@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>MonkiLogin</title>
+</head>
+<body>
+    <div id="content">
+        <header id="MainHeader">
+            <a class="Logo" href="/Index.html"><img src="IMAGES/Monki logo green.png" alt="LOGO"></a>
+            <img id="name" src="IMAGES/Name.png" alt="Website Name">
+            <select class="language" name="language" id="language">
+                <option value="en">EN</option>
+                <option value="de">DE</option>
+                <option value="fi">FI</option>
+            </select>
+        </header>
+        <article id="Login">
+            <h1>Login</h1>
+            <form action="">
+                <div class="loginfield">
+                    <label for="usrname">Username</label><br>
+                    <input type="text" id="usrname" name="usrname" required><br><br>
+                    <label for="psswd">Password</label><br>
+                    <input type="password" id="psswd" name="psswd" required><br><br>
+                </div>
+                <div class="checkbox">
+                <input type="checkbox" name="remem" id="remem">
+                <span>remember me</span><br><br>
+                </div>
+                <div class="submit">
+                <input type="submit" value="LogIn" class="submittext"/>
+                </div>
+            </form>
+        </article>
+        <footer>
+            <div class="contact">
+                <p id="contact">Contact</p>
+                <p class="mail">monkeypedia@email.com</p>
+            </div>
+            <div class="aboutus">
+                <a href="https://www.youtube.com/watch?v=GJDNkVDGM_s">About us</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
