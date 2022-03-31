@@ -1,5 +1,4 @@
 const prompts = require('prompts');
-const prompt = require('prompt-sync')({sigint: true});
 function checkIfLvlCouldBeIncreased(skill) {
     while (skill.currentXP >= skill.xpNeeded) {
         skill.currentXP = skill.currentXP - skill.xpNeeded;
@@ -73,8 +72,12 @@ async function gameLoop() {
                             name: 'value',
                             message: 'How much XP do you want to add?'
                         });
+                        if (xpResponse.value > 1440) {
+                            console.log("You can't add more than 1440 XP per day!")
+                        } else {
                         response.value.currentXP += xpResponse.value;
                         checkIfLvlCouldBeIncreased(response.value);
+                        }
                     } else if (skillResponse.value === "checkLVL") {
                         console.log(`${response.value.name} is level ${response.value.currentLVL}\nYou need ${response.value.xpNeeded} XP to reach level ${response.value.currentLVL + 1}`)
                     } else if (skillResponse.value === "checkXP") {
