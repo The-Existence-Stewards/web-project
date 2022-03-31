@@ -13,11 +13,13 @@ class Skills{
     constructor(name, multiplier, xpNeeded){
         this.name = name;
         this.multiplier = multiplier;
-        this.currentXP = 0
-        this.currentLVL = 0
-        this.xpNeeded = xpNeeded
+        this.currentXP = 0;
+        this.currentLVL = 0;
+        this.xpNeeded = xpNeeded;
+        this.lastLoggingDate = 0
     }
 }
+let logforday = 0
 let intelligence = new Skills("Intelligence", 1.2 , 30)
 let strength = new Skills("Strength", 1, 45)
 let endurance = new Skills("Endurance", 1.1, 40)
@@ -26,6 +28,7 @@ let agility = new Skills("Agility", 1.3, 20)
 let crafting = new Skills("Crafting", 1.5, 50)
 
 let allSkills = [intelligence, strength, endurance, charisma, agility, crafting]
+
 
 async function gameLoop() {
     let gameRunning = true;
@@ -72,12 +75,19 @@ async function gameLoop() {
                             name: 'value',
                             message: 'How much XP do you want to add?'
                         });
-                        if (xpResponse.value > 1440) {
-                            console.log("You can't add more than 1440 XP per day!")
-                        } else {
-                        response.value.currentXP += xpResponse.value;
-                        checkIfLvlCouldBeIncreased(response.value);
+                        if (xpResponse.value > 1400) {
+                            console.log("You can't log more than 24h of activity per day") 
                         }
+                        else {
+                            if (logforday + xpResponse.value > 1400) {
+                                console.log("You can't log more than 24h of activity per day") 
+                            }
+                             else {
+                                response.value.currentXP += xpResponse.value;
+                                logforday += xpResponse.value;
+                                checkIfLvlCouldBeIncreased(response.value);
+                             }   
+                            }
                     } else if (skillResponse.value === "checkLVL") {
                         console.log(`${response.value.name} is level ${response.value.currentLVL}\nYou need ${response.value.xpNeeded} XP to reach level ${response.value.currentLVL + 1}`)
                     } else if (skillResponse.value === "checkXP") {
