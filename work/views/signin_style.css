@@ -1,0 +1,88 @@
+
+body { 
+    font-family: 'Chivo', sans-serif;
+    margin: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+
+    background-color: #2196F3;
+
+}
+
+.grid-container div {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.signin-top-menu {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    
+    text-align: right;
+    background-color:rgba(255, 201, 43, 1);
+}
+
+.login-btn {
+    border-radius: 25px;
+    background-color:rgba(196, 196, 196, 0);
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid 1;
+    padding: 5px 40px;
+}
+
+.signin-text {
+    font-size: 1em;
+    text-align: left;
+}
+
+.signin-form {
+    text-align: left;
+}
+
+#signin-form {
+    /* box-sizing: border-box;
+    background-color: rgba(226, 230, 233, 1);
+    font-size: 0.9em; 
+    border-radius: 43px;
+    width: 70%;
+    padding: 7%;
+    margin: auto;
+    border-collapse: collapse;
+    overflow: hidden; */
+
+    /* position: absolute; */
+width: 486px;
+height: 841px;
+left: 859px;
+top: 133px;
+
+background: #E2E6E9;
+border-radius: 43px;
+}
+
+#signin-form input {
+    border-radius: 13px;
+    background-color:rgba(196, 196, 196, 0);
+    border-color: rgba(0, 0, 0, 1);
+    padding: 0.5em;
+}
+
+.signup-action-btn {
+    border-radius: 25px;
+    background-color:rgba(255, 201, 43, 1);
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid 1;
+    margin-right: 10px;
+    padding: 5px 63px;
+}
+
+.signin-footer {
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+
+}
