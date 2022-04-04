@@ -1,6 +1,9 @@
-const express = require('express');
+let express = require('express');
+let app = express();
 
-const app = express();
+app.set('views', __dirname + '/views');
+
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
@@ -14,5 +17,4 @@ app.get('/register', (req, res) => {
     res.sendFile(__dirname + '/views/register.html');
 });
 
-const port = 3000;
-app.listen(port);
+app.listen(process.env.PORT || 3000);
