@@ -22,18 +22,20 @@
         </div>
         <div id="logInContainer">
             <form action="/login" method="post">        
-                <div>
-                    <label for="username">Email or Username</label>
-                    <input type="text" id="username" name="username" required placeholder="Username">
+                <div class="userInputContainer">
+                    <label for="username">E-mail address</label>
+                    <input class="userInput" type="text" id="username" name="username" required>
                 </div>
-                <div>
+                <div  class="userInputContainer">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required placeholder="Password">
+                    <input class="userInput" type="password" id="password" name="password" required>
                 </div>
                 <button type="submit">Login</button>   
             </form>
-            <div class="separator"></div>
-            <div class="separator"></div>
+            <div id="separator container">
+                <div class="separator"></div>
+                <div class="separator"></div>
+            </div>
             <a href="/register">Don't have an account? Sign up ></a>
             <a href="">Forgot your password? Restore it ></a>
         </div>
