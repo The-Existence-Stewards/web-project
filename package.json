@@ -2,18 +2,21 @@
   "name": "work",
   "version": "1.0.0",
   "description": "random text",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "devStart": "nodemon app.js"
+    "start": "node server.js",
+    "devStart": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
+    "mysql": "^2.18.1",
     "prompts": "^2.4.2"
   },
   "devDependencies": {
     "dotenv": "^16.0.0",
     "nodemon": "^2.0.15"
-  }
+  },
+  "engines": {"node":"16.x"}
 }
