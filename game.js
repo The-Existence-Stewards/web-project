@@ -104,3 +104,7 @@ async function gameLoop() {
 }
 
 gameLoop()
+//////////////////////------Front end-----//----------------------------Back end----------------------------////
+function testFunction(skillName, userInput, currentXP, currentLVL, xpNeeded, dateTimeStamp, xpLimitForDay) {
+
+}
