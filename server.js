@@ -1,13 +1,15 @@
 let express = require('express');
 let app = express();
 
+let indexRouter = require('./routes/index');
+
 app.set('views', __dirname + '/views');
 
 app.use(express.static('public'));
+app.use('/', indexRouter);
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/index.html');
-});
+
+
 
 app.get('/login', (req, res) => {
     res.sendFile(__dirname + '/views/login.html');
