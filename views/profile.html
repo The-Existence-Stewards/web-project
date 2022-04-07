@@ -44,58 +44,147 @@
 
     <div class="elements">
         <div class="element strength">
-            <p class="title strenght">Strength</p>
-            <p class="level strenght">Lvl</p>
-            <input type="button" value="Add progress" class="btn-progress strenght">
-            <p class="xp strength">1/120 XP</p>
-            <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(222, 29, 51, 1)">
-                <div class="progress-bar" style="background-color: rgba(222, 29, 51, 1)"></div>
+            <div class="row1">
+                <div class="titleRow">
+                    <p class="title strenght">Strength</p>
+                    <p class="level strenght">Lvl 
+                        <span id="LvlValue">0</span>
+                    </p>
+                </div>
+                <button class="btn-progress strength">Add progress</button>
             </div>
-            
+            <div class="progressBarRow">
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(222, 29, 51, 1)">
+                    <div class="progress-bar" style="background-color: rgba(222, 29, 51, 1)"></div>
+                </div>
+                <div class="xp__container">
+                    <p class="xp strength">
+                        <span id="currentXP">10</span>
+                        <span>/</span>
+                        <span id="neededLvlXP">120</span>
+                        <span id="XPtext">XP</span>
+                    </p>
+                </div>
+            </div>
         </div> <br>
         <div class="element endurance">
-            <p class="title endurance">Endurance</p>
-            <p class="level endurance">Lvl</p>
-            <button class="btn-progress endurance">Add progress</button>
-            <p class="xp endurance">1/120 XP</p>
-            <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(81, 194, 71, 1)">
-                <div class="progress-bar" style="background-color: rgba(81, 194, 71, 1)"></div>
+            <div class="row1">
+                <div class="titleRow">
+                    <p class="title endurance">Endurance</p>
+                    <p class="level endurance">Lvl
+                        <span id="LvlValue">0</span>
+                    </p>
+                </div>
+                <button class="btn-progress endurance">Add progress</button>
+            </div>
+            <div class="progressBarRow">
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(81, 194, 71, 1)">
+                    <div class="progress-bar" style="background-color: rgba(81, 194, 71, 1)"></div>
+                </div>
+                <div class="xp__container">
+                    <p class="xp endurance">
+                        <span id="currentXP">10</span>
+                        <span>/</span>
+                        <span id="neededLvlXP">120</span>
+                        <span id="XPtext">XP</span>
+                    </p>
+                </div>
             </div>
         </div> <br>
         <div class="element intelligence">
-            <p class="title intelligence">Intelligence</p>
-            <p class="level intelligence">Lvl</p>
-            <button class="btn-progress intelligence">Add progress</button>
-            <p class="xp intelligence">1/120 XP</p>
-            <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(56, 102, 174, 1)">
-                <div class="progress-bar" style="background-color: rgba(56, 102, 174, 1)"></div>
+            <div class="row1">
+                <div class="titleRow">
+                    <p class="title intelligence">Intelligence</p>
+                    <p class="level intelligence">Lvl
+                        <span id="LvlValue">0</span>
+                    </p>
+                </div>
+                <button class="btn-progress intelligence">Add progress</button>
+            </div>
+            <div class="progressBarRow">
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(56, 102, 174, 1)">
+                    <div class="progress-bar" style="background-color: rgba(56, 102, 174, 1)"></div>
+                </div>
+                <div class="xp__container">
+                    <p class="xp intelligence">
+                        <span id="currentXP">10</span>
+                        <span>/</span>
+                        <span id="neededLvlXP">120</span>
+                        <span id="XPtext">XP</span>
+                    </p>
+                </div>
             </div>
         </div> <br>
         <div class="element charisma">
-            <p class="title charisma">Charisma</p>
-            <p class="level charisma">Lvl</p>
-            <button class="btn-progress charisma">Add progress</button>
-            <p class="xp charisma">1/120 XP</p>
-            <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(185, 58, 217, 1)">
-                <div class="progress-bar" style="background-color: rgba(185, 58, 217, 1)"></div>
+            <div class="row1">
+                <div class="titleRow">
+                    <p class="title charisma">Charisma</p>
+                    <p class="level charisma">Lvl
+                        <span id="LvlValue">0</span>
+                    </p>
+                </div>
+                <button class="btn-progress charisma">Add progress</button>
+            </div>
+            <div class="progressBarRow">
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(185, 58, 217, 1)">
+                    <div class="progress-bar" style="background-color: rgba(185, 58, 217, 1)"></div>
+                </div>
+                <div class="xp__container">
+                    <p class="xp charisma">
+                        <span id="currentXP">10</span>
+                        <span>/</span>
+                        <span id="neededLvlXP">120</span>
+                        <span id="XPtext">XP</span>
+                    </p>
+                </div>
             </div>
         </div> <br>
         <div class="element crafting">
-            <p class="title crafting">Crafting</p>
-            <p class="level crafting">Lvl</p>
-            <button class="btn-progress crafting">Add progress</button>
-            <p class="xp crafting">1/120 XP</p>
-            <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(178, 123, 77, 1)">
-                <div class="progress-bar" style="background-color: rgba(178, 123, 77, 1)"></div>
+            <div class="row1">
+                <div class="titleRow">
+                    <p class="title crafting">Crafting</p>
+                    <p class="level crafting">Lvl
+                        <span id="LvlValue">0</span>
+                    </p>
+                </div>
+                <button class="btn-progress crafting">Add progress</button>
+            </div>
+            <div class="progressBarRow">
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(178, 123, 77, 1)">
+                    <div class="progress-bar" style="background-color: rgba(178, 123, 77, 1)"></div>
+                </div>
+                <div class="xp__container">
+                    <p class="xp crafting">
+                        <span id="currentXP">10</span>
+                        <span>/</span>
+                        <span id="neededLvlXP">120</span>
+                        <span id="XPtext">XP</span>
+                    </p>
+                </div>
             </div>
         </div> <br>
         <div class="element agility">
-            <p class="title agility">Agility</p>
-            <p class="level agility">Lvl</p>
-            <button class="btn-progress agility">Add progress</button>
-            <p class="xp agility">1/120 XP</p>
-            <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(71, 194, 175, 1)">
-                <div class="progress-bar" style="background-color: rgba(71, 194, 175, 1)"></div>
+            <div class="row1">
+                <div class="titleRow">
+                    <p class="title agility">Agility</p>
+                    <p class="level agility">Lvl
+                        <span id="LvlValue">0</span>
+                    </p>
+                </div>
+                <button class="btn-progress agility">Add progress</button>
+            </div>
+            <div class="progressBarRow">
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(71, 194, 175, 1)">
+                    <div class="progress-bar" style="background-color: rgba(71, 194, 175, 1)"></div>
+                </div>
+                <div class="xp__container">
+                    <p class="xp agility">
+                        <span id="currentXP">10</span>
+                        <span>/</span>
+                        <span id="neededLvlXP">120</span>
+                        <span id="XPtext">XP</span>
+                    </p>
+                </div>
             </div>
         </div> <br>
     </div>
