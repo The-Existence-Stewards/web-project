@@ -28,7 +28,7 @@ body {
     padding: 0 5vw;
 }
 
-#header * {
+#header > img, form {
     height: 58%;
 }
 
