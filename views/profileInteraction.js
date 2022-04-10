@@ -1,5 +1,13 @@
-const modal = $(".modal");
+$(document).ready(function() {
+    $(".message").hide();
+    $(".menu").click(function() {
+        //get element's 2nd class name
+        var elementClass = $(this).parent().parent().attr("class").split(" ")[1];
+        $(".message."+elementClass).slideToggle();
+    });
+});
 
+const modal = $(".modal");
 
 //open modal
 function openModal() {

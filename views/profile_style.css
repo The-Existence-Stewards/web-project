@@ -321,6 +321,7 @@ div.progress-bar {
 .entering-minutes label {
     font-size: 2rem;
     padding-left: 1rem;
+    user-select: none;
 }
 
 .entering-minutes {
@@ -333,6 +334,7 @@ div.progress-bar {
 .modal-body p {
     text-align: center;
     font-size: 1.5rem ;
+    user-select: none;
 }
 
 .modal-body button {
@@ -352,6 +354,7 @@ div.progress-bar {
     font-size: 19px;
     font-family: 'Chivo', sans-serif;
     text-align: center;
+    user-select: none;
 }
 
 .close-button {
