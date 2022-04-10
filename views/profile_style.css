@@ -127,10 +127,10 @@ ul {
 }
 
 .title {
-    margin-top: 0px;
+    margin-top: 0;
     /* margin-right: 70px; */
     margin-left: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     font-size: 25px;
 }
 
@@ -147,6 +147,8 @@ ul {
 }
 
 .btn-progress {
+    display: flex;
+    padding: 0;
     width: 30%;
     height: 47px;
     bottom: 127px;
@@ -155,11 +157,10 @@ ul {
     background: #FFC92B;
     border-radius: 25px;
     border-style: none;
-
     font-size: 19px;
     font-family: 'Chivo', sans-serif;
     align-items: center;
-    text-align: center;
+    justify-content: center;
 }
 
 .btn-progress:hover{
@@ -171,7 +172,7 @@ div.row1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
 }
 
 div.titleRow {
@@ -202,7 +203,7 @@ div.xp__container {
 div.progress-bar__container {
     padding: 0;
     width: 75%;
-    background: #FFFFFF;
+    /* background: #FFFFFF; */
     border-radius: 25px;
 }
   
@@ -210,9 +211,10 @@ div.progress-bar {
     padding: 20px 0;
     border-radius: 25px;
     width: 100%;
-    clip-path: inset(0 50% 0 0);
+    clip-path: inset(0 0% 0 0);
+    transition: clip-path 1.3s;
+    background: #FFFFFF;
 }
-
 .explanation {
     position: relative;
     box-sizing: border-box;
@@ -231,7 +233,6 @@ div.progress-bar {
 .menu {
     cursor: pointer
 } 
-
 .profile-card {
     /* grid-column-start: 2;
     grid-column-end: 4;    */
@@ -274,7 +275,6 @@ div.progress-bar {
     grid-column: 1/4;
     grid-row: 4/5;
 }
-
 .modal {
     position: fixed;
     left: 0;
@@ -338,7 +338,7 @@ div.progress-bar {
 .modal-body button {
     margin: 0;
     position: absolute;
-    top: 70%;
+    top: 75%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);

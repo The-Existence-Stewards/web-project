@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="profile_style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="grid-container">
@@ -43,7 +44,7 @@
     </div>
 
     <div class="elements">
-        <div class="element strength" >
+        <div class="element strength">
             <div class="row1">
                 <div class="titleRow">
                     <p class="title strenght">Strength</p>
@@ -51,11 +52,11 @@
                         <span id="LvlValue">0</span>
                     </p>
                 </div>
-                <button class="trigger btn-progress strength">Add progress</button>
+                <button class="btn-progress strength">Add progress</button>
             </div>
             <div class="progressBarRow">
-                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(222, 29, 51, 1)">
-                    <div class="progress-bar" style="background-color: rgba(222, 29, 51, 1)"></div>
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(222, 29, 51, 1);background-color: rgba(222, 29, 51, 1)"">
+                    <div class="progress-bar"></div>
                 </div>
                 <div class="xp__container">
                     <p class="xp strength">
@@ -76,7 +77,6 @@
                 <li>Whatever</li>
               </ul>
         </div> <br>
-
         <div class="element endurance">
             <div class="row1">
                 <div class="titleRow">
@@ -85,11 +85,11 @@
                         <span id="LvlValue">0</span>
                     </p>
                 </div>
-                <button class="trigger btn-progress endurance">Add progress</button>
+                <button class="btn-progress endurance">Add progress</button>
             </div>
             <div class="progressBarRow">
-                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(81, 194, 71, 1)">
-                    <div class="progress-bar" style="background-color: rgba(81, 194, 71, 1)"></div>
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(81, 194, 71, 1);background-color: rgba(81, 194, 71, 1)">
+                    <div class="progress-bar"></div>
                 </div>
                 <div class="xp__container">
                     <p class="xp endurance">
@@ -101,7 +101,7 @@
                 </div>
                 <img src="icons8-pull-down-24.png" alt="menu" class="menu">
             </div>
-        </div>
+        </div> 
         <div class="explanation message endurance">
             <p>This is an explanation of what is included in this category:</p>
             <ul>
@@ -110,7 +110,6 @@
                 <li>Whatever</li>
               </ul>
         </div> <br>
-
         <div class="element intelligence">
             <div class="row1">
                 <div class="titleRow">
@@ -122,8 +121,8 @@
                 <button class="btn-progress intelligence">Add progress</button>
             </div>
             <div class="progressBarRow">
-                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(56, 102, 174, 1)">
-                    <div class="progress-bar" style="background-color: rgba(56, 102, 174, 1)"></div>
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(56, 102, 174, 1);background-color: rgba(56, 102, 174, 1)">
+                    <div class="progress-bar"></div>
                 </div>
                 <div class="xp__container">
                     <p class="xp intelligence">
@@ -135,7 +134,7 @@
                 </div>
                 <img src="icons8-pull-down-24.png" alt="menu" class="menu">
             </div>
-        </div>
+        </div> 
         <div class="explanation message intelligence">
             <p>This is an explanation of what is included in this category:</p>
             <ul>
@@ -144,7 +143,6 @@
                 <li>Whatever</li>
               </ul>
         </div> <br>
-
         <div class="element charisma">
             <div class="row1">
                 <div class="titleRow">
@@ -156,8 +154,8 @@
                 <button class="btn-progress charisma">Add progress</button>
             </div>
             <div class="progressBarRow">
-                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(185, 58, 217, 1)">
-                    <div class="progress-bar" style="background-color: rgba(185, 58, 217, 1)"></div>
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(185, 58, 217, 1);background-color: rgba(185, 58, 217, 1)">
+                    <div class="progress-bar"></div>
                 </div>
                 <div class="xp__container">
                     <p class="xp charisma">
@@ -169,8 +167,7 @@
                 </div>
                 <img src="icons8-pull-down-24.png" alt="menu" class="menu">
             </div>
-        </div>
-        <div class="explanation message charisma">
+        </div> <div class="explanation message charisma">
             <p>This is an explanation of what is included in this category:</p>
             <ul>
                 <li>Going to the gym</li>
@@ -178,7 +175,6 @@
                 <li>Whatever</li>
               </ul>
         </div> <br>
-
         <div class="element crafting">
             <div class="row1">
                 <div class="titleRow">
@@ -190,8 +186,8 @@
                 <button class="btn-progress crafting">Add progress</button>
             </div>
             <div class="progressBarRow">
-                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(178, 123, 77, 1)">
-                    <div class="progress-bar" style="background-color: rgba(178, 123, 77, 1)"></div>
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(178, 123, 77, 1);background-color: rgba(178, 123, 77, 1)">
+                    <div class="progress-bar"></div>
                 </div>
                 <div class="xp__container">
                     <p class="xp crafting">
@@ -203,7 +199,7 @@
                 </div>
                 <img src="icons8-pull-down-24.png" alt="menu" class="menu">
             </div>
-        </div>
+        </div> 
         <div class="explanation message crafting">
             <p>This is an explanation of what is included in this category:</p>
             <ul>
@@ -212,7 +208,6 @@
                 <li>Whatever</li>
               </ul>
         </div> <br>
-
         <div class="element agility">
             <div class="row1">
                 <div class="titleRow">
@@ -224,8 +219,8 @@
                 <button class="btn-progress agility">Add progress</button>
             </div>
             <div class="progressBarRow">
-                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(71, 194, 175, 1)">
-                    <div class="progress-bar" style="background-color: rgba(71, 194, 175, 1)"></div>
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(71, 194, 175, 1);background-color: rgba(71, 194, 175, 1)">
+                    <div class="progress-bar"></div>
                 </div>
                 <div class="xp__container">
                     <p class="xp agility">
@@ -247,7 +242,6 @@
               </ul>
         </div> <br>
     </div>
-
     <div class="profile-card">
         <div class="profile">
             <img src="pfp.png">
@@ -259,51 +253,35 @@
     <div class="profile-footer">
         <span>©The Existence Stewards 2022 | About Us | FAQ</span>
     </div>
-</div>  
 
-<!-- MODAL -->
-<div class="modal">
-    <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <div class="modal-body">
-            <h1>STRENGTH</h1> <br>
-            <span class="entering-minutes">
-                <input type="text" name="minutes">
-                <label for="minutes">Minutes</label>
-            </span>
-            <p>of Strength related activities</p>
-            <button class="btn-add-progress"> Add Progress</button>
+    <!-- MODAL -->
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-body">
+                <h1>STRENGTH</h1> <br>
+                <span class="entering-minutes">
+                    <input type="text" name="minutes">
+                    <label for="minutes">Minutes</label>
+                </span>
+                <p></p>
+                <button class="btn-add-progress"> Add Progress</button>
+            </div>
         </div>
     </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<script src="profile.js"></script>
-<script>
-
-    // function openMessage() {
-    //     var x = document.getElementById("message");
-    //     if (x.style.display == "none") {
-    //         x.style.display = "block";
-    //     } else {
-    //         x.style.display = "none";
-    //     }
-    // }
-
-    $(document).ready(function() {
-        $(".message").hide();
-        $(".menu").click(function() {
-            $(".message").slideToggle();
+    <script src="profileInteraction.js"></script>
+    <script>textChangeInsideModal(), openModal(), addEnterKeyListener()</script>
+    <script type = "text/javascript" src = "XPcalc.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".message").hide();
+            $(".menu").click(function() {
+                //get element's 2nd class name
+                var elementClass = $(this).parent().parent().attr("class").split(" ")[1];
+                $(".message."+elementClass).slideToggle();
+            });
         });
-    });
-
-    // $(".message").hide();
-    // $(".menu").click(function() {
-    //     $(this).slideToggle();
-    // });
-
-</script>
-
-
+    </script>
+</div>  
 </body>
 </html>
