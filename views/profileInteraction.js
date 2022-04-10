@@ -35,7 +35,7 @@ function closeModalOnInputConfirm() {
         modal.removeClass("show-modal");
     });
 }
-//add ENTER key event listener on modal
+//add ENTER key event listener on modal 
 function addEnterKeyListener() {
     $(".modal").keypress(function(e) {
         if (e.which == 13) {
