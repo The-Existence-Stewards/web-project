@@ -3,7 +3,7 @@ let router = express.Router();
 
 router.get('/', (req, res) => {
     // Issue with path
-    res.sendFile(__dirname + '/views/index.html');
+    res.sendFile('C:/Users/Onion/Desktop/Test/web-project/views/index.html');
 });
 
 module.exports = router;

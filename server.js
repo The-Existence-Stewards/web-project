@@ -20,3 +20,7 @@ app.get('/register', (req, res) => {
 });
 
 app.listen(process.env.PORT || 3000);
+
+// while(true) {
+//     console.log('nya')
+// }
