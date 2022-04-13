@@ -53,6 +53,7 @@ body {
     align-items: center;
     height: 70vh;
     padding: 10vh 7.5vw;
+    padding-bottom: 6vh;
 }
 
 #textContainer {
@@ -64,7 +65,7 @@ body {
 
 #textContainer>h1 {
     margin: 0;
-    font-size: 7.5vh;
+    font-size: 80px;
 }
 
 #textContainer>h2 {
@@ -80,14 +81,15 @@ body {
     padding: 3vh 4vw;
     border-radius: 25px;
     height: 65vh;
+    width: 33vw;
     background-color: var(--dirty-white);
     font-size: 2vh;
 }
 
-#logInContainer>form *{
+#logInContainer>form{
     display: flex;
     flex-direction: column;
-    width: 20vw;
+    width: 90%;
 }
 
 .userInputContainer {

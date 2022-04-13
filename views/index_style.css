@@ -53,6 +53,12 @@ body {
     color: black;
 }
 
+#loginButton:hover {
+    background-color: black;
+    color: var(--main-yellow);
+    cursor: pointer;
+}
+
 #signupButton {
     width: 100%;
     height: 100%;
@@ -63,13 +69,18 @@ body {
     color: var(--dirty-white);
 }
 
+#signupButton:hover {
+    color: var(--main-yellow);
+    cursor: pointer;
+}
+
 #main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: auto;
-    height: 110vh;
+    height: 115vh;
     padding: 10vh 7.5vw;
 }
 
@@ -100,6 +111,12 @@ body {
     background-color: black;
     font-size: 3.6vh;
     color: var(--dirty-white);
+}
+
+#main > form > #signupButtonMain:hover {
+    color: var(--main-yellow);
+    cursor: pointer;
+
 }
 
 #main > #mockupMain {
