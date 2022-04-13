@@ -1,4 +1,3 @@
-
 $(function calculateXpfromElement(){
     let mainElement = $(".elements")
     //select all mainElement child elements and put them in array
@@ -19,12 +18,29 @@ $(function calculateXpfromElement(){
         progressBar.css("clip-path", "inset(0 0 0 "+progressBarCrop+"%)")
     });
 });
-//print out data from input field when button is pressed
+//NaN input prevention
 $(document).ready(function() {
     $(".btn-add-progress").click(function() {
         var minutes = $("input:text").val();
+        errorMessage.text(null)
+        parseInt(minutes)
         skillName = $(".modal").find("h1").text().toLowerCase()
-        addMinutes(skillName,minutes)
+        if (isNaN(minutes) == true) {
+            errorMessage.text("Please enter a number!")
+            errorMessage.css("opacity", "1")
+            $("input:text").val("");
+        }
+        else if (minutes == "") {
+            errorMessage.text("Please enter a number!")
+            errorMessage.css("opacity", "1")
+            $("input:text").val("");
+        }
+        else { 
+            addMinutes(skillName,minutes)
+            $("input:text").val("");
+            errorMessage.text(null)
+            modal.toggleClass("show-modal")
+        }
     });
 });
 function progressbarCrop(currentXP, neededLvlXP, progressBar) {

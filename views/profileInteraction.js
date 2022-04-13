@@ -1,3 +1,5 @@
+const modal = $(".modal");
+const errorMessage = $(".modal").find(".error-handler")
 $(document).ready(function() {
     $(".message").hide();
     $(".menu").click(function() {
@@ -6,9 +8,6 @@ $(document).ready(function() {
         $(".message."+elementClass).slideToggle();
     });
 });
-
-const modal = $(".modal");
-
 //open modal
 function openModal() {
     $(".btn-progress").click(function() {
@@ -20,6 +19,7 @@ function clickOutsideModal() {
     $(document).click(function(event) {
         if ($(event.target).hasClass("modal")||$(event.target).hasClass("close-button")) {
             modal.removeClass("show-modal");
+            errorMessage.text(null)
         }
     });
 }
@@ -27,14 +27,14 @@ function textChangeInsideModal() {
     $(".btn-progress").click(function() {
         let newText = $(this).parent().parent().find(".title").text()
         $(".modal h1").text(newText.toUpperCase())
-        $(".modal p").text(`of ${newText.toUpperCase()} related activities`)
+        $(".modal p:first").text(`of ${newText.toUpperCase()} related activities`)
     });
 }
-function closeModalOnInputConfirm() {
-    $(".btn-add-progress").click(function() {
-        modal.removeClass("show-modal");
-    });
-}
+// function closeModalOnInputConfirm() {
+//     $(".btn-add-progress").click(function() {
+//         modal.toggleClass("show-modal");
+//     });
+// }
 //add ENTER key event listener on modal 
 function addEnterKeyListener() {
     $(".modal").keypress(function(e) {
@@ -46,4 +46,3 @@ function addEnterKeyListener() {
 
 addEventListener("click", openModal);
 addEventListener("click", clickOutsideModal);
-addEventListener("click", closeModalOnInputConfirm);
