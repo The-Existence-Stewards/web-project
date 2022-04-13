@@ -1,7 +1,12 @@
+drop database project;
+
+
 create database project;
 
-use project;
+CREATE USER 'projectuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'projectpass';
+GRANT ALL on project.* to 'projectuser'@'localhost';
 
+use project;
 Create table users(
 	user_id int not null auto_increment unique,
     username varchar(50) not null UNIQUE,
@@ -22,3 +27,69 @@ CREATE TABLE stats(
     foreign key (user_id) references users (user_id)
 		on delete cascade
 ) engine=INNODB;
+
+select * from users;
+select * from stats;
+delete from users where user_id=2;
+
+insert into users (username, password)
+values('lol',sha2(1234,256));
+insert into stats (strength, endurance, intelligence, charisma, agility, crafting)
+values(0,0,0,0,0,0);
+
+
+insert into users (username, password)
+values('bruno',sha2(1236,0));
+insert into stats (strength, endurance, intelligence, charisma, agility, crafting)
+values(0,0,0,0,0,0);
+
+update stats set strength=50 where user_id=2;
+
+
+
+
+
+
+
+=============================================================================================
+POSTGRESQL
+
+
+
+Create table users(
+	user_id serial not null unique,
+    username varchar(50) not null UNIQUE,
+    password varchar(256) not null,
+    primary key (user_id),
+    created_at timestamp not null default current_timestamp
+);
+	
+CREATE TABLE stats(
+	user_id serial not null unique,
+	strength int,
+	endurance int,
+    intelligence int,
+    charisma int,
+    agility int,
+    crafting int,
+    primary key (user_id),
+    foreign key (user_id) references users (user_id)
+		on delete cascade
+);
+
+
+
+insert into users (username,password) values
+('Nick', 1234);
+insert into stats (strength,endurance,intelligence,charisma,agility,crafting) values
+(0,0,0,0,0,0);
+
+insert into users (username,password) values
+('Brick', 4321);
+insert into stats (strength,endurance,intelligence,charisma,agility,crafting) values
+(0,0,0,0,0,0);
+
+insert into users (username,password) values
+('Slim Shady', 'moms spaghetti');
+insert into stats (strength,endurance,intelligence,charisma,agility,crafting) values
+(0,0,0,0,0,0);
