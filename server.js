@@ -1,26 +1,38 @@
-let express = require('express');
-let app = express();
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+};
 
-let indexRouter = require('./routes/index');
+const express = require('express');
+const app = express();
+// const db = require('./database.js');
 
-app.set('views', __dirname + '/views');
+const loginRouter = require('./routes/login.js');
+const registerRouter = require('./routes/register.js');
 
 app.use(express.static('public'));
-app.use('/', indexRouter);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
+app.use('/login', loginRouter);
+app.use('/register', registerRouter);
 
+// app.get('/db', async (req, res) => {
+//     try {
+//         const client = await db.connect();
+//         const result = await client.query('SELECT user_id, username FROM users;');
+//         const results = { 'results': (result) ? result.rows : null};
+//         res.json( results );
+//         client.release();
+//     } catch (err) {
+//         console.error(err);
+//         res.json({ error: err });
+//     }
+// });
 
-app.get('/login', (req, res) => {
-    res.sendFile(__dirname + '/views/login.html');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
 });
 
-app.get('/register', (req, res) => {
-    res.sendFile(__dirname + '/views/register.html');
-});
-
-app.listen(process.env.PORT || 3000);
-
-// while(true) {
-//     console.log('nya')
-// }
+module.exports = app;

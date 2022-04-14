@@ -1,5 +1,19 @@
-const mysql = require('mysql');
-const dotenv = require('dotenv');
-dotenv.config();
-const connection = mysql.createPool(process.env.SQLServer);
-module.exports = connection;
+const { Pool } = require('pg');
+const pool = (() => {
+    if (process.env.NODE_ENV !== 'production') {
+        return new Pool({
+            connectionString: process.env.DATABASE_URL,
+            ssl: false
+        });
+    } else {
+        return new Pool({
+            connectionString: process.env.DATABASE_URL,
+            ssl: {
+                rejectUnauthorized: false
+            }
+        });
+    }
+})();
+
+
+module.exports = pool;
