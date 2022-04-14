@@ -43,7 +43,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum temporibus nobis, cum cumque aperiam expedita, officia perspiciatis laboriosam ad laborum fugiat. Rerum, magni sint? Suscipit porro aliquam in tenetur quibusdam!</p>
     </div>
 
-    <div class="elements">
+    <div class="elements" data-timeTakenForLvlUp="">
         <div class="element strength">
             <div class="row1">
                 <div class="titleRow">
@@ -68,7 +68,9 @@
                 </div>
                 <img src="icons8-pull-down-24.png" alt="menu" class="menu">
             </div>
-            <!-- FOR TESTING PURPOSES <div class="testText">Test Text</div>  FOR TESTING PURPOSES-->
+            <div class="levelUpFlexContainer">
+                <div class="levelUpText">Level UP!</div>
+            </div>
         </div>
         <div class="explanation message strength">
             <p class="par">This is an explanation of what is included in this category:</p>
@@ -101,6 +103,9 @@
                     </p>
                 </div>
                 <img src="icons8-pull-down-24.png" alt="menu" class="menu">
+            </div>
+            <div class="levelUpFlexContainer">
+                <div class="levelUpText">Level UP!</div>
             </div>
         </div> 
         <div class="explanation message endurance">
@@ -135,6 +140,9 @@
                 </div>
                 <img src="icons8-pull-down-24.png" alt="menu" class="menu">
             </div>
+            <div class="levelUpFlexContainer">
+                <div class="levelUpText">Level UP!</div>
+            </div>
         </div> 
         <div class="explanation message intelligence">
             <p>This is an explanation of what is included in this category:</p>
@@ -168,6 +176,9 @@
                 </div>
                 <img src="icons8-pull-down-24.png" alt="menu" class="menu">
             </div>
+            <div class="levelUpFlexContainer">
+                <div class="levelUpText">Level UP!</div>
+            </div>
         </div> <div class="explanation message charisma">
             <p>This is an explanation of what is included in this category:</p>
             <ul>
@@ -199,6 +210,9 @@
                     </p>
                 </div>
                 <img src="icons8-pull-down-24.png" alt="menu" class="menu">
+            </div>
+            <div class="levelUpFlexContainer">
+                <div class="levelUpText">Level UP!</div>
             </div>
         </div> 
         <div class="explanation message crafting">
@@ -233,6 +247,9 @@
                 </div>
                 <img src="icons8-pull-down-24.png" alt="menu" class="menu">
             </div>
+            <div class="levelUpFlexContainer">
+                <div class="levelUpText">Level UP!</div>
+            </div>
         </div>
         <div class="explanation message agility">
             <p>This is an explanation of what is included in this category:</p>
@@ -254,13 +271,15 @@
     <div class="profile-footer">
         <span>©The Existence Stewards 2022 | About Us | FAQ</span>
     </div>
+    <div style="display: none;" class="levelUpTransition"></div>
+    <div style="display: none;" class="levelUpFlexContainer levelUpFlex"></div>
 
     <!-- MODAL -->
     <div class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <div class="modal-body">
-                <h1>STRENGTH</h1> <br>
+                <h1></h1> <br>
                 <span class="entering-minutes">
                     <input type="text" name="minutes">
                     <label for="minutes">Minutes</label>

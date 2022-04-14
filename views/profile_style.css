@@ -124,6 +124,9 @@ ul {
     /* left: 120px;
     top: 254px; */
 }
+div.animatedElement{
+    background-color: #6441A4;
+} 
 
 .title {
     margin-top: 0;
@@ -191,6 +194,13 @@ div.progressBarRow {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+.levelUpTransition {
+    transition: 0.3s;
+    pointer-events: none;
+}
+.levelUpOpacity {
+    opacity: 0;
 }
 
 div.xp__container {
@@ -386,18 +396,33 @@ div.progress-bar {
     cursor: pointer;
 }
 
-/* for testing purposes
+/* for testing purposes */
 
-div.testText{
+div.levelUpFlexContainer{
     padding: 0;
     position: absolute;
-    font-size: 25px;
-} 
+    display: flex;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    overflow: hidden;
+}
+div.levelUpText {
+    padding: 0;
+    color: whitesmoke;
+    font-size: 50px;
+    font-weight: 600;
+}
+div.levelUpFlexContainer.levelUpFlex{
+    transform: translateY(-100%);
+    transition: cubic-bezier(0,.3,1,.4) 1.7s;
+}
 
-*/
-
-
-@media screen and (min-width: 600px) {
+/* @media screen and (min-width: 600px) {
     
     .profile-top-menu img {
         width: 10em;
@@ -744,4 +769,4 @@ div.testText{
         transform: scale(1.0);
         transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
     }
-}
+} */
