@@ -422,7 +422,7 @@ div.levelUpFlexContainer.levelUpFlex{
     transition: cubic-bezier(0,.3,1,.4) 1.7s;
 }
 
-/* @media screen and (min-width: 600px) {
+@media screen and (min-width: 600px) {
     
     .profile-top-menu img {
         width: 10em;
@@ -769,4 +769,4 @@ div.levelUpFlexContainer.levelUpFlex{
         transform: scale(1.0);
         transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
     }
-} */
+}
