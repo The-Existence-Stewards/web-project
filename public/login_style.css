@@ -51,7 +51,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 70vh;
+    height: 72vh;
     padding: 10vh 7.5vw;
     padding-bottom: 6vh;
 }
@@ -77,11 +77,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    padding: 3vh 4vw;
+    justify-content: space-between;
+    padding: 5vh 1vw;
     border-radius: 25px;
-    height: 65vh;
-    width: 33vw;
+    height: 53vh;
+    width: 31vw;
+    max-width: 470px;
     background-color: var(--dirty-white);
     font-size: 2vh;
 }
@@ -89,16 +90,75 @@ body {
 #logInContainer>form{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 90%;
+    height: 30vh;
 }
 
 .userInputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 1vh 0;
+    height: 9vh;
 }
 
 .userInput {
     background-color: var(--dirty-white);
-    height: 3vh;
+    height: 5vh;
+    width: calc(100% - 2vw);
+    padding: 0px 1vw;
+    font-size: 2.5vh;
+    border-radius: 13px;
+}
+
+#logInContainer>form>button {
     width: 100%;
+    height: 5vh;
+    border: 1px solid black;
     border-radius: 25px;
+    background-color: var(--main-yellow);
+    font-size: 2.3vh;
+    font-weight: bold;
+    color: black;
+}
+
+#separatorContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 1px;
+    width: 80%;
+}
+
+.separator {
+    background-color: black;
+    height: 1px;
+    width: 43%;
+}
+
+#linksContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 7vh;
+}
+
+#linksContainer>a {
+    /*remove decoration from links*/
+    text-decoration: none;
+    color: black;
+}
+
+#footer {
+    height: 4vh;
+    padding-left: 7.5vw;
+}
+
+#footer>* {
+    font-size: 1.5vh;
+    text-decoration: none;
+    color: var(--main-yellow)
 }
