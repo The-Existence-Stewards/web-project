@@ -23,6 +23,8 @@ body {
 
     background-color:rgba(255, 201, 43, 1);
     overflow: hidden;
+    /* display: flex;
+    flex-direction: row-reverse; */
 }
 
 .profile-top-menu img {
@@ -34,7 +36,7 @@ body {
     margin-left: 1.5em;
 }
 
-.profile-top-menu a {
+.profile-top-menu a:not(.logout-btn) {
     /* float: left;
     display: block;
     text-align: center;
@@ -54,7 +56,7 @@ body {
     font-size: 1.25rem;
 }
 
-.profile-top-menu a:after {
+.profile-top-menu a:not(.logout-btn):after {
     content: '';
     position: absolute;
     width: 100%;
@@ -67,7 +69,7 @@ body {
     transition: transform 0.25s ease-out;
 }
 
-.profile-top-menu a:hover:after {
+.profile-top-menu a:not(.logout-btn):hover:after {
     transform: scaleX(1);
     transform-origin: center;
 }
@@ -495,6 +497,7 @@ div.levelUpFlexContainer.levelUpFlex{
     transition: cubic-bezier(0,.3,1,.4) 1.7s;
 }
 
+
 @media screen and (max-width: 1200px){
 
     .profile-top-menu a {
@@ -548,17 +551,19 @@ div.levelUpFlexContainer.levelUpFlex{
     }
 }
 
+
 @media only screen and (max-width: 959px) {
 
     .profile-top-menu {
         grid-column: 1/4;
         grid-row: 1/2;
-        
+
         /* background-color:rgba(255, 201, 43, 1);
         overflow: hidden; */
     }
 
     .top-text {
+        display: none;
         grid-column: 1/4;
         grid-row: 2/3;
 
@@ -582,7 +587,13 @@ div.levelUpFlexContainer.levelUpFlex{
         grid-column: 1/4;
         grid-row: 6/7;
 
-        font-size: .4rem;
+        font-size: .5rem;
+    }
+
+    .profile-top-menu img {
+        width: 12%;
+        margin-top: .7rem;
+        margin-left: .1rem;
     }
 
     .profile-top-menu a {
@@ -650,7 +661,8 @@ div.levelUpFlexContainer.levelUpFlex{
 
     /* Navigation bar */
 
-    .profile-top-menu a:not(:first-child) {display: none;}
+    .profile-top-menu a {display: none;}
+
     .profile-top-menu a.icon {
       float: right;
       display: block;
@@ -662,36 +674,70 @@ div.levelUpFlexContainer.levelUpFlex{
         right: 0;
         top: 0;
     }
-    .profile-top-menu.responsive a {
+
+    /* .profile-top-menu.responsive img {
+        display: none;
+    } */
+
+    .profile-top-menu.responsive a:not(.icon) {
         float: none;
         display: block;
-        text-align: left;
+        text-align: right;
+        /* top: 2.7rem; */
+        font-size: 1rem;
+        /* width: 19%; */
+
     }
 
+    .logout-btn {
+        float: none;
+        /* position: static; */
+        display: block;
+        text-align: right;
+
+        border-radius: 0;
+        border-color: inherit;
+        border-style: none;
+        background-color:inherit;
+        padding: 0;
+    }
+
+    .logout-btn:hover {
+        border: none;
+        background-color: inherit;
+        color: inherit;
+    }
+
+    .profile-top-menu a:not(.logout-btn):after {
+        position: static;
+        width: auto;
+        transform: none;
+        height: auto;
+        bottom: 0;
+        left: 0;
+        background-color: inherit;
+        transform-origin: none;
+        transition: none;
+    }
     
+    .profile-top-menu a:not(.logout-btn):hover:after {
+        transform: none;
+        transform-origin: none;
+    }
 }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-/* @media screen and (max-width: 768px) {
-    .profile-top-menu a:not(:first-child) {display: none;}
-    .profile-top-menu a.icon {
-      float: right;
-      display: block;
+@media screen and (max-width: 600px) {
+
+    .profile-top-menu img {
+        width: 15%;
+        margin-top: .7rem;
+        margin-left: .1rem;
     }
-  } */
-  
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-/* @media screen and (max-width: 768px) {
-    .profile-top-menu.responsive {position: relative;}
-    .profile-top-menu.responsive a.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
+
+    .btn-progress {
+        height: 40px;
+        width: 40%;
+        font-size: 0.7rem;
     }
-    .profile-top-menu.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-} */
+}
 

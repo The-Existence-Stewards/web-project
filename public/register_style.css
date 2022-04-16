@@ -18,8 +18,8 @@ body {
 }
 
 .signin-top-menu {
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column: 1/4;
+    grid-row: 1/2;
     
     text-align: right;
     background-color:rgba(255, 201, 43, 1);
@@ -64,7 +64,7 @@ body {
 .signin-text h1 {
     font-style: normal;
     font-weight: 400;
-    font-size: 80px;
+    font-size: 5em;
 
     padding-left: 1.5em;
     padding-top: 2.3em;
@@ -72,10 +72,11 @@ body {
 
 .signin-text p {
     padding-left: 3.5em;
+    margin-top: -3rem;
 
     font-style: normal;
     font-weight: 400;
-    font-size: 36px;
+    font-size: 2.25em;
 }
 
 .signin-form {
@@ -91,8 +92,7 @@ body {
     box-sizing: border-box;
     text-align: left;
 
-    width: 430px;
-    height: 710px;
+    width: 60%;
 
     padding-top: 5%;
     padding-bottom: 6%;
@@ -176,4 +176,137 @@ body {
 
 .signin-footer a:hover {
     color: rgba(255, 201, 43, 1);
+}
+
+@media screen and (max-width: 1200px) {
+
+    .signin-text h1 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3.5em;
+    
+        padding-left: 1.3em;
+        padding-top: 2.3em;
+    }
+    
+    .signin-text p {
+        padding-left: 3.15em;
+        margin-top: -1.5rem;
+    
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.5em;
+    }
+
+    #signin-form {
+        width: 80%;
+        padding-top: 8%;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    #signin-form label {
+        font-size: 1.1em ;
+    }
+
+    ::placeholder {
+        font-size: 1em;
+    }
+
+    .signup-action-btn {
+        font-size: 1.1em;
+    }
+
+    .signin-form span {
+        font-size: 1em;
+    }
+
+    .signin-footer {
+        font-size: .9em ;
+    }
+    
+}
+
+@media only screen and (max-width: 959px) {
+
+    .signin-top-menu {
+        grid-column: 1/4;
+        grid-row: 1/2;
+    }
+
+    .signin-text {
+        grid-column: 1/4;
+        grid-row: 2/3;
+    
+        text-align: center;
+    }
+
+    .signin-form {
+        grid-column: 1/4;
+        grid-row: 3/4;
+    }
+
+    .signin-footer {
+        grid-column: 1/4;
+        grid-row: 4/5;
+
+        font-size: .7em;
+    }
+
+    .signin-text h1 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3.5em;
+
+        padding-left: 0;
+        padding-top: 0;
+    }
+    
+    .signin-text p {   
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.25em;
+
+        margin-top: -1.5rem;
+    }
+
+    #signin-form {
+        margin: auto;
+        width: 50%;
+        padding-top: 5%;
+        padding-bottom: 4%;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .signin-text {
+        grid-column: 1/4;
+        grid-row: 2/3;
+    
+        text-align: center;
+    }
+
+    .signin-footer {
+        font-size: .5em;
+    }
+
+    .signin-text h1 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2.9em;
+    }
+    
+    .signin-text p {   
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.25em;
+
+    }
+
+    #signin-form {
+        width: 80%;
+    }
 }
