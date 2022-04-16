@@ -46,6 +46,11 @@ body {
     color: var(--dirty-white);
 }
 
+#signupButton:hover {
+    color: var(--main-yellow);
+    cursor: pointer;
+}
+
 #main {
     display: flex;
     flex-direction: row;
@@ -121,6 +126,12 @@ body {
     font-size: 2.3vh;
     font-weight: bold;
     color: black;
+}
+
+#logInContainer>form>button:hover {
+    background-color: black;
+    color: var(--main-yellow);
+    cursor: pointer;
 }
 
 #separatorContainer {
