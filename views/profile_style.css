@@ -18,60 +18,8 @@ body {
 }
 
 .profile-top-menu {
-    grid-column: 1/4;
-    grid-row: 1/2;
-
     background-color:rgba(255, 201, 43, 1);
     overflow: hidden;
-    /* display: flex;
-    flex-direction: row-reverse; */
-}
-
-.profile-top-menu img {
-    width: 10em;
-    height: auto;
-    float: left;
-    display: flex;
-    justify-content: left;
-    margin-left: 1.5em;
-}
-
-.profile-top-menu a:not(.logout-btn) {
-    /* float: left;
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 1.25rem; */
-
-    text-align: center;
-    text-decoration: none;
-    float: right;
-    margin-left: 2em;
-    margin-right: 2em;
-    padding: 10px;
-
-    position: relative;
-    color: rgba(0, 0, 0, 1);
-    font-size: 1.25rem;
-}
-
-.profile-top-menu a:not(.logout-btn):after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 1);
-    transform-origin: center;
-    transition: transform 0.25s ease-out;
-}
-
-.profile-top-menu a:not(.logout-btn):hover:after {
-    transform: scaleX(1);
-    transform-origin: center;
 }
 
 /* .profile-top-menu a:hover {
@@ -84,30 +32,7 @@ body {
     color: white;
 } */
 
-.profile-top-menu .icon {
-    display: none;
-}
-
-.logout-btn {
-    float: right;
-    position: relative;
-    border-radius: 25px;
-    border-color: rgba(0, 0, 0, 1);
-    border-style: solid;
-    background-color:rgba(255, 201, 43, 1);
-    padding: 5px 40px;
-    font-size: 1.25rem;
-    font-family: 'Chivo', sans-serif;
-}
-
-.logout-btn:hover {
-    border-color: rgba(255, 201, 43, 1);
-    background-color: rgb(0, 0, 0);
-    color: rgba(255, 201, 43, 1);
-}
-
 /* 
-
 ul {
     list-style-type: none;
     margin: 0;
@@ -153,26 +78,11 @@ ul {
 */
 
 .top-text {
-    /* grid-column-start: 1;
-    grid-column-end: 4; */
-    grid-column: 1/4;
-    grid-row: 2/3;
-
     text-align: center;
-    font-size: 1.4rem;
 }
-
 .top-text p {
     padding-left: 10rem;
     padding-right: 10rem;
-
-}
-.elements {
-    /* grid-column-start: 1;
-    grid-column-end: 3;   */
-
-    grid-column: 1/3;
-    grid-row: 3/4;
 }
 
 .element {
@@ -183,38 +93,26 @@ ul {
     background-color: rgba(226, 230, 233, 1);
     border-radius: 25px;
     margin: auto;
-    /* margin-top: 10px;
-    margin-bottom: 10px; */
-    /* width: 850px; */
-    width: 70%;
-    /* left: 120px;
-    top: 254px; */
 }
+
 div.animatedElement{
     background-color: #6441A4;
 } 
 
 .title {
     margin-top: 0;
-    /* margin-right: 70px; */
     margin-left: 20px;
     margin-bottom: 0;
-    font-size: 1.5rem;
     white-space: nowrap;
 }
-
 .level {
     margin: 0px;
-    font-size: 1.25rem;
     width: 50%;
 }
-
 .xp {
-    font-size: 1.25rem;
     white-space: nowrap;
     margin: 0;
 }
-
 .btn-progress {
     display: flex;
     padding: 0;
@@ -226,12 +124,10 @@ div.animatedElement{
     background: #FFC92B;
     border-radius: 25px;
     border-style: none;
-    font-size: 1.1rem;
     font-family: 'Chivo', sans-serif;
     align-items: center;
     justify-content: center;
 }
-
 .btn-progress:hover{
     box-shadow: 0 0 5px #d4a825;
 }
@@ -243,7 +139,6 @@ div.row1 {
     justify-content: space-between;
     align-items: flex-end;
 }
-
 div.titleRow {
     width: 100%;
     padding: 0;
@@ -252,7 +147,6 @@ div.titleRow {
     align-items: center;
     justify-content: space-between;
 }
-
 div.progressBarRow {
     padding: 0;
     display: flex;
@@ -269,20 +163,17 @@ div.progressBarRow {
 .levelUpOpacity {
     opacity: 0;
 }
-
 div.xp__container {
     padding: 0;
     margin-right: 15px;
     margin-left: 15px;
 }
-
 div.progress-bar__container {
     padding: 0;
     width: 75%;
     /* background: #FFFFFF; */
     border-radius: 25px;
 }
-  
 div.progress-bar {
     padding: 20px 0;
     border-radius: 25px;
@@ -300,64 +191,26 @@ div.progress-bar {
     background-color: rgba(226, 230, 233, 0.4);
     border-radius: 25px;
     margin: auto;
-    width: 70%;
     margin-top: 0.5rem;
 }
+.explanation ul { list-style: inside }
 
-.explanation ul {
-    list-style: inside;
-}
-
-.menu {
-    cursor: pointer
-} 
-.profile-card {
-    /* grid-column-start: 2;
-    grid-column-end: 4;    */
-
-    grid-column: 3/4;
-    grid-row: 3/4;
-}
+.menu { cursor: pointer }
 
 .profile {
     position: sticky;
     top: 50px;
-    background-color: rgba(226, 230, 233, 1);
 
     box-sizing: border-box;
     border-collapse: collapse;
     overflow: hidden;
     border-radius: 43px;
-    /* margin: auto; */
     padding-left: 10px;
-    width: 70%;
 
     text-align: center;
-    font-size: 1em; 
 }
 
-.profile img {
-    /* position: absolute; */
-    /* width: 262px;
-    height: 256.94px;
-    left: 1041px;
-    top: 280.46px; */
-
-    width: 70%;
-    height: 70%;
-    left: 70%;
-    top: 70%;
-
-    border-radius: 129.5px;
-}
- 
-.profile-footer {
-    /* grid-column-start: 1;
-    grid-column-end: 4; */
-
-    grid-column: 1/4;
-    grid-row: 4/5;
-}
+.profile img {  border-radius: 129.5px }
 
 .modal {
     position: fixed;
@@ -372,7 +225,6 @@ div.progress-bar {
     transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
     user-select: none;
 }
-
 .modal-content {
     position: absolute;
     top: 50%;
@@ -384,15 +236,12 @@ div.progress-bar {
     height: 25rem;
     border-radius: 1.5rem;
 }
-
 .modal-body {
     padding: 0 2rem;
 }
-
 .modal-body h1 {
     font-weight: bold;
 }
-
 .entering-minutes input {
     background-color: rgba(226, 230, 233, 1);
     outline: 0;
@@ -402,26 +251,22 @@ div.progress-bar {
     font-size: 1.5rem;
     text-align: center;
 }
-
 .entering-minutes label {
     font-size: 2rem;
     padding-left: 1rem;
     user-select: none;
 }
-
 .entering-minutes {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-
 .modal-body p {
     text-align: center;
     font-size: 1.5rem ;
     user-select: none;
 }
-
 .modal-body button {
     margin: 0;
     position: absolute;
@@ -441,7 +286,6 @@ div.progress-bar {
     text-align: center;
     user-select: none;
 }
-
 .close-button {
     float: right;
     width: 1.5rem;
@@ -450,17 +294,16 @@ div.progress-bar {
     border-radius: 0.25rem;
     background-color: lightgray;
 }
-
 .close-button:hover {
     background-color: darkgray;
 }
-
 .show-modal {
     opacity: 1;
     visibility: visible;
     transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
+
 .error-handler{
     color: red;
     opacity: 0;
@@ -486,198 +329,76 @@ div.levelUpFlexContainer{
     transform: translateY(100%);
     overflow: hidden;
 }
+
 div.levelUpText {
     padding: 0;
     color: whitesmoke;
     font-size: 50px;
     font-weight: 600;
 }
+
 div.levelUpFlexContainer.levelUpFlex{
     transform: translateY(-100%);
     transition: cubic-bezier(0,.3,1,.4) 1.7s;
 }
 
 
-@media screen and (max-width: 1200px){
-
-    .profile-top-menu a {
-        font-size: 1.1rem;
-    }
-    
-    .logout-btn {
-        padding: 5px 35px;
-        border-style: solid 0.5;
-        font-size: 1.1rem;
-    }
-
-    .top-text {
-        font-size: 1.2rem;
-    }
-    
-    .title {
-        margin-top: 0;
-        /* margin-right: 70px; */
-        margin-left: 20px;
-        margin-bottom: 0;
-        font-size: 1.2rem;
-        white-space: nowrap;
-    }
-    
-    .level {
-        /* margin: 0px; */
-        margin-left: 40px;
-        font-size: 1rem;
-        width: 50%;
-    }
-    
-    .xp {
-        font-size: 1rem;
-        white-space: nowrap;
-        margin: 0;
-    }
-
-    .btn-progress {
-        height: 40px;
-        width: 40%;
-        font-size: 0.8rem;
-    }
-
-    .profile {
-        font-size: 0.8rem;
-    }
-
-    .profile-footer {
-        font-size: 0.8rem;
-    }
-}
-
-
-@media only screen and (max-width: 959px) {
-
+@media screen and (max-width: 600px) {
     .profile-top-menu {
         grid-column: 1/4;
-        grid-row: 1/2;
-
-        /* background-color:rgba(255, 201, 43, 1);
-        overflow: hidden; */
-    }
+        grid-row: 1/2 }
 
     .top-text {
         display: none;
         grid-column: 1/4;
-        grid-row: 2/3;
-
-        font-size: 0.9rem;
-    }
+        grid-row: 2/3 }
 
     .elements {   
         grid-column: 1/4;
-        grid-row: 5/6;
-    }
+        grid-row: 5/6 }
 
-    .profile-card {
-        /* grid-column-start: 2;
-        grid-column-end: 4;    */
-    
+    .profile-card {   
         grid-column: 1/4;
-        grid-row: 4/5;
-    }
+        grid-row: 4/5 }
 
     .profile-footer { 
         grid-column: 1/4;
         grid-row: 6/7;
 
-        font-size: .5rem;
-    }
+        font-size: .5rem }
 
     .profile-top-menu img {
-        width: 12%;
-        margin-top: .7rem;
-        margin-left: .1rem;
-    }
+        width: 15%;
+        margin-top: .6rem;
+        margin-left: .7rem }
 
-    .profile-top-menu a {
-        font-size: .9rem;
-    }
+    .element { width: 90% }
+
+    .explanation { width: 90% }
+
+    .title { font-size: 1.25rem }
     
-    .logout-btn {
-        padding: 5px 35px;
-        border-style: solid 0.5;
-        font-size: .9rem;
-    }
+    .level { font-size: .9rem }
     
-    .title {
-        margin-top: 0;
-        /* margin-right: 70px; */
-        margin-left: 20px;
-        margin-bottom: 0;
-        font-size: 1rem;
-        white-space: nowrap;
-    }
-    
-    .level {
-        /* margin: 0px; */
-        margin-left: 40px;
-        font-size: .8rem;
-        width: 50%;
-    }
-    
-    .xp {
-        font-size: .8rem;
-        white-space: nowrap;
-        margin: 0;
-    }
+    .xp { font-size: .9rem }
 
     .btn-progress {
-        height: 30px;
-        width: 30%;
-        font-size: .8rem;
-    }
-
-    .explanation p, ul {
-        font-size: .75rem;
-    }
-
-    .profile {
-        margin: auto;
-        font-size: 0.8rem;
-    }
-
-    .profile img {  
-        float: left;
-        margin-left: 30px;
-
-        width: 30%;
-        height: 30%;
-        left: 30%;
-        top: 30%;
-    
-        border-radius: 129.5px;
-    }
-
-    .profile-footer {
-        font-size: 0.5rem;
-    }
+        height: 40px;
+        width: 40%;
+        font-size: .8rem }
 
     /* Navigation bar */
-
     .profile-top-menu a {display: none;}
-
     .profile-top-menu a.icon {
-      float: right;
-      display: block;
-    }
+        float: right;
+        display: block;
+        color: black; }
 
     .profile-top-menu.responsive {position: relative;}
     .profile-top-menu.responsive a.icon {
         position: absolute;
         right: 0;
-        top: 0;
-    }
-
-    /* .profile-top-menu.responsive img {
-        display: none;
-    } */
+        top: 0 }
 
     .profile-top-menu.responsive a:not(.icon) {
         float: none;
@@ -686,58 +407,330 @@ div.levelUpFlexContainer.levelUpFlex{
         /* top: 2.7rem; */
         font-size: 1rem;
         /* width: 19%; */
+        text-decoration: none;
+        color: black }
 
-    }
-
-    .logout-btn {
-        float: none;
-        /* position: static; */
-        display: block;
-        text-align: right;
-
-        border-radius: 0;
-        border-color: inherit;
-        border-style: none;
-        background-color:inherit;
-        padding: 0;
-    }
-
-    .logout-btn:hover {
-        border: none;
+    .profile {
         background-color: inherit;
-        color: inherit;
-    }
+        margin: auto;
+        font-size: 1rem;
+        width: 85% }
 
-    .profile-top-menu a:not(.logout-btn):after {
-        position: static;
-        width: auto;
-        transform: none;
-        height: auto;
-        bottom: 0;
-        left: 0;
-        background-color: inherit;
-        transform-origin: none;
-        transition: none;
-    }
-    
-    .profile-top-menu a:not(.logout-btn):hover:after {
-        transform: none;
-        transform-origin: none;
-    }
+    .profile img {  
+        width: 30%;
+        height: 30%;
+        left: 30%;
+        top: 30% }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 600px) {
+    .profile-top-menu {
+        grid-column: 1/4;
+        grid-row: 1/2 }
+
+    .top-text {
+        display: none;
+        grid-column: 1/4;
+        grid-row: 2/3 }
+
+    .elements {   
+        grid-column: 1/4;
+        grid-row: 5/6 }
+
+    .profile-card {   
+        grid-column: 1/4;
+        grid-row: 4/5 }
+
+    .profile-footer { 
+        grid-column: 1/4;
+        grid-row: 6/7;
+
+        font-size: .5rem }
 
     .profile-top-menu img {
         width: 15%;
         margin-top: .7rem;
-        margin-left: .1rem;
-    }
+        margin-left: .1rem }
+
+    .element { width: 75% }
+
+    .explanation { width: 75% }
+
+    .title { font-size: 1.15rem }
+    
+    .level { font-size: .9rem }
+    
+    .xp { font-size: .9rem }
 
     .btn-progress {
         height: 40px;
         width: 40%;
-        font-size: 0.7rem;
-    }
+        font-size: .8rem }
+
+    .profile {
+        margin: auto;
+        font-size: 1rem;
+        width: 85% }
+
+    .profile img {  
+        width: 30%;
+        height: 30%;
+        left: 30%;
+        top: 30% }
+
+    /* Navigation bar */
+    .profile-top-menu a {display: none;}
+    .profile-top-menu a.icon {
+        float: right;
+        display: block;
+        color: black; }
+
+    .profile-top-menu.responsive {position: relative;}
+    .profile-top-menu.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0 }
+
+    .profile-top-menu.responsive a:not(.icon) {
+        float: none;
+        display: block;
+        text-align: right;
+        /* top: 2.7rem; */
+        font-size: 1rem;
+        /* width: 19%; */
+        text-decoration: none;
+        color: black }
 }
 
+@media screen and (min-width: 768px) {
+
+    .profile-footer { font-size: .6rem }
+
+    .profile-top-menu img {
+        width: 15%;
+        margin-top: .7rem;
+        margin-left: .1rem }
+
+    .element { width: 70% }
+
+    .explanation { width: 70% }
+
+    .btn-progress {
+        height: 40px;
+        width: 40%;
+        font-size: 1rem }
+
+    .profile {
+        font-size: .9rem;
+        width: 50% }
+
+    .profile img {  
+        width: 40%;
+        height: 40%;
+        left: 40%;
+        top: 40% }
+}
+
+@media only screen and (min-width: 992px) {
+
+    .profile-top-menu {
+        grid-column: 1/4;
+        grid-row: 1/2 }
+
+    .top-text {
+        display: inline-block;
+        grid-column: 1/4;
+        grid-row: 2/3;
+    
+        font-size: 1rem }
+
+    .elements {
+        grid-column: 1/3;
+        grid-row: 3/4 }
+
+    .profile-card {
+        grid-column: 3/4;
+        grid-row: 3/4 }
+
+    .profile-footer {
+        grid-column: 1/4;
+        grid-row: 4/5;
+
+        font-size: .7em }
+
+   .profile-top-menu img {
+        width: 12%;
+        margin-top: .3rem;
+        margin-left: .05rem }
+
+    .profile-top-menu a {
+        font-size: .9rem }
+    
+    .logout-btn {
+        padding: 5px 35px;
+        border-style: solid 0.5;
+        font-size: .9rem }
+    
+    .element {
+        width: 85% }
+
+    .explanation {
+        width: 85% }
+    
+    .title { font-size: 1.2rem }
+    
+    .level { font-size: 1rem }
+    
+    .xp { font-size: 1rem }
+
+    .btn-progress {
+        height: 35px;
+        width: 35%;
+        font-size: .9rem }
+
+    .explanation p, ul {
+        font-size: .75rem }
+
+    .profile {
+        background-color: rgba(226, 230, 233, 1);
+        font-size: 1rem;
+        width: 85%;
+        margin: 0 }
+
+    .profile img {  
+        width: 50%;
+        height: 50%;
+        left: 50%;
+        top: 50% }
+
+    /* Remove hamburger navigation bar */
+    .profile-top-menu a.icon { display: none }
+
+    /* Adding regular menu */
+    .profile-top-menu a {display: block;}
+        
+    .profile-top-menu a:not(.logout-btn) {
+        text-align: center;
+        text-decoration: none;
+        float: right;
+        margin-left: 1em;
+        margin-right: 1em;
+        padding: 10px;
+    
+        position: relative;
+        color: rgba(0, 0, 0, 1);
+        font-size: 1.1rem }
+    
+    .profile-top-menu a:not(.logout-btn):after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 1);
+        transform-origin: center;
+        transition: transform 0.25s ease-out }
+    
+    .profile-top-menu a:not(.logout-btn):hover:after {
+        transform: scaleX(1);
+        transform-origin: center }
+
+    .logout-btn {
+        float: right;
+        position: relative;
+        border-radius: 25px;
+        border-color: rgba(0, 0, 0, 1);
+        border-style: solid;
+        background-color:rgba(255, 201, 43, 1);
+        padding: 5px 30px;
+        font-size: 1.25rem;
+        font-family: 'Chivo', sans-serif } 
+    .logout-btn:hover {
+        border-color: rgba(255, 201, 43, 1);
+        background-color: rgb(0, 0, 0);
+        color: rgba(255, 201, 43, 1) }
+
+    .profile-top-menu img {
+        width: 9em;
+        height: auto;
+        float: left;
+        display: flex;
+        justify-content: left;
+        margin-left: 1.5em }
+}
+
+@media screen and (min-width: 1200px){
+    .profile-top-menu a:not(.logout-btn) { font-size: 1.2rem }    
+    
+    .logout-btn {
+        padding: 5px 35px;
+        border-style: solid 0.5;
+        font-size: 1.1rem }
+
+    .top-text {
+        font-size: 1.2rem }
+
+    .element {
+        width: 80% }
+
+    .explanation { width: 80% }
+
+    .explanation p, ul{
+        font-size: 1.1em }
+    
+    .title { font-size: 1.6rem }
+    
+    .level { font-size: 1.3rem }
+    
+    .xp { font-size: 1.3rem }
+
+    .btn-progress {
+        height: 40px;
+        width: 40%;
+        font-size: 1.1rem }
+
+    .profile {
+        font-size: 1rem;
+        width: 75% }
+
+    .profile img {  
+        width: 60%;
+        height: 60%;
+        left: 60%;
+        top: 60% }
+}
+
+@media screen and (min-width: 1700px){
+
+    .profile-top-menu a:not(.logout-btn) { font-size: 1.3rem }
+    
+    .logout-btn {
+        padding: 7px 50px;
+        border-style: solid 0.5;
+        font-size: 1.5rem }
+
+    .top-text { font-size: 1.2rem }
+    
+    .title { font-size: 1.6rem }
+    
+    .level { font-size: 1.3rem }
+    
+    .xp { font-size: 1.3rem }
+
+    .btn-progress {
+        height: 40px;
+        width: 40%;
+        font-size: 1.1rem }
+
+    .profile {
+        font-size: 1.2rem;
+        width: 70% }
+
+    .profile img {  
+        width: 50%;
+        height: 50%;
+        left: 50%;
+        top: 50% }
+}
