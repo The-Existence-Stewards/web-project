@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="profile_style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="grid-container">
+    <!-- <div class="profile-top-menu">
+        <a class="progression" href="#progression">Progression</a>
+        <a class="how" href="#how">How does it work?</a>
+        <a class="about" href="#about">About us</a>
+        <button class="logout-btn">Log out</button>
+    </div> -->
+
+    <div class="profile-top-menu">
+        <ul>
+            <img src="Final_logo_big.png">
+            <li>
+                <button class="logout-btn">Log out</button>
+            </li>
+            <li class="dropdown">
+                <a class="drpdwn" href="#progression">Progression</a>
+            </li>
+            <li class="dropdown">
+                <a class="drpdwn" href="#how">How does it work?</a>
+            </li>
+            <li class="dropdown">
+                <a class="drpdwn" href="#about">About us</a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="top-text">
+        <h1>Bonjour</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum temporibus nobis, cum cumque aperiam expedita, officia perspiciatis laboriosam ad laborum fugiat. Rerum, magni sint? Suscipit porro aliquam in tenetur quibusdam!</p>
+    </div>
+
+    <div class="elements" data-timeTakenForLvlUp="">
+        <div class="element strength">
+            <div class="row1">
+                <div class="titleRow">
+                    <p class="title strenght">Strength</p>
+                    <p class="level strenght">Lvl 
+                        <span id="LvlValue"><%= user.strengthLevel %></span>
+                    </p>
+                </div>
+                <button class="btn-progress strength">Add progress</button>
+            </div>
+            <div class="progressBarRow">
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(222, 29, 51, 1);background-color: rgba(222, 29, 51, 1)"">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="xp__container">
+                    <p class="xp strength">
+                        <span id="currentXP"><%= user.strengthExperience %></span>
+                        <span>/</span>
+                        <span id="neededLvlXP"><%= user.strengthNeededLvlXP %></span>
+                        <span id="XPtext">XP</span>
+                    </p>
+                </div>
+                <img src="icons8-pull-down-24.png" alt="menu" class="menu">
+            </div>
+            <div class="levelUpFlexContainer">
+                <div class="levelUpText">Level UP!</div>
+            </div>
+        </div>
+        <div class="explanation message strength">
+            <p class="par">This is an explanation of what is included in this category:</p>
+            <ul class="ul">
+                <li>Going to the gym</li>
+                <li>Walking</li>
+                <li>Whatever</li>
+              </ul>
+        </div> <br>
+        <div class="element endurance">
+            <div class="row1">
+                <div class="titleRow">
+                    <p class="title endurance">Endurance</p>
+                    <p class="level endurance">Lvl
+                        <span id="LvlValue"><%= user.enduranceLevel %></span>
+                    </p>
+                </div>
+                <button class="btn-progress endurance">Add progress</button>
+            </div>
+            <div class="progressBarRow">
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(81, 194, 71, 1);background-color: rgba(81, 194, 71, 1)">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="xp__container">
+                    <p class="xp endurance">
+                        <span id="currentXP"><%= user.enduranceExperience %></span>
+                        <span>/</span>
+                        <span id="neededLvlXP"><%= user.enduranceNeededLvlXP %></span>
+                        <span id="XPtext">XP</span>
+                    </p>
+                </div>
+                <img src="icons8-pull-down-24.png" alt="menu" class="menu">
+            </div>
+            <div class="levelUpFlexContainer">
+                <div class="levelUpText">Level UP!</div>
+            </div>
+        </div> 
+        <div class="explanation message endurance">
+            <p>This is an explanation of what is included in this category:</p>
+            <ul>
+                <li>Going to the gym</li>
+                <li>Walking</li>
+                <li>Whatever</li>
+              </ul>
+        </div> <br>
+        <div class="element intelligence">
+            <div class="row1">
+                <div class="titleRow">
+                    <p class="title intelligence">Intelligence</p>
+                    <p class="level intelligence">Lvl
+                        <span id="LvlValue"><%= user.intelligenceLevel %></span>
+                    </p>
+                </div>
+                <button class="btn-progress intelligence">Add progress</button>
+            </div>
+            <div class="progressBarRow">
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(56, 102, 174, 1);background-color: rgba(56, 102, 174, 1)">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="xp__container">
+                    <p class="xp intelligence">
+                        <span id="currentXP"><%= user.intelligenceExperience %></span>
+                        <span>/</span>
+                        <span id="neededLvlXP"><%= user.intelligenceNeededLvlXP %></span>
+                        <span id="XPtext">XP</span>
+                    </p>
+                </div>
+                <img src="icons8-pull-down-24.png" alt="menu" class="menu">
+            </div>
+            <div class="levelUpFlexContainer">
+                <div class="levelUpText">Level UP!</div>
+            </div>
+        </div> 
+        <div class="explanation message intelligence">
+            <p>This is an explanation of what is included in this category:</p>
+            <ul>
+                <li>Going to the gym</li>
+                <li>Walking</li>
+                <li>Whatever</li>
+              </ul>
+        </div> <br>
+        <div class="element charisma">
+            <div class="row1">
+                <div class="titleRow">
+                    <p class="title charisma">Charisma</p>
+                    <p class="level charisma">Lvl
+                        <span id="LvlValue"><%= user.charismaLevel %></span>
+                    </p>
+                </div>
+                <button class="btn-progress charisma">Add progress</button>
+            </div>
+            <div class="progressBarRow">
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(185, 58, 217, 1);background-color: rgba(185, 58, 217, 1)">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="xp__container">
+                    <p class="xp charisma">
+                        <span id="currentXP"><%= user.charismaExperience %></span>
+                        <span>/</span>
+                        <span id="neededLvlXP"><%= user.charismaNeededLvlXP %></span>
+                        <span id="XPtext">XP</span>
+                    </p>
+                </div>
+                <img src="icons8-pull-down-24.png" alt="menu" class="menu">
+            </div>
+            <div class="levelUpFlexContainer">
+                <div class="levelUpText">Level UP!</div>
+            </div>
+        </div> <div class="explanation message charisma">
+            <p>This is an explanation of what is included in this category:</p>
+            <ul>
+                <li>Going to the gym</li>
+                <li>Walking</li>
+                <li>Whatever</li>
+              </ul>
+        </div> <br>
+        <div class="element crafting">
+            <div class="row1">
+                <div class="titleRow">
+                    <p class="title crafting">Crafting</p>
+                    <p class="level crafting">Lvl
+                        <span id="LvlValue"><%= user.craftingLevel %></span>
+                    </p>
+                </div>
+                <button class="btn-progress crafting">Add progress</button>
+            </div>
+            <div class="progressBarRow">
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(178, 123, 77, 1);background-color: rgba(178, 123, 77, 1)">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="xp__container">
+                    <p class="xp crafting">
+                        <span id="currentXP"><%= user.craftingExperience %></span>
+                        <span>/</span>
+                        <span id="neededLvlXP"><%= user.craftingNeededLvlXP %></span>
+                        <span id="XPtext">XP</span>
+                    </p>
+                </div>
+                <img src="icons8-pull-down-24.png" alt="menu" class="menu">
+            </div>
+            <div class="levelUpFlexContainer">
+                <div class="levelUpText">Level UP!</div>
+            </div>
+        </div> 
+        <div class="explanation message crafting">
+            <p>This is an explanation of what is included in this category:</p>
+            <ul>
+                <li>Going to the gym</li>
+                <li>Walking</li>
+                <li>Whatever</li>
+              </ul>
+        </div> <br>
+        <div class="element agility">
+            <div class="row1">
+                <div class="titleRow">
+                    <p class="title agility">Agility</p>
+                    <p class="level agility">Lvl
+                        <span id="LvlValue"><%= user.agilityLevel %></span>
+                    </p>
+                </div>
+                <button class="btn-progress agility">Add progress</button>
+            </div>
+            <div class="progressBarRow">
+                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(71, 194, 175, 1);background-color: rgba(71, 194, 175, 1)">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="xp__container">
+                    <p class="xp agility">
+                        <span id="currentXP"><%= user.agilityLevel %></span>
+                        <span>/</span>
+                        <span id="neededLvlXP"><%= user.agilityNeededLvlXP %></span>
+                        <span id="XPtext">XP</span>
+                    </p>
+                </div>
+                <img src="icons8-pull-down-24.png" alt="menu" class="menu">
+            </div>
+            <div class="levelUpFlexContainer">
+                <div class="levelUpText">Level UP!</div>
+            </div>
+        </div>
+        <div class="explanation message agility">
+            <p>This is an explanation of what is included in this category:</p>
+            <ul>
+                <li>Going to the gym</li>
+                <li>Walking</li>
+                <li>Whatever</li>
+              </ul>
+        </div> <br>
+    </div>
+    <div class="profile-card">
+        <div class="profile">
+            <img src="pfp.png">
+            <h1>Dude McDavid</h1>
+            <p>Strongest Stat</p>
+            <p>Total Experience</p>
+        </div>
+    </div>
+    <div class="profile-footer">
+        <span>©The Existence Stewards 2022 | About Us | FAQ</span>
+    </div>
+    <div style="display: none;" class="levelUpTransition"></div>
+    <div style="display: none;" class="levelUpFlexContainer levelUpFlex"></div>
+
+    <!-- MODAL -->
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-body">
+                <h1></h1> <br>
+                <span class="entering-minutes">
+                    <input type="text" name="minutes">
+                    <label for="minutes">Minutes</label>
+                </span>
+                <p></p>
+                <p class="error-handler"></p>
+                <button class="btn-add-progress"> Add Progress</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="profileInteraction.js"></script>
+    <script>textChangeInsideModal(), openModal(), addEnterKeyListener()</script>
+    <script type = "text/javascript" src = "XPcalc.js"></script>
+</div>  
+</body>
+</html>
