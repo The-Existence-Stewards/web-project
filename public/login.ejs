@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login_style.css">
+</head>
+<body>
+    <div id="header">
+        <img src="..\Design\Final_logo.svg">
+        <form action="/register">
+            <input type="submit" value="Sign Up"   id="signupButton">
+        </form>
+    </div>
+    <div id="main">
+        <div id="textContainer">
+            <h1>Welcome to Skill3</h1>
+            <h2>Do we know you?</h2>
+            <h2>Log in!</h2>
+        </div>
+        <div id="logInContainer">
+            <form action="/login" method="post">        
+                <div class="userInputContainer">
+                    <label for="username">E-mail address</label>
+                    <input class="userInput" type="text" id="username" name="username" required>
+                </div>
+                <div  class="userInputContainer">
+                    <label for="password">Password</label>
+                    <input class="userInput" type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>   
+            </form>
+            <div id="separatorContainer">
+                <div class="separator"></div>
+                <div class="separator"></div>
+            </div>
+            <div id="linksContainer">
+                <a href="/register">Don't have an account? Sign up ></a>
+                <a href="">Forgot your password? Restore it ></a>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <span>© The Existence Stewards 2022</span>
+        <span>|</span>
+        <a href="">About us</a>
+        <span>|</span>
+        <a href="">FAQ</a>
+    </footer>
+</body>
+</html>
