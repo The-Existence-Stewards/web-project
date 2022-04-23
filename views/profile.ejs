@@ -8,35 +8,42 @@
     <link rel="stylesheet" href="profile_style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="grid-container">
-    <!-- <div class="profile-top-menu">
-        <a class="progression" href="#progression">Progression</a>
-        <a class="how" href="#how">How does it work?</a>
+<div class="grid-container" >
+
+    <div class="profile-top-menu" id="topnav">
+        <img class="logo" src="../Design/Final_logo.svg">
+        <a type="button" class="logout-btn">Log out</a>
         <a class="about" href="#about">About us</a>
-        <button class="logout-btn">Log out</button>
-    </div> -->
-
-    <div class="profile-top-menu">
-        <ul>
-            <img src="Final_logo_big.png">
-            <li>
-                <button class="logout-btn">Log out</button>
-            </li>
-            <li class="dropdown">
-                <a class="drpdwn" href="#progression">Progression</a>
-            </li>
-            <li class="dropdown">
-                <a class="drpdwn" href="#how">How does it work?</a>
-            </li>
-            <li class="dropdown">
-                <a class="drpdwn" href="#about">About us</a>
-            </li>
-
-        </ul>
+        <a class="how" href="#how">How does it work?</a>
+        <a class="progression" href="#progression">Progression</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
+
+    <!-- <div class="profile-top-menu" id="topnav">
+        <div class="menu"></div>
+            <img class="logo" src="Final_logo_big.png">
+            <ul class="list">
+                <li>
+                    <span type= button class="logout-btn">Log out</span>
+                </li>
+                <li class="dropdown">
+                    <a class="drpdwn" href="#progression">Progression</a>
+                </li>
+                <li class="dropdown">
+                    <a class="drpdwn" href="#how">How does it work?</a>
+                </li>
+                <li class="dropdown">
+                    <a class="drpdwn" href="#about">About us</a>
+                </li>
+
+            </ul>
+        </div> -->
 
     <div class="top-text">
         <h1>Bonjour</h1>
@@ -294,6 +301,18 @@
     <script src="profileInteraction.js"></script>
     <script>textChangeInsideModal(), openModal(), addEnterKeyListener()</script>
     <script type = "text/javascript" src = "XPcalc.js"></script>
+    <script>
+
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+            function myFunction() {
+                var x = document.getElementById("topnav");
+                if (x.className === "profile-top-menu") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "profile-top-menu";
+                }
+            }
+    </script>
 </div>  
 </body>
 </html>
