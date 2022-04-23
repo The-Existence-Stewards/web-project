@@ -86,7 +86,7 @@ body {
     /* display: block; */
     /* text-align: center; */
     margin-left: 9%;
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
 }
 
 ::placeholder {
@@ -134,8 +134,7 @@ body {
     color: rgba(255, 201, 43, 1);
 }
 
-@media screen and (max-width: 600px) {
-
+@media screen and (max-width: 320px) {
     .signin-top-menu {
         grid-column: 1/4;
         grid-row: 1/2;
@@ -146,6 +145,7 @@ body {
         grid-row: 2/3;
     
         text-align: center;
+        font-size: .8rem;
     }
 
     .signin-form {
@@ -185,11 +185,15 @@ body {
 
     .signin-text p { display: none }
 
+    .signin-form span { font-size: .8rem}
+
     #signin-form {
         background: inherit;
         width: 100%;
         margin: auto;
     }
+
+    #signin-form label { font-size: 1rem}
 
     #signin-form input {
         outline: 0;
@@ -197,13 +201,14 @@ body {
         border-color: rgba(56, 102, 174, 1);
         border-radius: 0;
         width: 70%;
-        font-size: .9rem;
+        font-size: .8rem;
         height: 2%;
     }
+
+    .signup-action-btn { font-size: .9rem}
 }
 
-@media screen and (min-width: 600px) {
-
+@media screen and (min-width: 320px) {
     .signin-top-menu {
         grid-column: 1/4;
         grid-row: 1/2;
@@ -214,6 +219,7 @@ body {
         grid-row: 2/3;
     
         text-align: center;
+        font-size: .8rem;
     }
 
     .signin-form {
@@ -227,6 +233,57 @@ body {
 
         font-size: .7em;
     }
+
+    .signin-text {
+        grid-column: 1/4;
+        grid-row: 2/3;
+    
+        text-align: center;
+    }
+
+    .signin-top-menu img {
+        width: 30%;
+        margin-left: .3rem;
+    }
+
+    .login-btn {
+        font-size: .9em;
+        padding: 5px 30px;
+    }
+
+    .signin-text h1 { 
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3em;
+    }
+
+    .signin-text p { display: none }
+
+    .signin-form span { font-size: .8rem}
+
+    #signin-form {
+        background: inherit;
+        width: 100%;
+        margin: auto;
+    }
+
+    #signin-form label { font-size: 1rem}
+
+    #signin-form input {
+        outline: 0;
+        border-width: 0 0 2px;
+        border-color: rgba(56, 102, 174, 1);
+        border-radius: 0;
+        width: 70%;
+        font-size: .8rem;
+        height: 2%;
+    }
+
+    .signup-action-btn { font-size: .9rem}
+}
+
+@media screen and (min-width: 600px) {
+    .signin-footer { font-size: .7em }
 
     .signin-text h1 {
         font-style: normal;
@@ -246,6 +303,8 @@ body {
         width: 80%;
         margin: auto;
     }
+
+    #signin-form label { font-size: 1.2rem }
 }
 
 @media only screen and (min-width: 768px) {
