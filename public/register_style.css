@@ -50,26 +50,7 @@ body {
     color: rgba(255, 201, 43, 1);
 }
 
-#signin-form {
-    box-sizing: border-box;
-    text-align: left;
-
-    width: 60%;
-
-    padding-top: 6%;
-    padding-bottom: 6%;
-
-    background: #E2E6E9;
-    border-radius: 43px;
-}
-
-#signin-form input {
-    border-radius: 13px;
-    background-color:rgba(196, 196, 196, 0);
-    border-color: rgba(0, 0, 0, 1);
-    border-style: solid 0.5;
-    font-family: 'Chivo', sans-serif;
-    
+#signin-form input {  
     padding: 0.8em;
     width: 76%;
     height: 4%;
@@ -269,16 +250,6 @@ body {
 
     #signin-form label { font-size: 1rem}
 
-    #signin-form input {
-        outline: 0;
-        border-width: 0 0 2px;
-        border-color: rgba(56, 102, 174, 1);
-        border-radius: 0;
-        width: 70%;
-        font-size: .8rem;
-        height: 2%;
-    }
-
     .signup-action-btn { font-size: .9rem}
 }
 
@@ -292,6 +263,7 @@ body {
     }
     
     .signin-text p {   
+        display: inline-block;
         font-style: normal;
         font-weight: 400;
         font-size: 1.25em;
@@ -300,11 +272,27 @@ body {
     }
 
     #signin-form {
-        width: 80%;
-        margin: auto;
+        box-sizing: border-box;
+        text-align: left;
+    
+        width: 60%;
+    
+        padding-top: 6%;
+        padding-bottom: 6%;
+    
+        background: #E2E6E9;
+        border-radius: 43px;
+        border-width: 3px 3px 3px;
     }
 
-    #signin-form label { font-size: 1.2rem }
+    #signin-form input {
+        border-radius: 13px;
+        background-color:rgba(196, 196, 196, 0);
+        border-color: rgba(0, 0, 0, 1);
+        border-style: solid 0.5;
+    }
+
+    #signin-form label { font-size: 1.1rem }
 }
 
 @media only screen and (min-width: 768px) {
@@ -350,14 +338,14 @@ body {
         margin-top: -1.5rem;
     }
 
-    #signin-form {
+    /* #signin-form {
         margin: auto;
         width: 70%;
         padding-top: 5%;
         padding-bottom: 4%;
         padding-left: 1%;
         padding-right: 1%;
-    }
+    } */
 }
 
 @media only screen and (min-width: 992px) {
@@ -403,6 +391,7 @@ body {
 
     #signin-form {
         width: 100%;
+        padding-top: 2.3em;
     }
 }
 
