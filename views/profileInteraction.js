@@ -92,9 +92,20 @@ function visualLevelUp() {
     }, animationDuration);
     }
 
-    function toggleHamburgerModal() {
-            $(".hamburgerModal").toggleClass("show-modal");
-    };
+    $(document).ready(function() {
+        $("#hamburger-close-button").click(function() {
+            $('.hamburgerModal').toggleClass("show-modal");
+        });
+    });
+
+    function outsideClick() {
+        $(document).click(function(event) {
+            if ($(event.target).hasClass("hamburgerModal")) {
+                $('.hamburgerModal').removeClass("show-modal");
+            }
+        });
+    }
 
 addEventListener("click", openModal);
 addEventListener("click", clickOutsideModal);
+addEventListener('click', outsideClick)
