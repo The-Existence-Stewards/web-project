@@ -92,6 +92,10 @@ function visualLevelUp() {
     }, animationDuration);
     }
 
+    function toggleHamburgerModal() {
+        $(".hamburgerModal").toggleClass("show-modal");
+    };
+
     $(document).ready(function() {
         $("#hamburger-close-button").click(function() {
             $('.hamburgerModal').toggleClass("show-modal");
