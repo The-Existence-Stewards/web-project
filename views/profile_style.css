@@ -295,12 +295,6 @@ div.progress-bar {
 .close-button:hover {
     background-color: darkgray;
 }
-.show-modal {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-}
 
 .error-handler{
     color: red;
@@ -310,6 +304,13 @@ div.progress-bar {
 .btn-add-progress:hover{
     box-shadow: 0 0 5px #d4a825;
     cursor: pointer;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
 /* for testing purposes */
@@ -449,6 +450,22 @@ div.levelUpFlexContainer.levelUpFlex{
         height: 45%;
         left: 45%;
         top: 45% }
+
+    .logout-btn {
+        float: right;
+        position: relative;
+        border-radius: 25px;
+        border-color: rgba(0, 0, 0, 1);
+        border-style: solid;
+        background-color:var(--main-yellow);
+        padding: 5px 30px;
+        font-size: 1.25rem;
+        font-family: 'Chivo', sans-serif }
+
+    .logout-btn:hover {
+        border-color: var(--main-yellow);
+        background-color: rgb(0, 0, 0);
+        color: var(--main-yellow) }
 }
 
 @media screen and (min-width: 600px) {
@@ -663,20 +680,22 @@ div.levelUpFlexContainer.levelUpFlex{
         transform: scaleX(1);
         transform-origin: center }
 
+    /* 
+    moved higher in the code (line 477) so it could be used in the modal
     .logout-btn {
-        float: right;
-        position: relative;
-        border-radius: 25px;
-        border-color: rgba(0, 0, 0, 1);
-        border-style: solid;
-        background-color:rgba(255, 201, 43, 1);
-        padding: 5px 30px;
-        font-size: 1.25rem;
-        font-family: 'Chivo', sans-serif } 
+    float: right;
+    position: relative;
+    border-radius: 25px;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    background-color:rgba(255, 201, 43, 1);
+    padding: 5px 30px;
+    font-size: 1.25rem;
+    font-family: 'Chivo', sans-serif } 
     .logout-btn:hover {
-        border-color: rgba(255, 201, 43, 1);
-        background-color: rgb(0, 0, 0);
-        color: rgba(255, 201, 43, 1) }
+    border-color: rgba(255, 201, 43, 1);
+    background-color: rgb(0, 0, 0);
+    color: rgba(255, 201, 43, 1) } */
 
     .profile-top-menu img {
         width: 9em;
