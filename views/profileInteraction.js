@@ -90,6 +90,11 @@ function visualLevelUp() {
             }, animationDuration);
         }, animationDurationFlex);
     }, animationDuration);
-}
+    }
+
+    function toggleHamburgerModal() {
+            $(".hamburgerModal").toggleClass("show-modal");
+    };
+
 addEventListener("click", openModal);
 addEventListener("click", clickOutsideModal);
