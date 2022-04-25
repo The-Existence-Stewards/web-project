@@ -422,7 +422,7 @@ div.levelUpFlexContainer.levelUpFlex{
         display: block;
         color: black; }
 
-    .profile-top-menu.responsive {position: relative;}
+    /* .profile-top-menu.responsive {position: relative;}
     .profile-top-menu.responsive a.icon {
         position: absolute;
         right: 0;
@@ -432,11 +432,11 @@ div.levelUpFlexContainer.levelUpFlex{
         float: none;
         display: block;
         text-align: right;
-        /* top: 2.7rem; */
+        top: 2.7rem;
         font-size: 1rem;
-        /* width: 19%; */
+        width: 19%;
         text-decoration: none;
-        color: black }
+        color: black } */
 
     .profile {
         background-color: inherit;
