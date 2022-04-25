@@ -3,6 +3,11 @@ body {
     margin: 0;
 }
 
+:root {
+    --main-yellow: rgba(255, 201, 43, 1);
+    --dirty-white: rgba(226, 230, 233, 1);
+}
+
 .grid-container {
     display: grid;
     /* grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); */
@@ -18,7 +23,7 @@ body {
 }
 
 .profile-top-menu {
-    background-color:rgba(255, 201, 43, 1);
+    background-color: var(--main-yellow);
     overflow: hidden;
 }
 
@@ -90,7 +95,7 @@ ul {
     box-sizing: border-box;
     border-collapse: collapse;
     overflow: hidden;
-    background-color: rgba(226, 230, 233, 1);
+    background-color: var(--dirty-white);
     border-radius: 25px;
     margin: auto;
 }
@@ -121,7 +126,7 @@ div.animatedElement{
     bottom: 127px;
     overflow: hidden;
     margin-top: 0px;
-    background: #FFC92B;
+    background: var(--main-yellow);
     border-radius: 25px;
     border-style: none;
     font-family: 'Chivo', sans-serif;
@@ -228,7 +233,7 @@ div.progress-bar {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(226, 230, 233, 1);
+    background-color: var(--dirty-white);
     padding: 1rem 1.5rem;
     border-radius: 1.5rem;
 }
@@ -239,7 +244,7 @@ div.progress-bar {
     font-weight: bold;
 }
 .entering-minutes input {
-    background-color: rgba(226, 230, 233, 1);
+    background-color: var(--dirty-white);
     outline: 0;
     border-width: 0 0 2px;
     border-color: rgba(56, 102, 174, 1);
@@ -271,7 +276,7 @@ div.progress-bar {
     transform: translate(-50%, -50%);
 
     height: 47px;
-    background: #FFC92B;
+    background: var(--main-yellow);
     border-radius: 25px;
     border-style: none;
 
@@ -605,7 +610,7 @@ div.levelUpFlexContainer.levelUpFlex{
     .explanation p, ul { font-size: .75rem }
 
     .profile {
-        background-color: rgba(226, 230, 233, 1);
+        background-color: var(--dirty-white);
         font-size: 1rem;
         width: 85%;
         margin: 0 }
