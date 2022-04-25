@@ -127,6 +127,7 @@ div.animatedElement{
     font-family: 'Chivo', sans-serif;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .btn-progress:hover{
     box-shadow: 0 0 5px #d4a825;
@@ -376,9 +377,8 @@ div.levelUpFlexContainer.levelUpFlex{
     }
 
     .title { 
-        font-size: .8rem;
         margin-left: 0px;
-    }
+        font-size: .8rem }
     
     .level { font-size: .6rem }
     
@@ -568,9 +568,13 @@ div.levelUpFlexContainer.levelUpFlex{
 
     .explanation { width: 75% }
 
-    .title { font-size: 1.15rem }
+    .title { 
+        margin-left: 15px;
+        font-size: 1.15rem }
     
-    .level { font-size: .9rem }
+    .level { 
+        margin-left: 15px;
+        font-size: .9rem }
     
     .xp { font-size: .9rem }
 
@@ -688,9 +692,10 @@ div.levelUpFlexContainer.levelUpFlex{
         font-size: .9rem }
     
     .logout-btn {
-        padding: 5px 35px;
+        padding: 5px 40px;
         border-style: solid 0.5;
-        font-size: .9rem }
+        font-size: .9rem;
+        margin-top: 3px; }
     
     .element { width: 85% }
 
