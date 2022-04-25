@@ -306,6 +306,48 @@ div.progress-bar {
     cursor: pointer;
 }
 
+.hamburgerModal {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    user-select: none;
+}
+
+#hamburgerModalContent {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: var(--main-yellow);
+}
+
+#hamburger-close-button {
+    border: 1px solid black;
+    background-color: black;
+    color: var(--dirty-white);
+}
+
+#hamburger-close-button:hover {
+    background-color: var(--main-yellow);
+    color: black;
+    border: 1px solid black;
+}
+
+#hamburgerModalBody {
+    display:flex;
+    flex-direction: column;
+}
+
 .show-modal {
     opacity: 1;
     visibility: visible;
