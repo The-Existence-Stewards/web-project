@@ -57,5 +57,3 @@ function addMinutes(skill,minutes) {
     $(detectedSkill).find("#currentXP").text(newXP)
     progressbarCrop(newXP, neededLvlXP, progressBar)
 }
-
-

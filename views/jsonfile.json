@@ -1,0 +1,82 @@
+{
+    "stats":[
+    {
+        "skillName":"Intellegence",
+        "currentXP": 0,
+        "currentLVL": 0,
+        "xpNeeded": 30,
+        "multiplier": 1.2,
+        "visible": true,
+        "explanation": [
+            "This is the skill that determines your overall intellegence. It is the sum of your intelligence and wisdom.",
+            "Going to the library",
+            "Going to the school"
+        ]
+    },
+    {
+        "skillName":"Strength",
+        "currentXP": 0,
+        "currentLVL": 0,
+        "xpNeeded": 45,
+        "multiplier": 1,
+        "visible": true,
+        "explanation": [
+            "This is the skill that determines your overall strength. It is the sum of your strength and constitution.",
+            "Going to the gym",
+            "Going to the school"
+        ]
+    },
+    {
+        "skillName":"Endurance",
+        "currentXP": 0,
+        "currentLVL": 0,
+        "xpNeeded": 40,
+        "multiplier": 1.1,
+        "visible": true,
+        "explanation": [
+            "This is the skill that determines your overall endurance. It is the sum of your endurance and constitution.",
+            "Going to the gym",
+            "Going to the school"
+        ]
+    },
+    {
+        "skillName":"Charisma",
+        "currentXP": 0,
+        "currentLVL": 0,
+        "xpNeeded": 60,
+        "multiplier": 0.85,
+        "visible": true,
+        "explanation": [
+            "This is the skill that determines your overall endurance. It is the sum of your endurance and constitution.",
+            "Going to the gym",
+            "Going to the school"
+        ]
+    },
+    {
+        "skillName":"Agility",
+        "currentXP": 0,
+        "currentLVL": 0,
+        "xpNeeded": 20,
+        "multiplier": 1.3,
+        "visible": true,
+        "explanation": [
+            "This is the skill that determines your overall endurance. It is the sum of your endurance and constitution.",
+            "Going to the gym",
+            "Going to the school"
+        ]
+    },
+    {
+        "skillName":"Crafting",
+        "currentXP": 0,
+        "currentLVL": 0,
+        "xpNeeded": 50,
+        "multiplier": 1.5,
+        "visible": true,
+        "explanation": [
+            "This is the skill that determines your overall endurance. It is the sum of your endurance and constitution.",
+            "Going to the gym",
+            "Going to the school"
+        ]
+    }
+]
+}
