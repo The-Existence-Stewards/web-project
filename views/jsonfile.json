@@ -8,9 +8,10 @@
         "multiplier": 1.2,
         "visible": true,
         "explanation": [
-            "This is the skill that determines your overall intellegence. It is the sum of your intelligence and wisdom.",
-            "Going to the library",
-            "Going to the school"
+            "Challenge yourself by:",
+            "Reading",
+            "Studying",
+            "Learning a new skill (e.g. a musical instrument)"
         ]
     },
     {
@@ -21,9 +22,12 @@
         "multiplier": 1,
         "visible": true,
         "explanation": [
-            "This is the skill that determines your overall strength. It is the sum of your strength and constitution.",
-            "Going to the gym",
-            "Going to the school"
+            "Here are some activities that affect your strength:",
+            "Weightlifting",
+            "Powerlifting",
+            "CrossFit",
+            "Gymnastics",
+            "Swimming"
         ]
     },
     {
@@ -34,9 +38,12 @@
         "multiplier": 1.1,
         "visible": true,
         "explanation": [
-            "This is the skill that determines your overall endurance. It is the sum of your endurance and constitution.",
-            "Going to the gym",
-            "Going to the school"
+            "Here are some activities that affect your endurance:",
+            "Running",
+            "Cycling",
+            "Cross-country skiing",
+            "Rowing",
+            "Swimming"
         ]
     },
     {
@@ -47,9 +54,10 @@
         "multiplier": 0.85,
         "visible": true,
         "explanation": [
-            "This is the skill that determines your overall endurance. It is the sum of your endurance and constitution.",
-            "Going to the gym",
-            "Going to the school"
+            "See how you socialize with people, for example:",
+            "Meeting with friends",
+            "Going out",
+            "Having conversations with your sports-mates, or colleagues"
         ]
     },
     {
@@ -60,9 +68,13 @@
         "multiplier": 1.3,
         "visible": true,
         "explanation": [
-            "This is the skill that determines your overall endurance. It is the sum of your endurance and constitution.",
-            "Going to the gym",
-            "Going to the school"
+            "Here are some exercises that you can do to improve your agility:",
+            "Plyometric Agility Hurdles",
+            "Speed Ladder Agility Drills",
+            "Plyometric Box Drills",
+            "Lateral Plyometric Jumps",
+            "Tuck Jumps",
+            "Dot Drills"
         ]
     },
     {
@@ -73,9 +85,12 @@
         "multiplier": 1.5,
         "visible": true,
         "explanation": [
-            "This is the skill that determines your overall endurance. It is the sum of your endurance and constitution.",
-            "Going to the gym",
-            "Going to the school"
+            "If you're either an avid crafter or a beginner one, here's what may be included in this category:",
+            "DIY",
+            "Painting",
+            "Drawing",
+            "Woodwork",
+            "Crochet, knitting"
         ]
     }
 ]

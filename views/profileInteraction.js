@@ -132,11 +132,11 @@ $(document).ready(function() {
                     let explanationMessage = document.createElement("div")
                     explanationMessage.className = "explanation message " + elementClassname
                     explanationMessageHolder = []
-                    for (let t = 0; t < data.stats[i].explanation.length; t++) {
+                    for (let t = 1; t < data.stats[i].explanation.length; t++) {
                         explanationMessageHolder.push("<li>"+data.stats[i].explanation[t].toString()+"</li>")
                     }
                     explanationMessage.innerHTML = `
-                    <p class="par">This is an explanation of what is included in this category:</p>
+                    <p class="par">${data.stats[i].explanation[0]}</p>
                     <ul class="ul">
                         ${explanationMessageHolder.join("")}
                     </ul>`
