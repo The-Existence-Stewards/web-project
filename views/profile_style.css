@@ -310,7 +310,7 @@ div.progress-bar {
     position: fixed;
     display: flex;
     justify-content: flex-end;
-    left: 0;
+    right: 0;
     top: 0;
     z-index: 1;
     width: 100vw;
@@ -318,17 +318,18 @@ div.progress-bar {
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
-    transform: scale(1.1);
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    transition: visibility 0.5s, opacity 0.25s;
     user-select: none;
 }
 
 #hamburgerModalContent {
     position: absolute;
     display: flex;
+    right: -100%;
     flex-direction: column;
     height: 100vh;
     background-color: var(--main-yellow);
+    transition: right 0.5s
 }
 
 #hamburger-close-button {
@@ -358,8 +359,10 @@ div.progress-bar {
 .show-modal-hamburger {
     opacity: 1;
     visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.show-modal-hamburger > #hamburgerModalContent {
+    right: 0;
 }
 
 /* for testing purposes */
