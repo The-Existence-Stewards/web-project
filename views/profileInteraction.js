@@ -93,19 +93,19 @@ function visualLevelUp() {
     }
 
     function toggleHamburgerModal() {
-        $(".hamburgerModal").toggleClass("show-modal");
+        $(".hamburgerModal").toggleClass("show-modal-hamburger");
     };
 
     $(document).ready(function() {
         $("#hamburger-close-button").click(function() {
-            $('.hamburgerModal').toggleClass("show-modal");
+            $('.hamburgerModal').toggleClass("show-modal-hamburger");
         });
     });
 
     function outsideClick() {
         $(document).click(function(event) {
             if ($(event.target).hasClass("hamburgerModal")) {
-                $('.hamburgerModal').removeClass("show-modal");
+                $('.hamburgerModal').removeClass("show-modal-hamburger");
             }
         });
     }
