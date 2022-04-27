@@ -7,6 +7,11 @@ div {
     --dirty-white: rgba(226, 230, 233, 1);
 }
 
+@font-face {
+    font-family: Chivo Regular;
+    src: url("../font/Chivo-Regular.ttf");
+}
+
 body {
     margin: 0;
     padding: 0;
