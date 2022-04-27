@@ -90,6 +90,12 @@ body {
     width: 84%;
 }
 
+.signup-action-btn:hover {
+    border-color: rgba(0, 0, 0, 1);
+    background-color:rgba(0, 0, 0, 1);
+    color: rgba(255, 201, 43, 1);
+}
+
 .signin-form span {
     display: block;
     text-align: center;
