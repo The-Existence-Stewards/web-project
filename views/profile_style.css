@@ -215,6 +215,15 @@ div.progress-bar {
 
 .profile img { border-radius: 129.5px }
 
+.profile-footer a {
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+}
+
+.profile-footer a:hover  {
+    color: rgba(255, 201, 43, 1);
+}
+
 .modal {
     position: fixed;
     left: 0;
