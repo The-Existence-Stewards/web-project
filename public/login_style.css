@@ -168,8 +168,12 @@ body {
     padding-left: 7.5vw;
 }
 
-#footer>* {
+#footer >* {
     font-size: 1.5vh;
     text-decoration: none;
-    color: var(--main-yellow)
+    color: black;
+}
+
+#footer > a:hover {
+    color:  var(--main-yellow);
 }
