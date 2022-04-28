@@ -7,6 +7,10 @@ div {
     --dirty-white: rgba(226, 230, 233, 1);
 }
 
+::selection {
+    background: rgba(255, 201, 43, 1)
+}
+
 @font-face {
     font-family: Chivo Regular;
     src: url("../font/Chivo-Regular.ttf");
@@ -56,7 +60,8 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 72vh;
+    /* height: 72vh; */
+    height: 100%;
     padding: 10vh 7.5vw;
     padding-bottom: 6vh;
 }
@@ -85,24 +90,24 @@ body {
     justify-content: space-between;
     padding: 5vh 1vw;
     border-radius: 25px;
-    height: 72vh;
+    height: 75vh;
     width: 31vw;
     max-width: 470px;
     background-color: var(--dirty-white);
     font-size: 2vh;
 }
 
-#signin-container>form{
+#signin-container > form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 90%;
-    height: 30vh;
+    height: 80vh;
 }
 
 #signin-form input {  
     background-color: var(--dirty-white);
-    height: 5vh;
+    height: 3vh;
     width: calc(100% - 2vw);
     padding: 5px 1vw;
     font-size: 2vh;
@@ -111,7 +116,8 @@ body {
 
 #signin-form label {
     text-align: left;
-    font-size: 1.1em;
+    font-size: 2.2vh;
+    padding-bottom: 1%;
 }
 
 ::placeholder {
@@ -122,16 +128,14 @@ body {
 
 .signup-action-btn {
     font-family: 'Chivo', sans-serif;
-    font-size: 1.3em;
+    font-size: 2.3vh;
     border-radius: 25px;
     background-color:rgba(255, 201, 43, 1);
     border-color: rgba(0, 0, 0, 1);
     border-style: solid;
-    /* margin-right: 10px; */
     padding: 5px 63px;
-    margin-left: 8%;
     margin-bottom: 5%;
-    width: 84%;
+    width: 100%;
 }
 
 .signup-action-btn:hover {
@@ -142,7 +146,8 @@ body {
 
 #signin-form span {
     text-align: center;
-    font-size: 1em;
+    font-size: 2vh;
+    padding-bottom: 2%;
 }
 
 #signin-form span a {
@@ -167,4 +172,86 @@ body {
 
 #footer > a:hover {
     color:  var(--main-yellow);
+}
+
+@media screen and (max-width: 1024px) {
+
+    #main > #text-container > h1 {
+        font-size: 70px;
+    }
+    
+    #signin-container > span {
+        font-size: 2vh;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+
+    #header > form {
+        width: 25%;
+    }
+
+    #main {
+        flex-direction: column;
+        height: 98vh;
+        padding-top: 6vh;
+    }
+
+    #main > #text-container {
+        align-items: center;
+        text-align: center;
+    }
+
+    #main > #text-container > :not(h1) {
+        display: none;
+    }
+
+    #main > #signin-container {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+
+    #main > #text-container > h1 {
+        font-size: 45px;
+    }
+
+    #main > #signin-container {
+        background-color: white;
+        font-size: 3vh;
+        width: 90%;
+    }
+
+    #main > #signin-container > form {
+        height: 35vh;
+    }
+
+    #signin-form > input {
+        background-color: white;
+        border-radius: 0px;
+        border: 0px;
+        border-bottom: 3px solid rgba(56, 102, 174, 1);
+    }
+}
+
+@media screen and (max-width: 376px) {
+
+    #header > form {
+        width: 30%;
+    }
+
+    #signin-container {
+        width: 80vw;
+        min-width: 0px;
+    }
+
+    #signin-container > span {
+        text-align: center;
+    }
+
+    #footer > * {
+        font-size: 1.2vh;
+    }
 }

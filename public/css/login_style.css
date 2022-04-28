@@ -7,6 +7,10 @@ div {
     --dirty-white: rgba(226, 230, 233, 1);
 }
 
+::selection {
+    background: rgba(255, 201, 43, 1)
+}
+
 @font-face {
     font-family: Chivo Regular;
     src: url("../font/Chivo-Regular.ttf");
