@@ -2,7 +2,7 @@
     "stats":[
     {
         "skillName":"Intellegence",
-        "currentXP": 0,
+        "currentXP": 10,
         "currentLVL": 0,
         "xpNeeded": 30,
         "multiplier": 1.2,
@@ -16,7 +16,7 @@
     },
     {
         "skillName":"Strength",
-        "currentXP": 0,
+        "currentXP": 20,
         "currentLVL": 0,
         "xpNeeded": 45,
         "multiplier": 1,
@@ -32,7 +32,7 @@
     },
     {
         "skillName":"Endurance",
-        "currentXP": 0,
+        "currentXP": 25,
         "currentLVL": 0,
         "xpNeeded": 40,
         "multiplier": 1.1,

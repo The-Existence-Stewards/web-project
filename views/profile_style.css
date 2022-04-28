@@ -175,7 +175,7 @@ div.progress-bar {
     /* padding: 20px 0; */
     border-radius: 25px;
     width: 100%;
-    clip-path: inset(0 0% 0 0);
+    clip-path: inset(0 0 0 0%);
     transition: clip-path 1.3s;
     background: #FFFFFF;
 }
@@ -311,7 +311,7 @@ div.progress-bar {
     cursor: pointer;
 }
 
-/* for testing purposes */
+/* visual level-up  */
 
 div.levelUpFlexContainer{
     padding: 0;
@@ -337,6 +337,82 @@ div.levelUpText {
 div.levelUpFlexContainer.levelUpFlex{
     transform: translateY(-100%);
     transition: cubic-bezier(0,.3,1,.4) 1.7s;
+}
+
+/* testing */
+div#circleSpinner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#circleSpinner {
+width: 100px;
+height: 100px;
+}
+#spinner {
+    fill:transparent;
+    stroke-width: 8px;
+    stroke-linecap: round;
+    transform-origin: center;
+    animation-name: animation , rainbow;
+    animation-duration: 1.2s, 10s;
+    animation-iteration-count: infinite;
+}
+  
+@keyframes animation {
+0% {
+    stroke-dasharray: 1 98;
+    stroke-dashoffset: -105;
+}
+50% {
+    stroke-dasharray: 80 10;
+    stroke-dashoffset: -160;
+}
+100% {
+    stroke-dasharray: 1 98;
+    stroke-dashoffset: -300;
+}
+}
+@keyframes rainbow {
+    0% {
+    stroke: #FF0000;
+    }
+    8.33% {
+    stroke: #FF7F00;
+    }
+    16.66% {
+    stroke: #FFFF00;
+    }
+    24.99% {
+    stroke: #00FF00;
+    }
+    33.32% {
+    stroke: #0000FF;
+    }
+    41.65% {
+    stroke: #4B0082;
+    }
+    49.98% {
+    stroke: #9400D3;
+    }
+    58.31% {
+    stroke: #4B0082;
+    }
+    66.64% {
+    stroke: #0000FF;
+    }
+    74.97% {
+    stroke: #00FF00;
+    }
+    83.3% {
+    stroke: #FFFF00;
+    }
+    91.63% {
+    stroke: #FF7F00;
+    }
+    100% {
+    stroke: #FF0000;
+    }
 }
 
 @media screen and (max-width: 320px) {

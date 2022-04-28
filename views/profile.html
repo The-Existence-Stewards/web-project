@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- <script>localStorage.clear()</script> -->
 </head>
 <body>
 <div class="grid-container" >
@@ -51,7 +52,63 @@
     </div>
 
     <div class="elements" data-timeTakenForLvlUp="">
-        <!-- <div class="element strength">
+        <div id="circleSpinner">
+            <svg viewBox="0 0 100 100">
+              <circle id="spinner" cx="50" cy="50" r="45"/>
+          </svg>
+          </div>
+    </div>
+    <div class="profile-card">
+        <div class="profile">
+            <img src="pfp.png">
+            <h1>Dude McDavid</h1>
+            <p>Strongest Stat</p>
+            <p>Total Experience</p>
+        </div>
+    </div>
+    <div class="profile-footer">
+        <span>©The Existence Stewards 2022 | About Us | FAQ</span>
+    </div>
+    <div style="display: none;" class="levelUpTransition"></div>
+    <div style="display: none;" class="levelUpFlexContainer levelUpFlex"></div>
+
+    <!-- MODAL -->
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-body">
+                <h1></h1> <br>
+                <span class="entering-minutes">
+                    <input type="text" name="minutes">
+                    <label for="minutes">Minutes</label>
+                </span>
+                <p></p>
+                <p class="error-handler"></p>
+                <button class="btn-add-progress"> Add Progress</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="profileInteraction.js"></script>
+    <script>addEnterKeyListener()</script>
+    <script src = "XPcalc.js"></script>
+    <script>
+
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+            function myFunction() {
+                var x = document.getElementById("topnav");
+                if (x.className === "profile-top-menu") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "profile-top-menu";
+                }
+            }
+    </script>
+</div>  
+</body>
+</html>
+
+<!-- <div class="element strength">
             <div class="row1">
                 <div class="titleRow">
                     <p class="title strenght">Strength</p>
@@ -266,53 +323,3 @@
                 <li>Whatever</li>
               </ul>
         </div> <br> -->
-    </div>
-    <div class="profile-card">
-        <div class="profile">
-            <img src="pfp.png">
-            <h1>Dude McDavid</h1>
-            <p>Strongest Stat</p>
-            <p>Total Experience</p>
-        </div>
-    </div>
-    <div class="profile-footer">
-        <span>©The Existence Stewards 2022 | About Us | FAQ</span>
-    </div>
-    <div style="display: none;" class="levelUpTransition"></div>
-    <div style="display: none;" class="levelUpFlexContainer levelUpFlex"></div>
-
-    <!-- MODAL -->
-    <div class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <div class="modal-body">
-                <h1></h1> <br>
-                <span class="entering-minutes">
-                    <input type="text" name="minutes">
-                    <label for="minutes">Minutes</label>
-                </span>
-                <p></p>
-                <p class="error-handler"></p>
-                <button class="btn-add-progress"> Add Progress</button>
-            </div>
-        </div>
-    </div>
-    
-    <script src="profileInteraction.js"></script>
-    <script>addEnterKeyListener()</script>
-    <script type = "text/javascript" src = "XPcalc.js"></script>
-    <script>
-
-        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-            function myFunction() {
-                var x = document.getElementById("topnav");
-                if (x.className === "profile-top-menu") {
-                    x.className += " responsive";
-                } else {
-                    x.className = "profile-top-menu";
-                }
-            }
-    </script>
-</div>  
-</body>
-</html>

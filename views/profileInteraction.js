@@ -99,6 +99,8 @@ $(document).ready(function() {
                     let currentSkillName = data.stats[i].skillName
                     let newDiv = document.createElement("div")
                     elementClassname = data.stats[i].skillName.toLowerCase()
+                    //send multiplier data to localStorage
+                    sessionStorage.setItem(elementClassname, data.stats[i].multiplier)
                     newDiv.className = "element "+elementClassname
                     newDiv.innerHTML = `
                     <div class="row1">
@@ -155,7 +157,50 @@ $(document).ready(function() {
                 $(".message."+elementClass).slideToggle();
             });
         })
+        .then(function() {
+            setTimeout(function() {
+                let mainElement = $(".elements")
+                //select all mainElement child elements and put them in array
+                let mainElementChildren = mainElement.children()
+                //select all mainElement child elements and put them in array
+                let mainElementChildrenArray = []
+                for(let i = 0; i < mainElementChildren.length; i++){
+                    if (mainElementChildren[i].tagName != "BR"){
+                        mainElementChildrenArray.push(mainElementChildren[i])
+                    }
+                }
+                mainElementChildrenArray.forEach(element => {
+                    let currentXP = $(element).find("#currentXP").text()
+                    let neededLvlXP = $(element).find("#neededLvlXP").text()
+                    let progressBar = $(element).find(".progress-bar")
+                    let progressBarCrop = (currentXP / neededLvlXP)*100
+                    progressBar.css("clip-path", "inset(0 0 0 "+progressBarCrop+"%)")
+                });
+                $("#circleSpinner").hide()
+            })
+        });
     });
+//execute code after json file was fetched
+// $(document).ready(function() {
+//     let mainElement = $(".elements")
+//     //select all mainElement child elements and put them in array
+//     let mainElementChildren = mainElement.children()
+//     console.log(mainElementChildren);
+//     //select all mainElement child elements and put them in array
+//     let mainElementChildrenArray = []
+//     for(let i = 0; i < mainElementChildren.length; i++){
+//         if (mainElementChildren[i].tagName != "BR"){
+//             mainElementChildrenArray.push(mainElementChildren[i])
+//         }
+//     }
+//     mainElementChildrenArray.forEach(element => {
+//         let currentXP = $(element).find("#currentXP").text()
+//         let neededLvlXP = $(element).find("#neededLvlXP").text()
+//         let progressBar = $(element).find(".progress-bar")
+//         let progressBarCrop = (currentXP / neededLvlXP)*100
+//         progressBar.css("clip-path", "inset(0 0 0 "+progressBarCrop+"%)")
+//     });
+// });
 
 // $(document).ready(function() {
 //     $(".message").hide();

@@ -1,23 +1,3 @@
-$(function calculateXpfromElement(){
-    let mainElement = $(".elements")
-    //select all mainElement child elements and put them in array
-    let mainElementChildren = mainElement.children()
-    //select all mainElement child elements and put them in array
-    let mainElementChildrenArray = []
-    for(let i = 0; i < mainElementChildren.length; i++){
-        if (mainElementChildren[i].tagName != "BR"){
-            mainElementChildrenArray.push(mainElementChildren[i])
-        }
-    }
-    mainElementChildrenArray.forEach(element => {
-        // let LvlValue = $(element).find("#LvlValue").text()
-        let currentXP = $(element).find("#currentXP").text()
-        let neededLvlXP = $(element).find("#neededLvlXP").text()
-        let progressBar = $(element).find(".progress-bar")
-        let progressBarCrop = (currentXP / neededLvlXP)*100
-        progressBar.css("clip-path", "inset(0 0 0 "+progressBarCrop+"%)")
-    });
-});
 //NaN input prevention
 $(document).ready(function() {
     $(".btn-add-progress").click(function() {
@@ -35,7 +15,20 @@ $(document).ready(function() {
             errorMessage.css("opacity", "1")
             $("input:text").val("");
         }
-        else { 
+        else {
+            let loggedData = {
+                skillName: skillName,
+                minutes: minutes
+            }
+            let loggedDataJSON = JSON.stringify(loggedData)
+            $.ajax({
+                url: "/addMinutes",
+                method: "POST",
+                data: loggedDataJSON,
+            })
+            .fail(function( jqXHR, textStatus ) {
+                alert( "Request failed: " + textStatus );
+              });
             addMinutes(skillName,minutes)
             $("input:text").val("");
             errorMessage.text(null)
@@ -57,3 +50,23 @@ function addMinutes(skill,minutes) {
     $(detectedSkill).find("#currentXP").text(newXP)
     progressbarCrop(newXP, neededLvlXP, progressBar)
 }
+// $(document).ready(function() {
+//     let mainElement = $(".elements")
+//     //select all mainElement child elements and put them in array
+//     let mainElementChildren = mainElement.children()
+//     //select all mainElement child elements and put them in array
+//     let mainElementChildrenArray = []
+//     for(let i = 0; i < mainElementChildren.length; i++){
+//         if (mainElementChildren[i].tagName != "BR"){
+//             mainElementChildrenArray.push(mainElementChildren[i])
+//         }
+//     }
+//     mainElementChildrenArray.forEach(element => {
+//         // let LvlValue = $(element).find("#LvlValue").text()
+//         let currentXP = $(element).find("#currentXP").text()
+//         let neededLvlXP = $(element).find("#neededLvlXP").text()
+//         let progressBar = $(element).find(".progress-bar")
+//         let progressBarCrop = (currentXP / neededLvlXP)*100
+//         progressBar.css("clip-path", "inset(0 0 0 "+progressBarCrop+"%)")
+//     });
+// });
