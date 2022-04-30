@@ -32,8 +32,12 @@ body {
     padding: 0 5vw;
 }
 
-#header > img, form {
+#header > a, form {
     height: 58%;
+}
+
+#header > a > img {
+    height: 100%
 }
 
 #header > form {

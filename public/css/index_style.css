@@ -28,8 +28,12 @@ body {
     padding: 0 5vw;
 }
 
-#header > img, div {
+#header > a, div {
     height: 58%;
+}
+
+#header > a > img {
+    height: 100%
 }
 
 #header > .buttonContainer {
