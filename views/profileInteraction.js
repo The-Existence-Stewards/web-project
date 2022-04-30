@@ -211,5 +211,25 @@ $(document).ready(function() {
 //     });
 // });
 //open modal
+
+    function toggleHamburgerModal() {
+        $(".hamburgerModal").toggleClass("show-modal-hamburger");
+    };
+
+    $(document).ready(function() {
+        $("#hamburger-close-button").click(function() {
+            $('.hamburgerModal').toggleClass("show-modal-hamburger");
+        });
+    });
+
+    function outsideClick() {
+        $(document).click(function(event) {
+            if ($(event.target).hasClass("hamburgerModal")) {
+                $('.hamburgerModal').removeClass("show-modal-hamburger");
+            }
+        });
+    }
+
 addEventListener("click", openModal);
 addEventListener("click", clickOutsideModal);
+addEventListener('click', outsideClick)
