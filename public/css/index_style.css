@@ -10,7 +10,7 @@ div {
 @font-face {
     font-family: Chivo Regular;
     src: url("../font/Chivo-Regular.ttf");
-}
+  }
 
 body {
     margin: 0;
@@ -87,7 +87,6 @@ body {
 #main > h1 {
     margin: 0;
     font-size: 7.5vh;
-    text-align: center;
 }
 
 #main > #logoMain {
@@ -110,7 +109,7 @@ body {
     border: 1px solid black;
     border-radius: 25px;
     background-color: black;
-    font-size: 2vw;
+    font-size: 3.6vh;
     color: var(--dirty-white);
 }
 
@@ -122,64 +121,4 @@ body {
 
 #main > #mockupMain {
     width: 56vw;
-}
-
-@media screen and (max-width: 1024px) {
-    #main {
-        height: 90vh;
-    }
-}
-
-@media screen and (max-width: 768px) {
-
-    .buttonContainer > form {
-        width: 100%;
-    }
-    
-    #signupForm {
-        display: none;
-    }
-
-    #main {
-        height: 90vh;
-    }
-
-    #main > form {
-        width: 70vw;
-        height: 8vh;
-    }
-
-    #main > form > #signupButtonMain {
-        font-size: 5.2vw;
-    }
-
-    #main > #mockupMain {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 426px) {
-
-    #main {
-        height: 80vh;
-    }
-
-    #main > h1 {
-        display: none;
-    }
-
-    #main > #logoMain {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 376px) {
-
-    #main {
-        height: 70vh;
-    }
-
-    #main > form > #signupButtonMain {
-        font-size: 7vw;
-    }
 }

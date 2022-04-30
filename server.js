@@ -3,36 +3,51 @@ if (process.env.NODE_ENV !== 'production') {
 };
 
 const express = require('express');
+const session = require('express-session');
+const passport = require('passport');
+const routes = require('./routes');
+const connection = require('./config/database');
+// const expressEjsLayouts = require('express-ejs-layouts');
+
 const app = express();
-// const db = require('./database.js');
 
-const loginRouter = require('./routes/login.js');
-const registerRouter = require('./routes/register.js');
+// app.set('view engine', 'ejs');
+// app.use(expressEjsLayouts);
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const Postgres = require('connect-pg-simple')(session);
 
-app.use('/login', loginRouter);
-app.use('/register', registerRouter);
+const sessionStore = new Postgres({ pool: connection, tableName: 'session' });
 
-// app.get('/db', async (req, res) => {
-//     try {
-//         const client = await db.connect();
-//         const result = await client.query('SELECT user_id, username FROM users;');
-//         const results = { 'results': (result) ? result.rows : null};
-//         res.json( results );
-//         client.release();
-//     } catch (err) {
-//         console.error(err);
-//         res.json({ error: err });
-//     }
-// });
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: true,
+    store: sessionStore,
+    cookie: {
+        // set to expire in one day (ms/s * s/min * min/h * h/day * days)
+        maxAge: 1000 * 60 * 60 * 24 * 1
+    }
+}));
+
+require('./config/passport');
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// For debugging purposes
+app.use((req, res, next) => {
+    // console.log(req.session);
+    console.log(req.user[0].skillname);
+    next();
+});
+
+app.use(routes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });
-
-module.exports = app;

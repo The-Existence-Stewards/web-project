@@ -15,5 +15,4 @@ const pool = (() => {
     }
 })();
 
-
 module.exports = pool;
