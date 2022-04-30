@@ -91,7 +91,7 @@ body {
 #title {
     font-size: 2.5rem;
     /*remove bold text from h1 */
-    width: 50vw;
+    width: fit-content;
     font-weight: normal;
     margin-block-start: 0.67em;
     margin-block-end: 1em;
@@ -139,18 +139,11 @@ body {
     #header > .buttonContainer {
         width: 30%;
     }
-
-    #title {
-        width: 55vw;
-    }
-    
 }
 
 @media screen and (max-width: 768px) {
 
-    #title {
-        width: 70vw;
-    }
+
 }
 
 @media screen and (max-width: 426px) {
@@ -159,9 +152,6 @@ body {
         width: 50%;
     }
 
-    #title {
-        width: 80vw;
-    }
 }
 
 @media screen and (max-width: 376px) {
