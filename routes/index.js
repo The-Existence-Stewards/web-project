@@ -33,6 +33,9 @@ router.get('/skills', (req, res, next) => {
     models.getSkills(req.user.user_id).then(result => res.send(result));
 });
 
+router.get('/username', (req, res, next) => {
+    models.getUser(req.user.user_id).then(result => res.send(result.username));
+})
 //post
 
 router.post('/login', passport.authenticate('local', {
