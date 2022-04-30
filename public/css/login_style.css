@@ -7,9 +7,13 @@ div {
     --dirty-white: rgba(226, 230, 233, 1);
 }
 
+::selection {
+    background: rgba(255, 201, 43, 1)
+}
+
 @font-face {
     font-family: Chivo Regular;
-    src: url("../Design/font/Chivo-Regular.ttf");
+    src: url("../font/Chivo-Regular.ttf");
   }
 
 body {
@@ -87,6 +91,7 @@ body {
     border-radius: 25px;
     height: 53vh;
     width: 31vw;
+    min-width: 360px;
     max-width: 470px;
     background-color: var(--dirty-white);
     font-size: 2vh;
@@ -168,8 +173,89 @@ body {
     padding-left: 7.5vw;
 }
 
-#footer>* {
+#footer >* {
     font-size: 1.5vh;
     text-decoration: none;
-    color: var(--main-yellow)
+    color: black;
+}
+
+#footer > a:hover {
+    color:  var(--main-yellow);
+}
+
+@media screen and (max-width: 1024px) {
+
+    #main > #textContainer > h1 {
+        font-size: 70px;
+    }
+    
+    #logInContainer > #linksContainer > a {
+        font-size: 2vh;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+
+    #header > form {
+        width: 25%;
+    }
+
+    #main {
+        flex-direction: column;
+        height: 76vh;
+        padding-top: 6vh;
+    }
+
+    #main > #textContainer {
+        align-items: center;
+        text-align: center;
+    }
+
+    #main > #textContainer > :not(h1) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 426px) {
+
+    #main > #textContainer > h1 {
+        font-size: 45px;
+    }
+
+    #main > #logInContainer {
+        background-color: white;
+        font-size: 3vh;
+    }
+
+    #main > #logInContainer > form {
+        height: 35vh;
+    }
+
+    .userInput {
+        background-color: white;
+        border-radius: 0px;
+        border: 0px;
+        border-bottom: 3px solid rgba(56, 102, 174, 1);
+    }
+}
+
+@media screen and (max-width: 376px) {
+
+    #header > form {
+        width: 30%;
+    }
+
+    #logInContainer {
+        width: 80vw;
+        min-width: 0px;
+    }
+
+    #logInContainer > #linksContainer > * {
+        text-align: center;
+    }
+
+    #footer > * {
+        font-size: 1.2vh;
+    }
 }
