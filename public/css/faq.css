@@ -1,0 +1,170 @@
+div {
+    border: 0px solid black
+}
+
+:root {
+    --main-yellow: rgba(255, 201, 43, 1);
+    --dirty-white: rgba(226, 230, 233, 1);
+}
+
+@font-face {
+    font-family: Chivo Regular;
+    src: url("../font/Chivo-Regular.ttf");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Chivo Regular";
+}
+
+#header {
+    background-color: var(--main-yellow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    width: auto;
+    padding: 0 5vw;
+}
+
+#header > a, div {
+    height: 58%;
+}
+
+#header > a > img {
+    height: 100%
+}
+
+#header > .buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 26%;
+}
+
+.buttonContainer > form {
+    width: 45%;
+    height: 100%;
+}
+
+#loginButton {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: var(--main-yellow);
+    font-size: 1.8vh;
+    color: black;
+}
+
+#loginButton:hover {
+    background-color: black;
+    color: var(--main-yellow);
+    cursor: pointer;
+}
+
+#signupButton {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: black;
+    font-size: 1.8vh;
+    color: var(--dirty-white);
+}
+
+#signupButton:hover {
+    color: var(--main-yellow);
+    cursor: pointer;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    height: auto;
+    padding: 10vh 7.5vw;
+    padding-bottom: 6vh;
+}
+
+#title {
+    font-size: 2.5rem;
+    /*remove bold text from h1 */
+    width: 50vw;
+    font-weight: normal;
+    margin-block-start: 0.67em;
+    margin-block-end: 1em;
+    border-bottom: 2px solid black;
+}
+
+.qa-container {
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid black;
+    padding-left: 3vw;
+    margin-block-end: 0.67em;
+}
+
+.qa-container > * {
+    margin-bottom: 2vh;
+}
+
+.question {
+    font-size: 2rem;
+}
+
+.answer {
+    font-size: 1.2rem;
+    width: 90%;
+}
+
+#footer {
+    height: 4vh;
+    padding-left: 7.5vw;
+}
+
+#footer >* {
+    font-size: 1.5vh;
+    text-decoration: none;
+    color: black;
+}
+
+#footer > a:hover {
+    color:  var(--main-yellow);
+}
+
+@media screen and (max-width: 1024px) {
+
+    #header > .buttonContainer {
+        width: 30%;
+    }
+
+    #title {
+        width: 55vw;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+
+    #title {
+        width: 70vw;
+    }
+}
+
+@media screen and (max-width: 426px) {
+
+    #header > .buttonContainer {
+        width: 50%;
+    }
+
+    #title {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 376px) {
+
+    
+}
