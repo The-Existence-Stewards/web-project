@@ -28,6 +28,11 @@ router.get('/aboutUs', (req, res, next) => {
     res.sendFile('/views/about-us.html', { root: './'})
 });
 
+router.get('/skills', (req, res, next) => {
+    // console.log(models.getSkills(req.user.user_id));
+    models.getSkills(req.user.user_id).then(result => res.send(result));
+});
+
 //post
 
 router.post('/login', passport.authenticate('local', {

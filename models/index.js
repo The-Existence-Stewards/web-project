@@ -1,6 +1,7 @@
 const db = require('../config/database');
 const bcrypt = require('bcrypt');
 
+
 const saltRounds = 10;
 const stats = `insert into skills (user_id, skillName, multiplier) values
 ($1,'strength',1.5),
@@ -62,6 +63,23 @@ const models = {
     getUser: async (id) => {
         try {
             const client = await db.connect();
+            const result = await client.query('SELECT user_id, username, password FROM users WHERE user_id = $1;', [id]);
+            const results = { 'results': (result) ? result.rows : null};
+            client.release();
+            if (results.results.length === 0) {
+                return { 'error': 'User not found' };
+            } else {
+                return results.results[0];
+            }
+        } catch (err) {
+            console.error(err);
+            return { 'error': err };
+        }
+    },
+
+    getSkills: async (id) => {
+        try {
+            const client = await db.connect();
             const result = await client.query('SELECT * FROM skills WHERE user_id = $1;', [id]);
             const results = { 'results': (result) ? result.rows : null};
             client.release();
@@ -76,27 +94,10 @@ const models = {
         }
     },
 
-    getStats: async (id) => {
-        try {
-            const client = await db.connect();
-            const result = await client.query('SELECT * FROM stats WHERE user_id = $1;', [id]);
-            const results = { 'results': (result) ? result.rows : null};
-            client.release();
-            if (results.results.length === 0) {
-                return { 'error': 'User not found' };
-            } else {
-                return results.results[0];
-            }
-        } catch (err) {
-            console.error(err);
-            return { 'error': err };
-        }
-    },
-
     updateStats: async (id, stats) => {
         try {
             const client = await db.connect();
-            const result = await client.query('UPDATE stats SET strength = $1, endurance = $2, intelligence = $3, charisma = $4, agility = $5, crafting = $6 WHERE user_id = $7;', [stats.strength, stats.endurance, stats.intelligence, stats.charisma, stats.agility, stats.crafting, id]);
+            const result = await client.query();
             const results = { 'results': (result) ? result.rows : null};
             client.release();
             if (results.results.length === 0) {

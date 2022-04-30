@@ -25,7 +25,7 @@ const sessionStore = new Postgres({ pool: connection, tableName: 'session' });
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     store: sessionStore,
     cookie: {
         // set to expire in one day (ms/s * s/min * min/h * h/day * days)
@@ -41,7 +41,7 @@ app.use(passport.session());
 // For debugging purposes
 app.use((req, res, next) => {
     // console.log(req.session);
-    console.log(req.user[0].skillname);
+    // console.log(req.user);
     next();
 });
 

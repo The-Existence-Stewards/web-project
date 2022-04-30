@@ -6,6 +6,12 @@ body {
 :root {
     --main-yellow: rgba(255, 201, 43, 1);
     --dirty-white: rgba(226, 230, 233, 1);
+    --strength-progress-bar: rgba(222, 29, 51, 1);
+    --endurance-progress-bar: rgba(81, 194, 71, 1);
+    --agility-progress-bar: rgba(71, 194, 175, 1);
+    --intelligence-progress-bar: rgba(56, 102, 174, 1);
+    --charisma-progress-bar: rgba(185, 58, 217, 1);
+    --crafting-progress-bar: rgba(178, 123, 77, 1);
 }
 
 .grid-container {
@@ -181,7 +187,7 @@ div.progress-bar {
     /* padding: 20px 0; */
     border-radius: 25px;
     width: 100%;
-    clip-path: inset(0 0% 0 0);
+    clip-path: inset(0 0 0 0%);
     transition: clip-path 1.3s;
     background: #FFFFFF;
 }
@@ -214,6 +220,15 @@ div.progress-bar {
 }
 
 .profile img { border-radius: 129.5px }
+
+.profile-footer a {
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+}
+
+.profile-footer a:hover  {
+    color: rgba(255, 201, 43, 1);
+}
 
 .modal {
     position: fixed;
@@ -310,7 +325,7 @@ div.progress-bar {
     position: fixed;
     display: flex;
     justify-content: flex-end;
-    left: 0;
+    right: 0;
     top: 0;
     z-index: 1;
     width: 100vw;
@@ -318,19 +333,54 @@ div.progress-bar {
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
-    transform: scale(1.1);
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    transition: visibility 0.5s, opacity 0.25s;
     user-select: none;
 }
 
 #hamburgerModalContent {
     position: absolute;
     display: flex;
+    right: -100%;
     flex-direction: column;
     height: 100vh;
     background-color: var(--main-yellow);
+    transition: right 0.5s
 }
 
+#hamburgerModalContent a:not(.logout-btn) {
+    text-align: center;
+    text-decoration: none;
+    float: right;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 10px;
+
+    position: relative;
+    color: rgba(0, 0, 0, 1);
+    font-size: 1.1rem }
+
+#hamburgerModalContent a:not(.logout-btn):after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 1);
+    transform-origin: center;
+    transition: transform 0.25s ease-out }
+
+#hamburgerModalContent a:not(.logout-btn):hover:after {
+    transform: scaleX(1);
+    transform-origin: center }
+
+#hamburgerModalBody {
+    display: flex;
+    justify-content: space-between;
+    height: 25%;
+
+}
 #hamburger-close-button {
     border: 1px solid black;
     background-color: black;
@@ -353,6 +403,15 @@ div.progress-bar {
     visibility: visible;
     transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.show-modal-hamburger {
+    opacity: 1;
+    visibility: visible;
+}
+
+.show-modal-hamburger > #hamburgerModalContent {
+    right: 0;
 }
 
 /* for testing purposes */
@@ -383,7 +442,84 @@ div.levelUpFlexContainer.levelUpFlex{
     transition: cubic-bezier(0,.3,1,.4) 1.7s;
 }
 
+/* testing */
+div#circleSpinner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#circleSpinner {
+width: 100px;
+height: 100px;
+}
+#spinner {
+    fill:transparent;
+    stroke-width: 8px;
+    stroke-linecap: round;
+    transform-origin: center;
+    animation-name: animation , rainbow;
+    animation-duration: 1.2s, 10s;
+    animation-iteration-count: infinite;
+}
+  
+@keyframes animation {
+0% {
+    stroke-dasharray: 1 98;
+    stroke-dashoffset: -105;
+}
+50% {
+    stroke-dasharray: 80 10;
+    stroke-dashoffset: -160;
+}
+100% {
+    stroke-dasharray: 1 98;
+    stroke-dashoffset: -300;
+}
+}
+@keyframes rainbow {
+    0% {
+    stroke: #FF0000;
+    }
+    8.33% {
+    stroke: #FF7F00;
+    }
+    16.66% {
+    stroke: #FFFF00;
+    }
+    24.99% {
+    stroke: #00FF00;
+    }
+    33.32% {
+    stroke: #0000FF;
+    }
+    41.65% {
+    stroke: #4B0082;
+    }
+    49.98% {
+    stroke: #9400D3;
+    }
+    58.31% {
+    stroke: #4B0082;
+    }
+    66.64% {
+    stroke: #0000FF;
+    }
+    74.97% {
+    stroke: #00FF00;
+    }
+    83.3% {
+    stroke: #FFFF00;
+    }
+    91.63% {
+    stroke: #FF7F00;
+    }
+    100% {
+    stroke: #FF0000;
+    }
+}
+
 @media screen and (min-width: 0px) {
+
     .profile-top-menu {
         grid-column: 1/4;
         grid-row: 1/2 }
@@ -501,6 +637,7 @@ div.levelUpFlexContainer.levelUpFlex{
         border-style: solid;
         background-color:var(--main-yellow);
         padding: 5px 30px;
+        text-align: center;
         font-size: 1.25rem;
         font-family: 'Chivo', sans-serif }
 
