@@ -113,7 +113,7 @@ $(document).ready(function() {
                         <button class="btn-progress ${elementClassname}">Add progress</button>
                     </div>
                     <div class="progressBarRow">
-                        <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(222, 29, 51, 1);background-color: rgba(222, 29, 51, 1)"">
+                        <div class="progress-bar__container" style="box-shadow: 0 0 5px var(--${elementClassname}-progress-bar);background-color: var(--${elementClassname}-progress-bar)"">
                             <div class="progress-bar"></div>
                         </div>
                         <div class="xp__container">

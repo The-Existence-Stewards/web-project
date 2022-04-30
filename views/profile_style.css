@@ -6,6 +6,12 @@ body {
 :root {
     --main-yellow: rgba(255, 201, 43, 1);
     --dirty-white: rgba(226, 230, 233, 1);
+    --strength-progress-bar: rgba(222, 29, 51, 1);
+    --endurance-progress-bar: rgba(81, 194, 71, 1);
+    --agility-progress-bar: rgba(71, 194, 175, 1);
+    --intelligence-progress-bar: rgba(56, 102, 174, 1);
+    --charisma-progress-bar: rgba(185, 58, 217, 1);
+    --crafting-progress-bar: rgba(178, 123, 77, 1);
 }
 
 .grid-container {
