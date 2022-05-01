@@ -1,3 +1,50 @@
+const explanations = {
+    "intelligence": [
+            "Challenge yourself by:",
+            "Reading",
+            "Studying",
+            "Learning a new skill (e.g. a musical instrument)"
+        ],
+    "strength": [
+        "Here are some activities that affect your strength:",
+            "Weightlifting",
+            "Powerlifting",
+            "CrossFit",
+            "Gymnastics",
+            "Swimming"
+        ],
+    "agility": [
+        "Here are some exercises that you can do to improve your agility:",
+            "Plyometric Agility Hurdles",
+            "Speed Ladder Agility Drills",
+            "Plyometric Box Drills",
+            "Lateral Plyometric Jumps",
+            "Tuck Jumps",
+            "Dot Drills"
+        ],
+    "endurance": [
+        "Here are some activities that affect your endurance:",
+            "Running",
+            "Cycling",
+            "Cross-country skiing",
+            "Rowing",
+            "Swimming"
+        ],
+    "charisma": [
+        "See how you socialize with people, for example:",
+            "Meeting with friends",
+            "Going out",
+            "Having conversations with your sports-mates, or colleagues"
+        ],
+    "crafting": [
+        "If you're either an avid crafter or a beginner one, here's what may be included in this category:",
+            "DIY",
+            "Painting",
+            "Drawing",
+            "Woodwork",
+            "Crochet, knitting"
+    ]
+}
 const modal = $(".modal");
 const errorMessage = $(".modal").find(".error-handler")
 //fetch skill data from server response
@@ -86,21 +133,19 @@ function visualLevelUp() {
     }, animationDuration);
 }
 $(document).ready(function() {
-    fetch("jsonfile.json")
-        .then(response => response.json())
-        .then(data => {
+    $.getJSON("./jsonfile.json", function(respondedData) {
+        let data = respondedData
             //loop through all stats
-            for (let i = 0; i < data.stats.length; i++) {
-                if (data.stats[i].visible == true) {
+            for (let i = 0; i < data.length; i++) {
                         //create div for each stat
-                    let Lvl = data.stats[i].currentLVL
-                    let XP = data.stats[i].currentXP
-                    let XPneeded = data.stats[i].xpNeeded
-                    let currentSkillName = data.stats[i].skillName
+                    let Lvl = data[i].lvl
+                    let XP = data[i].currentxp
+                    let XPneeded = data[i].xptonextlvl
+                    let currentSkillName = data[i].skillname
                     let newDiv = document.createElement("div")
-                    elementClassname = data.stats[i].skillName.toLowerCase()
+                    elementClassname = data[i].skillname.toLowerCase()
                     //send multiplier data to localStorage
-                    sessionStorage.setItem(elementClassname, data.stats[i].multiplier)
+                    sessionStorage.setItem(elementClassname, data[i].multiplier)
                     newDiv.className = "element "+elementClassname
                     newDiv.innerHTML = `
                     <div class="row1">
@@ -134,22 +179,43 @@ $(document).ready(function() {
                     let explanationMessage = document.createElement("div")
                     explanationMessage.className = "explanation message " + elementClassname
                     explanationMessageHolder = []
-                    for (let t = 1; t < data.stats[i].explanation.length; t++) {
-                        explanationMessageHolder.push("<li>"+data.stats[i].explanation[t].toString()+"</li>")
+                    //search for value behind variable elementClassname in object explanations
+                    for (let key in explanations) {
+                        if (key == elementClassname) {
+                            for (let t = 1; t < explanations[key].length; t++) {
+                                explanationMessageHolder.push("<li>"+explanations[key][t].toString()+"</li>")
+                            }
+                            explanationMessage.innerHTML = `
+                            <p class="par">${explanations[key][0]}</p>
+                            <ul class="ul">
+                                ${explanationMessageHolder.join("")}
+                            </ul>`
+                            $(newDiv).after(explanationMessage)
+                            $(explanationMessage).after("<br/>")
+                            $(".message").hide();
+                        }
                     }
-                    explanationMessage.innerHTML = `
-                    <p class="par">${data.stats[i].explanation[0]}</p>
-                    <ul class="ul">
-                        ${explanationMessageHolder.join("")}
-                    </ul>`
-                    $(newDiv).after(explanationMessage)
-                    $(explanationMessage).after("<br/>")
-                    $(".message").hide();
                 }
-                else{
-                    i++
+            function sortByLvl(data) {
+                data.sort(function (a, b) {
+                    return b.lvl - a.lvl;
+                });
+                console.log(data)
+                let similarLevels = []
+                similarLevels.push(data.at(0))
+                for (let i = 0; i < data.length-1; i++) {
+                    // console.log(data.at(i).lvl)
+                    // console.log(data.at(i+1).lvl)
+                    if (parseInt(data.at(i).lvl) == parseInt(data.at(i+1).lvl)) {
+                        similarLevels.push(data.at(i+1))
+                    }
+                    else{
+                        break
+                    }
                 }
+                console.log(similarLevels)
             }
+            sortByLvl(data)
             textChangeInsideModal()
             $(".menu").click(function() {
                 //get element's 2nd class name

@@ -1,97 +1,62 @@
-{
-    "stats":[
+[
     {
-        "skillName":"Intelligence",
-        "currentXP": 10,
-        "currentLVL": 0,
-        "xpNeeded": 30,
-        "multiplier": 1.2,
-        "visible": true,
-        "explanation": [
-            "Challenge yourself by:",
-            "Reading",
-            "Studying",
-            "Learning a new skill (e.g. a musical instrument)"
-        ]
+        "user_id":3,
+        "skill_id":7,
+        "skillname":"Strength",
+        "xptonextlvl":600,
+        "currentxp":100,
+        "totalxp":0,
+        "lvl":0,
+        "multiplier":1.5
     },
     {
-        "skillName":"Strength",
-        "currentXP": 20,
-        "currentLVL": 0,
-        "xpNeeded": 45,
-        "multiplier": 1,
-        "visible": true,
-        "explanation": [
-            "Here are some activities that affect your strength:",
-            "Weightlifting",
-            "Powerlifting",
-            "CrossFit",
-            "Gymnastics",
-            "Swimming"
-        ]
+        "user_id":3,
+        "skill_id":8,
+        "skillname":"Intelligence",
+        "xptonextlvl":0,
+        "currentxp":0,
+        "totalxp":0,
+        "lvl":0,
+        "multiplier":1.2
     },
     {
-        "skillName":"Endurance",
-        "currentXP": 25,
-        "currentLVL": 0,
-        "xpNeeded": 40,
-        "multiplier": 1.1,
-        "visible": true,
-        "explanation": [
-            "Here are some activities that affect your endurance:",
-            "Running",
-            "Cycling",
-            "Cross-country skiing",
-            "Rowing",
-            "Swimming"
-        ]
+        "user_id":3,
+        "skill_id":9,
+        "skillname":"Agility",
+        "xptonextlvl":0,
+        "currentxp":0,
+        "totalxp":0,
+        "lvl":0,
+        "multiplier":1.8
     },
     {
-        "skillName":"Charisma",
-        "currentXP": 0,
-        "currentLVL": 0,
-        "xpNeeded": 60,
-        "multiplier": 0.85,
-        "visible": true,
-        "explanation": [
-            "See how you socialize with people, for example:",
-            "Meeting with friends",
-            "Going out",
-            "Having conversations with your sports-mates, or colleagues"
-        ]
+        "user_id":3,
+        "skill_id":10,
+        "skillname":"Crafting",
+        "xptonextlvl":0,
+        "currentxp":0,
+        "totalxp":0,
+        "lvl":0,
+        "multiplier":1.5
     },
     {
-        "skillName":"Agility",
-        "currentXP": 0,
-        "currentLVL": 0,
-        "xpNeeded": 20,
-        "multiplier": 1.3,
-        "visible": true,
-        "explanation": [
-            "Here are some exercises that you can do to improve your agility:",
-            "Plyometric Agility Hurdles",
-            "Speed Ladder Agility Drills",
-            "Plyometric Box Drills",
-            "Lateral Plyometric Jumps",
-            "Tuck Jumps",
-            "Dot Drills"
-        ]
+        "user_id":3,
+        "skill_id":11,
+        "skillname":"Charisma",
+        "xptonextlvl":0,
+        "currentxp":0,
+        "totalxp":0,
+        "lvl":0,
+        "multiplier":1.2
     },
     {
-        "skillName":"Crafting",
-        "currentXP": 0,
-        "currentLVL": 0,
-        "xpNeeded": 50,
-        "multiplier": 1.5,
-        "visible": true,
-        "explanation": [
-            "If you're either an avid crafter or a beginner one, here's what may be included in this category:",
-            "DIY",
-            "Painting",
-            "Drawing",
-            "Woodwork",
-            "Crochet, knitting"
-        ]
+        "user_id":3,
+        "skill_id":12,
+        "skillname":"Endurance",
+        "xptonextlvl":0,
+        "currentxp":0,
+        "totalxp":0,
+        "lvl":0,
+        "multiplier":1.4
     }
 ]
-}
