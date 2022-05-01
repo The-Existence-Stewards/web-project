@@ -31,13 +31,28 @@
             <a class="about" href="#about">About us</a>
             <!-- <form action="" method="get" id="logout-form">
                 <input type="submit" value="Log In" class="logout-btn">
-            </form> -->
+            </form>  -->
             <a type="button" class="logout-btn">Log out</a>
             <a href="javascript:void(0);" class="icon" onclick="toggleHamburgerModal()">
                 <i class="fa fa-bars"></i>
             </a>
         </div>
     </div>
+
+    <!-- <div class="top-menu" id="topnav">
+        <a href="/">
+            <img class="logo" src="images\Final_logo.svg">
+        </a>
+        <form>
+            <a class="progression" href="#progression">Progression</a>
+            <a class="how" href="#how">How does it work?</a>
+            <a class="about" href="#about">About us</a>
+            <a type="button" class="logout-btn">Log out</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleHamburgerModal()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </form>
+    </div> -->
 
     <div id="main">
 
@@ -61,17 +76,22 @@
                 <h1>Eehe</h1>
                 <p>Eehe know Digital Ocean like its pocket</p>
             </div>
+
+            <div class="break"></div>
+
             <div class="people vadim">
                 <img src="images\moi.jpg" alt="">
                 <h1>OxCone</h1>
                 <p>OxCone is JS's king</p>
             </div>
-            <div class="break"></div>
             <div class="people anibal">
                 <img src="images\moi.jpg" alt="">
                 <h1>PortalFan</h1>
                 <p>PortalFan and html/css are besties </p>
             </div>
+
+            <!-- <div class="break"></div> -->
+
             <div class="people marion">
                 <img src="images\moi.jpg" alt="">
                 <h1>Clarks</h1>
@@ -88,5 +108,33 @@
         <span>|</span>
         <a href="">FAQ</a>
     </footer>
+
+
+        <!-- Hamburger Modal -->
+    <modal class="hamburgerModal">
+        <div id="hamburgerModalContent">
+            <span class="close-button" id="hamburger-close-button">&times;</span>
+            <div id="hamburgerModalBody">
+                <a class="progression" href="#progression">Progression</a>
+                <a class="how" href="#how">How does it work?</a>
+                <a class="about" href="#about">About us</a>
+                <a type="button" class="logout-btn">Log out</a>
+            </div>
+        </div>
+    </modal>
 </body>
+
+<script>
+
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function myFunction() {
+            var x = document.getElementById("topnav");
+            if (x.className === "profile-top-menu") {
+                x.className += " responsive";
+            } else {
+                x.className = "profile-top-menu";
+            }
+        }
+    </script>
+
 </html>

@@ -22,12 +22,8 @@ body {
     padding: 0 5vw;
 }
 
-.top-menu a, div {
+.top-menu a, img {
     height: 58%;
-}
-
-.top-menu > a > img {
-    height: 100%
 }
 
 .top-menu a {
@@ -47,7 +43,7 @@ body {
     justify-content: left;
 }
         
-.top-menu a:not(.logout-btn) {
+.link-container a:not(.logout-btn) {
     text-decoration: none;
     margin-left: 1em;
     margin-right: 1em;
@@ -58,7 +54,7 @@ body {
     font-size: 1.1rem 
 }
 
-.top-menu a:not(.logout-btn):after {
+.link-container a:not(.logout-btn):after {
     content: '';
     position: absolute;
     width: 100%;
@@ -71,7 +67,7 @@ body {
     transition: transform 0.25s ease-out 
 }
 
-.top-menu a:not(.logout-btn):hover:after {
+.link-container a:not(.logout-btn):hover:after {
     transform: scaleX(1);
     transform-origin: center 
 }
@@ -123,19 +119,19 @@ body {
     text-align: center;
 }
 
-#text-container>h1 {
+#text-container > h1 {
     width: 100%;
     margin: 0;
     font-size: 80px;
 }
 
-#text-container>h2 {
+#text-container > h2 {
     /* margin: 0; */
     width: 100%;
     font-size: 3.75vh;
 }
 
-#text-container>p {
+#text-container > p {
     margin: 0;
     font-size: 2vh;
     padding-left: 5em;
@@ -150,15 +146,17 @@ body {
     align-items: center;
 }
 
-.break {
+/* .break {
     flex-basis: 100%;
     width: 0;
     height: 5vh;
-}
+} */
 
 .people {
     flex-basis: 20%;
     text-align: center;
+    /* max-width: 100px; */
+    flex: 1 1 400px;
 }
 
 .people img {
@@ -167,6 +165,10 @@ body {
     height: 45%;
     left: 45%;
     top: 45%;
+    flex: 1 1 400px;
+    max-width: 100px;
+
+
 }
 
 #footer {
@@ -182,4 +184,226 @@ body {
 
 #footer > a:hover {
     color:  var(--main-yellow);
+}
+
+/* Hamburger */
+
+.hamburgerModal {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.5s, opacity 0.25s;
+    user-select: none;
+}
+
+#hamburgerModalContent {
+    position: absolute;
+    display: flex;
+    right: -100%;
+    flex-direction: column;
+    height: 100vh;
+    background-color: var(--main-yellow);
+    transition: right 0.5s
+}
+
+#hamburgerModalContent a:not(.logout-btn) {
+    text-align: center;
+    text-decoration: none;
+    float: right;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 10px;
+
+    position: relative;
+    color: rgba(0, 0, 0, 1);
+    font-size: 1.1rem }
+
+#hamburgerModalContent a:not(.logout-btn):after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 1);
+    transform-origin: center;
+    transition: transform 0.25s ease-out }
+
+#hamburgerModalContent a:not(.logout-btn):hover:after {
+    transform: scaleX(1);
+    transform-origin: center }
+
+#hamburgerModalBody {
+    display: flex;
+    justify-content: space-between;
+    height: 25%;
+
+}
+#hamburger-close-button {
+    border: 1px solid black;
+    background-color: black;
+    color: var(--dirty-white);
+}
+
+#hamburger-close-button:hover {
+    background-color: var(--main-yellow);
+    color: black;
+    border: 1px solid black;
+}
+
+#hamburgerModalBody {
+    display:flex;
+    flex-direction: column;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.show-modal-hamburger {
+    opacity: 1;
+    visibility: visible;
+}
+
+.show-modal-hamburger > #hamburgerModalContent {
+    right: 0;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 426px) {
+
+    #main > #text-container > h1 {
+        font-size: 45px;
+    }
+
+    #main > #signin-container {
+        background-color: white;
+        font-size: 3vh;
+        width: 90%;
+    }
+
+    #main > #signin-container > form {
+        height: 35vh;
+    }
+
+    #signin-form > input {
+        background-color: white;
+        border-radius: 0px;
+        border: 0px;
+        border-bottom: 3px solid rgba(56, 102, 174, 1);
+    }
+}
+
+@media screen and (max-width: 376px) {
+
+    #header > form {
+        width: 30%;
+    }
+
+    #signin-container {
+        width: 80vw;
+        min-width: 0px;
+    }
+
+    #signin-container > span {
+        text-align: center;
+    }
+
+    #footer > * {
+        font-size: 1.2vh;
+    }
+}
+
+
+
+
+@media screen and (min-width: 0px) {
+
+    /* Navigation bar */
+    .profile-top-menu a {display: none;}
+    .profile-top-menu a.icon {
+        float: right;
+        display: block;
+        color: black; }
+        .profile {
+            background-color: inherit;
+            margin: auto;
+            font-size: .8rem;
+            width: 85% }
+    
+        .profile img {  
+            width: 45%;
+            height: 45%;
+            left: 45%;
+            top: 45% }
+    
+        .logout-btn {
+            float: right;
+            position: relative;
+            border-radius: 25px;
+            border: 1px solid black;
+            background-color:var(--main-yellow);
+            padding: 5px 30px;
+            text-align: center;
+            font-size: 1.25rem;
+            font-family: 'Chivo', sans-serif }
+    
+        .logout-btn:hover {
+            border-color: var(--main-yellow);
+            background-color: rgb(0, 0, 0);
+            color: var(--main-yellow) }
+    }
+
+@media only screen and (min-width: 992px) { 
+    /* Remove hamburger navigation bar */
+    .profile-top-menu a.icon { display: none }
+
+    /* Adding regular menu */
+    .profile-top-menu a {display: block;}
+        
+    .profile-top-menu a:not(.logout-btn) {
+        text-align: center;
+        text-decoration: none;
+        float: right;
+        margin-left: 1em;
+        margin-right: 1em;
+        padding: 10px;
+    
+        position: relative;
+        color: rgba(0, 0, 0, 1);
+        font-size: 1.1rem }
+    
+    .profile-top-menu a:not(.logout-btn):after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 1);
+        transform-origin: center;
+        transition: transform 0.25s ease-out }
+    
+    .profile-top-menu a:not(.logout-btn):hover:after {
+        transform: scaleX(1);
+        transform-origin: center }
 }
