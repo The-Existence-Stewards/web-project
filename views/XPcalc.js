@@ -1,3 +1,16 @@
+function turnOnSpinner() {
+    $(".inModal").toggleClass("active")
+    setTimeout(function() {
+        $(".inModal").toggleClass("animation")
+    })
+}
+function turnOffSpinner() {
+    animationDuration = ($(".inModal.active").css("transition").split(" ")[1].split("s")[0])*1000
+    setTimeout(function() {
+        $(".inModal").toggleClass("animation")
+    }, animationDuration)
+    $(".inModal").toggleClass("active")
+}
 //NaN input prevention
 $(document).ready(function() {
     $(".btn-add-progress").click(function() {
@@ -17,7 +30,7 @@ $(document).ready(function() {
         }
         else {
             let loggedData = {
-                skillName: skillName,
+                skillname: skillName,
                 minutes: minutes
             }
             let loggedDataJSON = JSON.stringify(loggedData)
@@ -26,13 +39,29 @@ $(document).ready(function() {
                 method: "POST",
                 data: loggedDataJSON,
             })
-            .fail(function( jqXHR, textStatus ) {
-                alert( "Request failed: " + textStatus );
-              });
-            addMinutes(skillName,minutes)
-            $("input:text").val("");
-            errorMessage.text(null)
-            modal.toggleClass("show-modal")
+            .always(function() {
+                turnOnSpinner()
+            })
+            //handle failed request
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                alert("Request failed: " + textStatus + " - " + errorThrown)
+                turnOffSpinner()
+            })
+            .done(function(data, textStatus, jqXHR) {
+                if (data.response == "success") {
+                    turnOffSpinner()
+                    addMinutes(skillName,minutes)
+                    $("input:text").val("");
+                    errorMessage.text(null)
+                    modal.toggleClass("show-modal")
+                }
+                if (data.response == "dailyLimit") {
+                    turnOffSpinner()
+                    errorMessage.text("You have reached your daily limit!")
+                    errorMessage.css("opacity", "1")
+                    $("input:text").val("");
+                }
+            });
         }
     });
 });

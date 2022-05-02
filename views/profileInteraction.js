@@ -70,11 +70,6 @@ function clickOutsideModal() {
         }
     });
 }
-// function closeModalOnInputConfirm() {
-//     $(".btn-add-progress").click(function() {
-//         modal.toggleClass("show-modal");
-//     });
-// }
 //add ENTER key event listener on modal 
 function addEnterKeyListener() {
     $(".modal").keypress(function(e) {
@@ -83,7 +78,41 @@ function addEnterKeyListener() {
         }
     });
 }
-
+function findStrongestStat(data) {
+    data.sort(function (a, b) {
+        return b.lvl - a.lvl;
+    });
+    let similarLevels = []
+    similarLevels.push(data.at(0))
+    for (let i = 0; i < data.length-1; i++) {
+        // console.log(data.at(i).lvl)
+        // console.log(data.at(i+1).lvl)
+        if (parseInt(data.at(i).lvl) == parseInt(data.at(i+1).lvl)) {
+            similarLevels.push(data.at(i+1))
+        }
+        else{
+            break
+        }
+    }
+    if (similarLevels.length > 1) {
+        similarLevels.sort(function (a, b) {
+            return b.currentxp/b.xptonextlvl - a.currentxp/a.xptonextlvl;
+        });
+        //leave only first 2 elements in array
+        similarLevels.splice(2, similarLevels.length-2)
+        $("#strongestStatHolder").text(`${similarLevels[0].skillname}/${similarLevels[1].skillname}`)
+    }
+    else{
+        $("#strongestStatHolder").text(`${similarLevels[0].skillname}`)
+    }
+}
+function findTotalXp(data) {
+    let totalXp = 0;
+    data.forEach(function(element) {
+        totalXp += element.totalxp
+    });
+    $("#totalXpHolder").text(`${totalXp} XP`)
+}
 function visualLevelUp() {
     //track how much time function is taking
     let startTime = new Date();
@@ -196,26 +225,8 @@ $(document).ready(function() {
                         }
                     }
                 }
-            function sortByLvl(data) {
-                data.sort(function (a, b) {
-                    return b.lvl - a.lvl;
-                });
-                console.log(data)
-                let similarLevels = []
-                similarLevels.push(data.at(0))
-                for (let i = 0; i < data.length-1; i++) {
-                    // console.log(data.at(i).lvl)
-                    // console.log(data.at(i+1).lvl)
-                    if (parseInt(data.at(i).lvl) == parseInt(data.at(i+1).lvl)) {
-                        similarLevels.push(data.at(i+1))
-                    }
-                    else{
-                        break
-                    }
-                }
-                console.log(similarLevels)
-            }
-            sortByLvl(data)
+            findStrongestStat(data)
+            findTotalXp(data)
             textChangeInsideModal()
             $(".menu").click(function() {
                 //get element's 2nd class name

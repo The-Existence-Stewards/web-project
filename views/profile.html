@@ -54,16 +54,22 @@
     <div class="elements" data-timeTakenForLvlUp="">
         <div id="circleSpinner">
             <svg viewBox="0 0 100 100">
-              <circle id="spinner" cx="50" cy="50" r="45"/>
-          </svg>
-          </div>
+                <circle id="spinner" cx="50" cy="50" r="45"/>
+            </svg>
+        </div>
     </div>
     <div class="profile-card">
         <div class="profile">
             <img src="pfp.png">
             <h1>Dude McDavid</h1>
-            <p>Strongest Stat</p>
-            <p>Total Experience</p>
+            <div class="profileStats">
+                <p>Strongest Stat:</p>
+                <h3 id="strongestStatHolder"></h3>
+            </div>
+            <div class="profileStats">
+                <p>Total Experience:</p>
+                <h3 id="totalXpHolder"></h3>
+            </div>
         </div>
     </div>
     <div class="profile-footer">
@@ -75,6 +81,11 @@
     <!-- MODAL -->
     <div class="modal">
         <div class="modal-content">
+            <div class="inModal">
+                <svg viewBox="0 0 100 100">
+                    <circle id="spinner" cx="50" cy="50" r="45"/>
+                </svg>
+            </div>
             <span class="close-button">&times;</span>
             <div class="modal-body">
                 <h1></h1> <br>

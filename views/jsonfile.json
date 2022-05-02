@@ -3,20 +3,20 @@
         "user_id":3,
         "skill_id":7,
         "skillname":"Strength",
-        "xptonextlvl":600,
-        "currentxp":100,
+        "xptonextlvl":10,
+        "currentxp":3,
         "totalxp":0,
-        "lvl":0,
+        "lvl":2,
         "multiplier":1.5
     },
     {
         "user_id":3,
         "skill_id":8,
         "skillname":"Intelligence",
-        "xptonextlvl":0,
-        "currentxp":0,
+        "xptonextlvl":10,
+        "currentxp":5,
         "totalxp":0,
-        "lvl":0,
+        "lvl":3,
         "multiplier":1.2
     },
     {
