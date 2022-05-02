@@ -14,6 +14,15 @@ body {
     --crafting-progress-bar: rgba(178, 123, 77, 1);
 }
 
+::selection {
+    background: rgba(255, 201, 43, 1)
+}
+
+@font-face {
+    font-family: Chivo Regular;
+    src: url("../public/css/font/Chivo-Regular.ttf");
+}
+
 .grid-container {
     display: grid;
     /* grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); */
