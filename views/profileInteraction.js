@@ -85,8 +85,6 @@ function findStrongestStat(data) {
     let similarLevels = []
     similarLevels.push(data.at(0))
     for (let i = 0; i < data.length-1; i++) {
-        // console.log(data.at(i).lvl)
-        // console.log(data.at(i+1).lvl)
         if (parseInt(data.at(i).lvl) == parseInt(data.at(i+1).lvl)) {
             similarLevels.push(data.at(i+1))
         }
@@ -100,7 +98,13 @@ function findStrongestStat(data) {
         });
         //leave only first 2 elements in array
         similarLevels.splice(2, similarLevels.length-2)
-        $("#strongestStatHolder").text(`${similarLevels[0].skillname}/${similarLevels[1].skillname}`)
+        if ((similarLevels[0].currentxp/similarLevels[0].xptonextlvl) == (similarLevels[1].currentxp/similarLevels[1].xptonextlvl)) {
+            $("#strongestStatHolder").text(`${similarLevels[0].skillname}/${similarLevels[1].skillname}`)
+        }
+        else {
+            $("#strongestStatHolder").text(`${similarLevels[0].skillname}`)
+        }
+        
     }
     else{
         $("#strongestStatHolder").text(`${similarLevels[0].skillname}`)

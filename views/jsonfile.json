@@ -4,9 +4,9 @@
         "skill_id":7,
         "skillname":"Strength",
         "xptonextlvl":10,
-        "currentxp":3,
+        "currentxp":5,
         "totalxp":0,
-        "lvl":2,
+        "lvl":3,
         "multiplier":1.5
     },
     {

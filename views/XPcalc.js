@@ -31,7 +31,8 @@ $(document).ready(function() {
         else {
             let loggedData = {
                 skillname: skillName,
-                minutes: minutes
+                minutes: minutes,
+                calculatedXP: minutes*sessionStorage[skillName]
             }
             let loggedDataJSON = JSON.stringify(loggedData)
             $.ajax({
