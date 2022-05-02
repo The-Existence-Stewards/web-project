@@ -150,10 +150,10 @@ body {
     max-width: 1000px;
 }
 
-.text h1, p {
+/* .text h1, p {
     text-align: left;
     padding-left: 50px;
-}
+} */
 
 .text p {
     font-size: 1.2rem;
@@ -221,10 +221,19 @@ body {
     .top-menu > .icon {
         display: none;
     }
+
+    .text h1, p {
+        text-align: left;
+        padding-left: 50px;
+    }
 }
 
 
 @media screen and (max-width: 768px){
+
+    .text h1, p {
+        text-align: center;
+    }
 
     #text-container > h1 {
         width: 100%;
