@@ -80,7 +80,7 @@
             </div>
             <div class="people eero">
                 <img src="images\moi.jpg" alt="">
-                <h1>Eeheerroo</h1>
+                <h1>Eehe</h1>
                 <p>Eehe know Digital Ocean like its pocket</p>
             </div>
 
@@ -119,6 +119,15 @@
 </body>
 
 <script>
+
+    $(window).resize(function() {
+      if (window.innerWidth <= 768) {
+          $('.hamburgerModal').addClass('transition')
+      } else {
+          $('.hamburgerModal').removeClass('transition')
+      }
+    });
+
     function toggleHamburgerModal() {
         $(".hamburgerModal").toggleClass("show-modal-hamburger");
     };
