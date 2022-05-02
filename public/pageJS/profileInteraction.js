@@ -166,7 +166,7 @@ function visualLevelUp() {
     }, animationDuration);
 }
 $(document).ready(function() {
-    $.getJSON("./jsonfile.json", function(respondedData) {
+    $.getJSON("../public/pageJS/jsonfile.json", function(respondedData) {
         let data = respondedData
             //loop through all stats
             for (let i = 0; i < data.length; i++) {
@@ -202,7 +202,7 @@ $(document).ready(function() {
                                 <span id="XPtext">XP</span>
                             </p>
                         </div>
-                        <img src="icons8-pull-down-24.png" alt="menu" class="menu">
+                        <img src="../public/images/icons8-pull-down-24.png" alt="menu" class="menu">
                     </div>
                         <div class="levelUpFlexContainer">
                             <div class="levelUpText">Level UP!</div>
