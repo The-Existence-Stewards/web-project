@@ -9,7 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- <div id="header">
@@ -25,18 +27,23 @@
         <a href="/">
             <img class="logo" src="images\Final_logo.svg">
         </a>
-        <div class="link-container">
-            <a class="progression" href="#progression">Progression</a>
-            <a class="how" href="#how">How does it work?</a>
-            <a class="about" href="#about">About us</a>
-            <!-- <form action="" method="get" id="logout-form">
-                <input type="submit" value="Log In" class="logout-btn">
-            </form>  -->
-            <a type="button" class="logout-btn">Log out</a>
-            <a href="javascript:void(0);" class="icon" onclick="toggleHamburgerModal()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
+        <modal class="hamburgerModal">
+            <div id="hamburgerModalContent">
+                <div class="link-container hamburgerModalBody">
+                    <span class="close-button" id="hamburger-close-button">&times;</span>
+                    <a class="progression" href="#progression">Progression</a>
+                    <a class="how" href="#how">How does it work?</a>
+                    <a class="about" href="#about">About us</a>
+                    <!-- <form action="" method="get" id="logout-form">
+                        <input type="submit" value="Log In" class="logout-btn">
+                    </form>  -->
+                    <a type="button" class="logout-btn">Log out</a>
+                </div>
+            </div>
+        </modal>
+        <a href="javascript:void(0);" class="icon" onclick="toggleHamburgerModal()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
 
     <!-- <div class="top-menu" id="topnav">
@@ -109,32 +116,28 @@
         <a href="">FAQ</a>
     </footer>
 
-
-        <!-- Hamburger Modal -->
-    <modal class="hamburgerModal">
-        <div id="hamburgerModalContent">
-            <span class="close-button" id="hamburger-close-button">&times;</span>
-            <div id="hamburgerModalBody">
-                <a class="progression" href="#progression">Progression</a>
-                <a class="how" href="#how">How does it work?</a>
-                <a class="about" href="#about">About us</a>
-                <a type="button" class="logout-btn">Log out</a>
-            </div>
-        </div>
-    </modal>
 </body>
 
 <script>
+    function toggleHamburgerModal() {
+        $(".hamburgerModal").toggleClass("show-modal-hamburger");
+    };
 
-    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-        function myFunction() {
-            var x = document.getElementById("topnav");
-            if (x.className === "profile-top-menu") {
-                x.className += " responsive";
-            } else {
-                x.className = "profile-top-menu";
+    $(document).ready(function() {
+        $("#hamburger-close-button").click(function() {
+            $('.hamburgerModal').toggleClass("show-modal-hamburger");
+        });
+    });
+
+    function outsideClick() {
+        $(document).click(function(event) {
+            if ($(event.target).hasClass("hamburgerModal")) {
+                $('.hamburgerModal').removeClass("show-modal-hamburger");
             }
-        }
-    </script>
+        });
+    }
+
+    addEventListener('click', outsideClick)
+</script>
 
 </html>
