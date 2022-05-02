@@ -55,13 +55,10 @@ update stats set strength=50 where user_id=2;
 POSTGRESQL
 
 
-drop table users,skills,logs;
+drop table users,stats;
+
+
 drop table session;
-
-
-
-
-
 
 CREATE TABLE "session" (
   "sid" varchar NOT NULL COLLATE "default",
@@ -108,32 +105,34 @@ CREATE TABLE logs(
 
 
 
-
-
-
 select * from users;
 select * from skills;
 select * from logs;
 
-delete from users where user_id = 2;
+delete from users where user_id = 3;
+delete from skills where user_id = 1;
 
 select * from users where username = 'Leo' AND user_id = 14;
 
 
 insert into users (username,password) values
-('Nick', '$2b$10$6/8vDz8hDNSFy9xO.HkaA.kCJlspfRCx/1XRi3YSs6wz8l0LW.pJW');
+('LOL', '$2b$10$6/8vDz8hDNSFy9xO.HkaA.kCJlspfRCx/1XRi3YSs6wz8l0LW.pJW');
 
 insert into skills (user_id, skillName, multiplier) values
-(1,'strength',1.5),
-(1,'intelligence',1.2),
-(1,'agility',1.8),
-(1,'crafting',1.5),
-(1,'charisma',1.2),
-(1,'endurance',1.4);
+(1,'Strength',1.5),
+(1,'Intelligence',1.2),
+(1,'Agility',1.8),
+(1,'Crafting',1.5),
+(1,'Charisma',1.2),
+(1,'Endurance',1.4);
+
+update skills set xpToNextLvl = 50 where user_id = 1 and skillName = 'Strength';
 
 insert into logs (skill_id, minutes) values
 (2,60),
 (5,30),
 (6,90);
+
+select * from skills where user_id = 1;
 
 
