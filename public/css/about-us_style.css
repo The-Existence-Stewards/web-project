@@ -12,6 +12,11 @@ body {
     background: rgba(255, 201, 43, 1)
 }
 
+@font-face {
+    font-family: Chivo Regular;
+    src: url("../public/css/font/Chivo-Regular.ttf");
+}
+
 .top-menu {
     background-color: var(--main-yellow);
     display: flex;
