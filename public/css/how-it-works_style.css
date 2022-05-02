@@ -207,17 +207,33 @@ body {
 
 
 
+        /* Hamburger */
+
+
+@media screen and (min-width: 769px) {
+    
+    .link-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .top-menu  #hamburger-close-button {
+        display: none;
+    }
+    
+    .top-menu > .icon {
+        display: none;
+    }
+}
+
 
 @media screen and (max-width: 768px){
-        /* Hamburger */
 
     a.icon {
         float: right;
         display: block;
         color: black; 
     }
-
-    .profile-top-menu a {display: none}
 
     .hamburgerModal {
         position: fixed;
