@@ -24,13 +24,15 @@
             <input type="submit" value="Log out"   id="logoutButton">
         </form>
     </div> -->
+
     <div class="top-menu" id="topnav">
         <a href="/">
             <img class="logo" src="images\Final_logo.svg">
         </a>
-        <div class="hamburgerModal">
-            <div id="hamburgerModalContent">
+        <modal class="hamburgerModal">
+                <div id="hamburgerModalContent">
                 <div class="link-container hamburgerModalBody">
+                    <span class="close-button" id="hamburger-close-button">&times;</span>
                     <a class="progression" href="#progression">Progression</a>
                     <a class="how" href="#how">How does it work?</a>
                     <a class="about" href="#about">About us</a>
@@ -38,12 +40,12 @@
                         <input type="submit" value="Log In" class="logout-btn">
                     </form> -->
                     <a type="button" class="logout-btn">Log out</a>
-                    <a href="javascript:void(0);" class="icon" onclick="toggleHamburgerModal()">
-                        <i class="fa fa-bars"></i>
-                    </a>
                 </div>
             </div>
-        </div>
+        </modal>
+        <a href="javascript:void(0);" class="icon" onclick="toggleHamburgerModal()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
 
     <div id="main">
@@ -96,18 +98,7 @@
 
 
 
-    <!-- Hamburger Modal -->
-    <modal class="hamburgerModal">
-        <div id="hamburgerModalContent">
-            <span class="close-button" id="hamburger-close-button">&times;</span>
-            <div id="hamburgerModalBody">
-                <a class="progression" href="#progression">Progression</a>
-                <a class="how" href="#how">How does it work?</a>
-                <a class="about" href="#about">About us</a>
-                <a type="button" class="logout-btn">Log out</a>
-            </div>
-        </div>
-    </modal>
+
 
 
 </body>
@@ -119,7 +110,7 @@
     };
 
     $(document).ready(function() {
-        $(".hamburger-close-button").click(function() {
+        $("#hamburger-close-button").click(function() {
             $('.hamburgerModal').toggleClass("show-modal-hamburger");
         });
     });

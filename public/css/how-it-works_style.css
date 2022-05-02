@@ -119,18 +119,6 @@ body {
     text-align: center;
 }
 
-#text-container > h1 {
-    width: 100%;
-    margin: 0;
-    font-size: 80px;
-}
-
-#text-container > h2 {
-    /* margin: 0; */
-    width: 100%;
-    font-size: 3.75vh;
-}
-
 #cards {
     display: flex;
     flex-direction: column;
@@ -205,12 +193,21 @@ body {
     right: 0;
 }
 
-
-
-        /* Hamburger */
-
+/* Hamburger */
 
 @media screen and (min-width: 769px) {
+
+    #text-container > h1 {
+        width: 100%;
+        margin: 0;
+        font-size: 80px;
+    }
+    
+    #text-container > h2 {
+        /* margin: 0; */
+        width: 100%;
+        font-size: 3.75vh;
+    }
     
     .link-container {
         display: flex;
@@ -228,6 +225,22 @@ body {
 
 
 @media screen and (max-width: 768px){
+
+    #text-container > h1 {
+        width: 100%;
+        margin: 0;
+        font-size: 50px;
+    }
+    
+    #text-container > h2 {
+        /* margin: 0; */
+        width: 100%;
+        font-size: 2vh;
+    }
+
+    .top-menu .logout-btn {
+        height: auto;
+    }
 
     a.icon {
         float: right;
@@ -258,8 +271,7 @@ body {
         flex-direction: column;
         height: 100vh;
         background-color: var(--main-yellow);
-
-        
+        padding: 5vh 2vw;
         transition: right 0.5s
     }
 
@@ -291,7 +303,7 @@ body {
         transform: scaleX(1);
         transform-origin: center }
 
-    #hamburgerModalBody {
+    .hamburgerModalBody {
         display: flex;
         justify-content: space-between;
         height: 25%;
@@ -303,15 +315,33 @@ body {
         color: var(--dirty-white);
     }
 
+    .close-button {
+        float: right;
+        width: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        border-radius: 0.25rem;
+        background-color: lightgray;
+    }
+
     #hamburger-close-button:hover {
         background-color: var(--main-yellow);
         color: black;
         border: 1px solid black;
     }
 
-    #hamburgerModalBody {
+    .hamburgerModalBody {
         display:flex;
         flex-direction: column;
+    }
+
+    .show-modal-hamburger {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .show-modal-hamburger > #hamburgerModalContent {
+        right: 0;
     }
 
 }
