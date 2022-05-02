@@ -269,8 +269,11 @@ body {
         background-color: rgba(0, 0, 0, 0.5);
         opacity: 0;
         visibility: hidden;
-        transition: visibility 0.5s, opacity 0.25s;
         user-select: none;
+    }
+
+    .transition {
+        transition: visibility 0.5s, opacity 0.25s;
     }
 
     #hamburgerModalContent {
