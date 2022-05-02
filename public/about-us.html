@@ -119,6 +119,15 @@
 </body>
 
 <script>
+
+    $(window).resize(function() {
+      if (window.innerWidth <= 768) {
+          $('.hamburgerModal').addClass('transition')
+      } else {
+          $('.hamburgerModal').removeClass('transition')
+      }
+    });
+
     function toggleHamburgerModal() {
         $(".hamburgerModal").toggleClass("show-modal-hamburger");
     };
