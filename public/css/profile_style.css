@@ -676,6 +676,8 @@ div.inModal svg{
         background-color:var(--main-yellow);
         padding: 5px 30px;
         text-align: center;
+        text-decoration: none;
+        color: black;
         font-size: 1.25rem;
         font-family: 'Chivo', sans-serif }
 
