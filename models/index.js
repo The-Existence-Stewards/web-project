@@ -4,12 +4,12 @@ const bcrypt = require('bcrypt');
 
 const saltRounds = 10;
 const stats = `insert into skills (user_id, skillName, multiplier) values
-($1,'strength',1.5),
-($1,'intelligence',1.2),
-($1,'agility',1.8),
-($1,'crafting',1.5),
-($1,'charisma',1.2),
-($1,'endurance',1.4);`;
+($1,'Strength',1),
+($1,'Intelligence',1.2),
+($1,'Agility',1.3),
+($1,'Crafting',1.5),
+($1,'Charisma',0.85),
+($1,'Endurance',1.1);`;
 
 const models = {
 
@@ -94,7 +94,17 @@ const models = {
         }
     },
 
-    updateStats: async (id, stats) => {
+    updateStats: async (min, skillName, id) => {
+        const Limit = 960;
+        let loggedMinutes = null;
+        try {
+            const client = await db.connect();
+            let skillIDs = await client.query('')
+
+        } catch (err) {
+
+        }
+
         try {
             const client = await db.connect();
             const result = await client.query();

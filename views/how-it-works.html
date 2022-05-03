@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="CSS/about-us_style.css">
+    <link rel="stylesheet" href="CSS/how-it-works_style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <!-- <div id="header">
@@ -23,12 +24,13 @@
             <input type="submit" value="Log out"   id="logoutButton">
         </form>
     </div> -->
+
     <div class="top-menu" id="topnav">
         <a href="/">
             <img class="logo" src="images\Final_logo.svg">
         </a>
         <modal class="hamburgerModal">
-            <div id="hamburgerModalContent">
+                <div id="hamburgerModalContent">
                 <span class="close-button" id="hamburger-close-button">&times;</span>
                 <div class="link-container hamburgerModalBody">
                     
@@ -37,7 +39,7 @@
                     <a class="about" href="/aboutUs">About us</a>
                     <!-- <form action="" method="get" id="logout-form">
                         <input type="submit" value="Log In" class="logout-btn">
-                    </form>  -->
+                    </form> -->
                     <a type="button" class="logout-btn" href="/logout">Log out</a>
                 </div>
             </div>
@@ -47,63 +49,41 @@
         </a>
     </div>
 
-    <!-- <div class="top-menu" id="topnav">
-        <a href="/">
-            <img class="logo" src="images\Final_logo.svg">
-        </a>
-        <form>
-            <a class="progression" href="#progression">Progression</a>
-            <a class="how" href="#how">How does it work?</a>
-            <a class="about" href="#about">About us</a>
-            <a type="button" class="logout-btn">Log out</a>
-            <a href="javascript:void(0);" class="icon" onclick="toggleHamburgerModal()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </form>
-    </div> -->
-
     <div id="main">
 
         <div id="text-container">
-            <h1>About us</h1>
-            <h2>Who are we?</h2>
-            <p>
-                5 friends who have common interests in different things, we wanted to be creative and challenge ourselves in every-day life activities.
-                Stay tuned for more improvements in our app!
-            </p>
+            <h1>How does it work?</h1>
+            <h2>Let's see together how you can Level up!</h2>
         </div>
 
         <div id="cards">
-            <div class="people kacper">
-                <img src="images\kacper.png" alt="">
-                <h1>WellyBelly</h1>
-                <p>WellyBelly is our Passport expert</p>
+            <div class="explanation img1">
+                <img src="images\1.png" alt="">
+                <div class="text">
+                    <h1>Step 1</h1>
+                    <p>On your profile page, you can see all the categories that you can use to track your activities.
+                        After doing some Strength activity, or something that goes into the Intelligence category, enter your
+                        minutes with the "Add progress" button.
+                    </p>
+                </div>
             </div>
-            <div class="people eero">
-                <img src="images\eero.png" alt="">
-                <h1>Eehe</h1>
-                <p>Eehe know Heroku like its pocket</p>
+            <div class="explanation img2">
+                <img src="images\2.png" alt="">
+                <div class="text">
+                    <h1>Step 2</h1>
+                    <p>When you have entered your minutes, you can see the Level up-bar gets fuller and fuller.
+                        Enter more minutes to go to the next level!
+                    </p>
+                </div>
             </div>
-
-            <div class="break"></div>
-
-            <div class="people vadim">
-                <img src="images\vadim.png" alt="">
-                <h1>OxCone</h1>
-                <p>OxCone is JS's king</p>
-            </div>
-            <div class="people anibal">
-                <img src="images\anibal.png" alt="">
-                <h1>PortalFan</h1>
-                <p>PortalFan and html/css are besties </p>
-            </div>
-
-            <!-- <div class="break"></div> -->
-
-            <div class="people marion">
-                <img src="images\marion.png" alt="">
-                <h1>Clarks</h1>
-                <p>Clarks likes to learn</p>
+            <div class="explanation img3">
+                <img src="images\3.png" alt="">
+                <div class="text">
+                    <h1>Step 3</h1>
+                    <p>See on your profile card your Level, and check what is your highest score.
+                        Tip: to get a higher score, you can try new activities.
+                        Enjoy! 
+                    </p>
             </div>
         </div>
 
@@ -116,6 +96,11 @@
         <span>|</span>
         <a href="/faq">FAQ</a>
     </footer>
+
+
+
+
+
 
 </body>
 
@@ -148,6 +133,8 @@
     }
 
     addEventListener('click', outsideClick)
+
+
 </script>
 
 </html>

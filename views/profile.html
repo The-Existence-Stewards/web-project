@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/profile_style.css">
+    <link rel="stylesheet" href="CSS/profile_style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,9 +18,9 @@
     <div class="profile-top-menu" id="topnav">
         <img class="logo" src="images/Final_logo.svg">
         <a type="button" class="logout-btn" href="/logout">Log out</a>
-        <a class="about" href="#about">About us</a>
-        <a class="how" href="#how">How does it work?</a>
-        <a class="progression" href="#progression">Progression</a>
+        <a class="about" href="/aboutUs">About us</a>
+        <a class="how" href="/howItWorks">How does it work?</a>
+        <a class="progression" href="/profile">Progression</a>
         <a href="javascript:void(0);" class="icon" onclick="toggleHamburgerModal()">
             <i class="fa fa-bars"></i>
         </a>
@@ -54,20 +54,26 @@
     <div class="elements" data-timeTakenForLvlUp="">
         <div id="circleSpinner">
             <svg viewBox="0 0 100 100">
-              <circle id="spinner" cx="50" cy="50" r="45"/>
-          </svg>
-          </div>
+                <circle id="spinner" cx="50" cy="50" r="45"/>
+            </svg>
+        </div>
     </div>
     <div class="profile-card">
         <div class="profile">
             <img src="images/pfp.png">
             <h1>Dude McDavid</h1>
-            <p>Strongest Stat</p>
-            <p>Total Experience</p>
+            <div class="profileStats">
+                <p>Strongest Stat:</p>
+                <h3 id="strongestStatHolder"></h3>
+            </div>
+            <div class="profileStats">
+                <p>Total Experience:</p>
+                <h3 id="totalXpHolder"></h3>
+            </div>
         </div>
     </div>
     <div class="profile-footer">
-        <span>©The Existence Stewards 2022 | <a href="/aboutUs">About Us</a> | <a href="#FAQ">FAQ</a></span>
+        <span>©The Existence Stewards 2022 | <a href="/aboutUs">About Us</a> | <a href="/faq">FAQ</a></span>
     </div>
     <div style="display: none;" class="levelUpTransition"></div>
     <div style="display: none;" class="levelUpFlexContainer levelUpFlex"></div>
@@ -75,6 +81,11 @@
     <!-- MODAL -->
     <div class="modal">
         <div class="modal-content">
+            <div class="inModal">
+                <svg viewBox="0 0 100 100">
+                    <circle id="spinner" cx="50" cy="50" r="45"/>
+                </svg>
+            </div>
             <span class="close-button">&times;</span>
             <div class="modal-body">
                 <h1></h1> <br>
@@ -94,8 +105,8 @@
         <div id="hamburgerModalContent">
             <span class="close-button" id="hamburger-close-button">&times;</span>
             <div id="hamburgerModalBody">
-                <a class="progression" href="#progression">Progression</a>
-                <a class="how" href="#how">How does it work?</a>
+                <a class="progression" href="/profile">Progression</a>
+                <a class="how" href="/howItWorks">How does it work?</a>
                 <a class="about" href="/aboutUs">About us</a>
                 <a type="button" class="logout-btn" href="/logout">Log out</a>
             </div>
@@ -107,15 +118,15 @@
     <script src = "pageJS/XPcalc.js"></script>
     <script>
 
-        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-            function myFunction() {
-                var x = document.getElementById("topnav");
-                if (x.className === "profile-top-menu") {
-                    x.className += " responsive";
-                } else {
-                    x.className = "profile-top-menu";
-                }
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function myFunction() {
+            var x = document.getElementById("topnav");
+            if (x.className === "profile-top-menu") {
+                x.className += " responsive";
+            } else {
+                x.className = "profile-top-menu";
             }
+        }
     </script>
 </div>  
 </body>

@@ -28,14 +28,23 @@ router.get('/aboutUs', (req, res, next) => {
     res.sendFile('/views/about-us.html', { root: './'})
 });
 
+router.get('/howItWorks', (req, res, next) => {
+    res.sendFile('/views/how-it-works.html', { root: './'})
+});
+
+router.get('/faq', (req, res, next) => {
+    res.sendFile('/views/faq.html', { root: './'})
+});
+
 router.get('/skills', (req, res, next) => {
-    // console.log(models.getSkills(req.user.user_id));
+    // console.log(models.getSkills(req.user.user_id)) ;
     models.getSkills(req.user.user_id).then(result => res.send(result));
 });
 
 router.get('/username', (req, res, next) => {
     models.getUser(req.user.user_id).then(result => res.send(result.username));
 })
+
 //post
 
 router.post('/login', passport.authenticate('local', {
@@ -58,6 +67,18 @@ router.post('/register', (req, res, next) => {
     })
 });
 
+// put
 
+router.put('/addMinutes' , (req, res, next) => {
+    models.updateStats(req.body.min, req.body.skillName, req.user.user_id);
+    // receive minutes, (user_id/skill_id), skillName, calculatedXp, currentXp, currentLVL, xpForLvlUp
+    // check for limit
+        // if good calculate new values and send success back
+        // if bad send back failure
+});
+
+// delete
+
+router.delete('/deleteAccount', )
 
 module.exports = router;
