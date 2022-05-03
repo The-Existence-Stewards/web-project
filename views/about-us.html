@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../public/css/about-us_style.css">
+    <link rel="stylesheet" href="CSS/about-us_style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,20 +25,19 @@
     </div> -->
     <div class="top-menu" id="topnav">
         <a href="/">
-            <img class="logo" src="../public/images\Final_logo.svg">
+            <img class="logo" src="images\Final_logo.svg">
         </a>
         <modal class="hamburgerModal">
             <div id="hamburgerModalContent">
                 <span class="close-button" id="hamburger-close-button">&times;</span>
                 <div class="link-container hamburgerModalBody">
-                    
-                    <a class="progression" href="#progression">Progression</a>
-                    <a class="how" href="#how">How does it work?</a>
-                    <a class="about" href="#about">About us</a>
+                    <a class="progression" href="/profile">Progression</a>
+                    <a class="how" href="/howItWorks">How does it work?</a>
+                    <a class="about" href="/aboutUs">About us</a>
                     <!-- <form action="" method="get" id="logout-form">
                         <input type="submit" value="Log In" class="logout-btn">
                     </form>  -->
-                    <a type="button" class="logout-btn">Log out</a>
+                    <a type="button" class="logout-btn" href="/logout">Log out</a>
                 </div>
             </div>
         </modal>
@@ -75,12 +74,12 @@
 
         <div id="cards">
             <div class="people kacper">
-                <img src="../public/images\kacper.png" alt="">
+                <img src="images\kacper.png" alt="">
                 <h1>WellyBelly</h1>
                 <p>WellyBelly is our Passport expert</p>
             </div>
             <div class="people eero">
-                <img src="../public/images\eero.png" alt="">
+                <img src="images\eero.png" alt="">
                 <h1>Eehe</h1>
                 <p>Eehe know Heroku like its pocket</p>
             </div>
@@ -88,12 +87,12 @@
             <div class="break"></div>
 
             <div class="people vadim">
-                <img src="../public/images\vadim.png" alt="">
+                <img src="images\vadim.png" alt="">
                 <h1>OxCone</h1>
                 <p>OxCone is JS's king</p>
             </div>
             <div class="people anibal">
-                <img src="../public/images\anibal.png" alt="">
+                <img src="images\anibal.png" alt="">
                 <h1>PortalFan</h1>
                 <p>PortalFan and html/css are besties </p>
             </div>
@@ -101,7 +100,7 @@
             <!-- <div class="break"></div> -->
 
             <div class="people marion">
-                <img src="../public/images\marion.png" alt="">
+                <img src="images\marion.png" alt="">
                 <h1>Clarks</h1>
                 <p>Clarks likes to learn</p>
             </div>
@@ -112,9 +111,9 @@
     <footer id="footer">
         <span>© The Existence Stewards 2022</span>
         <span>|</span>
-        <a href="">About us</a>
+        <a href="/aboutUs">About us</a>
         <span>|</span>
-        <a href="">FAQ</a>
+        <a href="/faq">FAQ</a>
     </footer>
 
 </body>

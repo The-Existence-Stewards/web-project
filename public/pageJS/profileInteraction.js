@@ -37,7 +37,7 @@ const explanations = {
             "Having conversations with your sports-mates, or colleagues"
         ],
     "crafting": [
-        "If you're either an avid crafter or a beginner one, here's what may be included in this category:",
+        "Here's what may be included in this category:",
             "DIY",
             "Painting",
             "Drawing",
@@ -166,7 +166,7 @@ function visualLevelUp() {
     }, animationDuration);
 }
 $(document).ready(function() {
-    $.getJSON("../public/pageJS/jsonfile.json", function(respondedData) {
+    $.getJSON("/skills", function(respondedData) {
         let data = respondedData
             //loop through all stats
             for (let i = 0; i < data.length; i++) {
@@ -202,7 +202,7 @@ $(document).ready(function() {
                                 <span id="XPtext">XP</span>
                             </p>
                         </div>
-                        <img src="../public/images/icons8-pull-down-24.png" alt="menu" class="menu">
+                        <img src="images/icons8-pull-down-24.png" alt="menu" class="menu">
                     </div>
                         <div class="levelUpFlexContainer">
                             <div class="levelUpText">Level UP!</div>

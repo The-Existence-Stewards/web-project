@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../public/css/profile_style.css">
+    <link rel="stylesheet" href="CSS/profile_style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,11 +16,11 @@
 <div class="grid-container" >
 
     <div class="profile-top-menu" id="topnav">
-        <img class="logo" src="../public/images/Final_logo.svg">
-        <a type="button" class="logout-btn">Log out</a>
-        <a class="about" href="#about">About us</a>
-        <a class="how" href="#how">How does it work?</a>
-        <a class="progression" href="#progression">Progression</a>
+        <img class="logo" src="images/Final_logo.svg">
+        <a type="button" class="logout-btn" href="/logout">Log out</a>
+        <a class="about" href="/aboutUs">About us</a>
+        <a class="how" href="/howItWorks">How does it work?</a>
+        <a class="progression" href="/profile">Progression</a>
         <a href="javascript:void(0);" class="icon" onclick="toggleHamburgerModal()">
             <i class="fa fa-bars"></i>
         </a>
@@ -60,7 +60,7 @@
     </div>
     <div class="profile-card">
         <div class="profile">
-            <img src="../public/images/pfp.png">
+            <img src="images/pfp.png">
             <h1>Dude McDavid</h1>
             <div class="profileStats">
                 <p>Strongest Stat:</p>
@@ -73,7 +73,7 @@
         </div>
     </div>
     <div class="profile-footer">
-        <span>©The Existence Stewards 2022 | <a href="#aboutus">About Us</a> | <a href="#FAQ">FAQ</a></span>
+        <span>©The Existence Stewards 2022 | <a href="/aboutUs">About Us</a> | <a href="/faq">FAQ</a></span>
     </div>
     <div style="display: none;" class="levelUpTransition"></div>
     <div style="display: none;" class="levelUpFlexContainer levelUpFlex"></div>
@@ -105,17 +105,17 @@
         <div id="hamburgerModalContent">
             <span class="close-button" id="hamburger-close-button">&times;</span>
             <div id="hamburgerModalBody">
-                <a class="progression" href="#progression">Progression</a>
-                <a class="how" href="#how">How does it work?</a>
-                <a class="about" href="#about">About us</a>
-                <a type="button" class="logout-btn">Log out</a>
+                <a class="progression" href="/profile">Progression</a>
+                <a class="how" href="/howItWorks">How does it work?</a>
+                <a class="about" href="/aboutUs">About us</a>
+                <a type="button" class="logout-btn" href="/logout">Log out</a>
             </div>
         </div>
     </modal>
     
-    <script src="../public/pageJS/profileInteraction.js"></script>
+    <script src="pageJS/profileInteraction.js"></script>
     <script>addEnterKeyListener()</script>
-    <script src = "../public/pageJS/XPcalc.js"></script>
+    <script src = "pageJS/XPcalc.js"></script>
     <script>
 
     /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */

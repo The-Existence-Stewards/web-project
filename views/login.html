@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../public/css/login_style.css">
+    <link rel="stylesheet" href="CSS/login_style.css">
 </head>
 <body>
     <div id="header">
         <a href="/">
-            <img src="../public/images\Final_logo.svg">
+            <img src="images\Final_logo.svg">
         </a>
         <form action="/register">
             <input type="submit" value="Sign Up"   id="signupButton">
@@ -25,7 +25,7 @@
         <div id="logInContainer">
             <form action="/login" method="post">        
                 <div class="userInputContainer">
-                    <label for="username">E-mail address</label>
+                    <label for="username">Username</label>
                     <input class="userInput" type="text" id="username" name="username" required>
                 </div>
                 <div  class="userInputContainer">
@@ -47,9 +47,9 @@
     <footer id="footer">
         <span>© The Existence Stewards 2022</span>
         <span>|</span>
-        <a href="">About us</a>
+        <a href="/aboutUs">About us</a>
         <span>|</span>
-        <a href="">FAQ</a>
+        <a href="/faq">FAQ</a>
     </footer>
 </body>
 </html>

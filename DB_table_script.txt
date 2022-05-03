@@ -55,6 +55,23 @@ update stats set strength=50 where user_id=2;
 POSTGRESQL
 
 
+drop table users,stats;
+
+
+drop table session;
+
+CREATE TABLE "session" (
+  "sid" varchar NOT NULL COLLATE "default",
+	"sess" json NOT NULL,
+	"expire" timestamp(6) NOT NULL
+)
+WITH (OIDS=FALSE);
+
+ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
+
+CREATE INDEX "IDX_session_expire" ON "session" ("expire");
+
+select * from session;
 
 Create table users(
 	user_id serial not null unique,
@@ -63,33 +80,59 @@ Create table users(
     primary key (user_id),
     created_at timestamp not null default current_timestamp
 );
-	
-CREATE TABLE stats(
-	user_id serial not null unique,
-	strength int,
-	endurance int,
-    intelligence int,
-    charisma int,
-    agility int,
-    crafting int,
-    primary key (user_id),
+CREATE TABLE skills(
+	user_id int,
+	skill_id serial not null unique,
+	primary key (skill_id),
+	skillName varchar(256) not null,
+    xpToNextLvl int default 0,
+    currentXp int default 0,
+	totalXp int default 0,
+    lvl int default 0,
+    multiplier real,
     foreign key (user_id) references users (user_id)
+		on delete cascade
+);
+CREATE TABLE logs(
+	log_id serial not null unique,
+	primary key (log_id),
+	date varchar(50) default current_date,
+	minutes int,
+	skill_id int,
+	foreign key (skill_id) references skills (skill_id)
 		on delete cascade
 );
 
 
 
-insert into users (username,password) values
-('Nick', 1234);
-insert into stats (strength,endurance,intelligence,charisma,agility,crafting) values
-(0,0,0,0,0,0);
+select * from users;
+select * from skills;
+select * from logs;
+
+delete from users where user_id = 3;
+delete from skills where user_id = 1;
+
+select * from users where username = 'Leo' AND user_id = 14;
+
 
 insert into users (username,password) values
-('Brick', 4321);
-insert into stats (strength,endurance,intelligence,charisma,agility,crafting) values
-(0,0,0,0,0,0);
+('LOL', '$2b$10$6/8vDz8hDNSFy9xO.HkaA.kCJlspfRCx/1XRi3YSs6wz8l0LW.pJW');
 
-insert into users (username,password) values
-('Slim Shady', 'moms spaghetti');
-insert into stats (strength,endurance,intelligence,charisma,agility,crafting) values
-(0,0,0,0,0,0);
+insert into skills (user_id, skillName, multiplier) values
+(1,'Strength',1.5),
+(1,'Intelligence',1.2),
+(1,'Agility',1.8),
+(1,'Crafting',1.5),
+(1,'Charisma',1.2),
+(1,'Endurance',1.4);
+
+update skills set xpToNextLvl = 50 where user_id = 1 and skillName = 'Strength';
+
+insert into logs (skill_id, minutes) values
+(2,60),
+(5,30),
+(6,90);
+
+select * from skills where user_id = 1;
+
+
