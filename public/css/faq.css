@@ -156,7 +156,7 @@ body {
     color:  var(--main-yellow);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 769px) {
 
     #header > .buttonContainer {
         width: 30%;
