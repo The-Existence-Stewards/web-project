@@ -13,7 +13,7 @@ div {
 
 @font-face {
     font-family: Chivo Regular;
-    src: url("../public/css/font/Chivo-Regular.ttf");
+    src: url("../font/Chivo-Regular.ttf");
 }
 
 body {
