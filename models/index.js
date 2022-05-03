@@ -80,7 +80,8 @@ const models = {
     getSkills: async (id) => {
         try {
             const client = await db.connect();
-            const result = await client.query('SELECT * FROM skills WHERE user_id = $1;', [id]);
+            const result = await client.query('SELECT * FROM skills WHERE user_id = $1 order by skill_id;', [id]);
+            console.log(result);
             const results = { 'results': (result) ? result.rows : null};
             client.release();
             if (results.results.length === 0) {
@@ -94,8 +95,9 @@ const models = {
         }
     },
 
-    updateStats: async (min, skillName, id) => {
+    updateStats: async (minutes, skillName, id) => {
         // 960 min = 16 hours.
+        const min = Number(minutes);
         const Limit = 960;
         const levelupMultiplier = 1.15;
         let todaysDate = new Date().toISOString().slice(0,10);
@@ -107,15 +109,15 @@ const models = {
             const client = await db.connect();
             const getSkillID = await client.query('SELECT skill_id from skills where user_id = $1 and skillName = $2;', [id, skillName]);
             const skillID = getSkillID.rows[0].skill_id;
-            const getMinutes = await client.query('SELECT SUM(minutes) from logs where skill_id = $1 and date = $2;', [skillID, todaysDate]);
+            const getMinutes = await client.query('SELECT SUM(minutes) from logs where date = $2;', [todaysDate]);
             const loggedMinutes = getMinutes.rows[0].sum;
-            if ((min + loggedMinutes) < Limit) {
+            if ((Number(min) + Number(loggedMinutes)) < Limit) {
                 const getSkill = await client.query('SELECT xpToNextLvl, currentXp, totalXp, lvl, multiplier from skills where user_id = $1 and skillName = $2;', [id, skillName]);
                 const skill = getSkill.rows[0];
                 const multiplier = skill.multiplier;
-                const currentXp = skill.currentXp;
-                const totalXp = skill.totalXp;
-                let xpToNextLvl = skill.xpToNextLvl;
+                const currentXp = skill.currentxp;
+                const totalXp = skill.totalxp;
+                let xpToNextLvl = skill.xptonextlvl;
                 let lvl = skill.lvl;
                 
 
@@ -123,7 +125,8 @@ const models = {
                 let newTotalXp = totalXp + Math.round(min * multiplier);
                 let addingLevel = true;
                 while (addingLevel) {
-                    if (newXp >= xpToNextLvl) {
+                    console.log(currentXp);
+                    if (newXp >= xpToNextLvl && xpToNextLvl !== 0) {
                         newXp = newXp - xpToNextLvl;
                         lvl++;
                         xpToNextLvl = Math.round(xpToNextLvl * levelupMultiplier);
@@ -132,25 +135,14 @@ const models = {
                     }
                 };
 
+
                 await client.query('UPDATE skills SET currentXp = $1, totalXp = $2, lvl = $3, xpToNextLvl = $4 WHERE user_id = $5 and skill_id = $6;', [newXp, newTotalXp, lvl, xpToNextLvl, id, skillID]);
-                await client.query('INSERT INTO logs (skill_id, minutes) VALUES ($1, $2, $3);', [skillID, min]);
-                return { 'success': 'success' };                
+                await client.query('INSERT INTO logs (skill_id, minutes) VALUES ($1, $2);', [skillID, min]);
+                client.release();
+                return { 'success': 'success' }; 
             } else {
+                client.release();
                 return { 'error': 'Limit exceeded' };
-            }
-        } catch (err) {
-
-        }
-
-        try {
-            const client = await db.connect();
-            const result = await client.query();
-            const results = { 'results': (result) ? result.rows : null};
-            client.release();
-            if (results.results.length === 0) {
-                return { 'error': 'User not found' };
-            } else {
-                return results.results[0];
             }
         } catch (err) {
             console.error(err);

@@ -34,12 +34,14 @@ $(document).ready(function() {
                 minutes: minutes,
                 calculatedXP: minutes*sessionStorage[skillName]
             }
-            let loggedDataJSON = JSON.stringify(loggedData)
+            // let loggedDataJSON = JSON.stringify(loggedData)
             $.ajax({
                 url: "/addMinutes",
-                method: "POST",
-                data: loggedDataJSON,
+                method: "PUT",
+                data: loggedData,
             })
+            // If it works you get this: { 'success': 'success' }
+            // If the limit doesn't allow it you get this: { 'error': 'Limit exceeded' }
             .always(function() {
                 turnOnSpinner()
             })
@@ -49,14 +51,14 @@ $(document).ready(function() {
                 turnOffSpinner()
             })
             .done(function(data, textStatus, jqXHR) {
-                if (data.response == "success") {
+                if (data.success == "success") {
                     turnOffSpinner()
                     addMinutes(skillName,minutes)
                     $("input:text").val("");
                     errorMessage.text(null)
                     modal.toggleClass("show-modal")
                 }
-                if (data.response == "dailyLimit") {
+                if (data.error == "Limit exceeded") {
                     turnOffSpinner()
                     errorMessage.text("You have reached your daily limit!")
                     errorMessage.css("opacity", "1")

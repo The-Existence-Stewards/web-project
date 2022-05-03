@@ -70,12 +70,13 @@ router.post('/register', (req, res, next) => {
 // put
 
 router.put('/addMinutes' , (req, res, next) => {
-    models.updateStats(req.body.min, req.body.skillName, req.user.user_id)
+    let smallSkillName = req.body.skillname;
+    let skillName = smallSkillName[0].toUpperCase() + smallSkillName.slice(1);
+
+    console.log("\x1b[31m"+skillName+"\x1b[0m");
+    console.log("\x1b[31m"+req.body.minutes+"\x1b[0m");
+    models.updateStats(req.body.minutes, skillName, req.user.user_id)
     .then((response) => { res.send(response) });
-    // receive minutes, (user_id/skill_id), skillName, calculatedXp, currentXp, currentLVL, xpForLvlUp
-    // check for limit
-        // if good calculate new values and send success back
-        // if bad send back failure
 });
 
 // delete

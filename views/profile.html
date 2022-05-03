@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Skill3</title>
     <link rel="stylesheet" href="CSS/profile_style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
         </div> -->
 
     <div class="top-text">
-        <h1>Hello</h1>
+        <h1 id="greeting">Hello</h1>
         <p>Welcome to your profile page! Here you can add the time you spent on each category. Be active, level up and see your Strongest Stat and your Total Experience grow every day. Let's go!</p>
     </div>
 
@@ -61,7 +61,7 @@
     <div class="profile-card">
         <div class="profile">
             <img src="images/pfp.png">
-            <h1>Dude McDavid</h1>
+            <h1 id="dudeMcDavid">Dude McDavid</h1>
             <div class="profileStats">
                 <p>Strongest Stat:</p>
                 <h3 id="strongestStatHolder"></h3>
@@ -131,230 +131,3 @@
 </div>  
 </body>
 </html>
-
-<!-- <div class="elements" data-timeTakenForLvlUp="">
-        <div class="element strength">
-            <div class="row1">
-                <div class="titleRow">
-                    <p class="title strenght">Strength</p>
-                    <p class="level strenght">Lvl 
-                        <span id="LvlValue">0</span>
-                    </p>
-                </div>
-                <button class="btn-progress strength">Add progress</button>
-            </div>
-            <div class="progressBarRow">
-                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(222, 29, 51, 1);background-color: rgba(222, 29, 51, 1)"">
-                    <div class="progress-bar"></div>
-                </div>
-                <div class="xp__container">
-                    <p class="xp strength">
-                        <span id="currentXP">10</span>
-                        <span>/</span>
-                        <span id="neededLvlXP">120</span>
-                        <span id="XPtext">XP</span>
-                    </p>
-                </div>
-                <img src="icons8-pull-down-24.png" alt="menu" class="menu">
-            </div>
-            <div class="levelUpFlexContainer">
-                <div class="levelUpText">Level UP!</div>
-            </div>
-        </div>
-        <div class="explanation message strength">
-            <p class="par">Here are some activities that affect your strength:</p>
-            <ul class="ul">
-                <li>Weightlifting</li>
-                <li>Powerlifting</li>
-                <li>CrossFit</li>
-                <li>Gymnastics</li>
-                <li>Swimming</li>
-            </ul>
-        </div> <br>
-        <div class="element endurance">
-            <div class="row1">
-                <div class="titleRow">
-                    <p class="title endurance">Endurance</p>
-                    <p class="level endurance">Lvl
-                        <span id="LvlValue">0</span>
-                    </p>
-                </div>
-                <button class="btn-progress endurance">Add progress</button>
-            </div>
-            <div class="progressBarRow">
-                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(81, 194, 71, 1);background-color: rgba(81, 194, 71, 1)">
-                    <div class="progress-bar"></div>
-                </div>
-                <div class="xp__container">
-                    <p class="xp endurance">
-                        <span id="currentXP">10</span>
-                        <span>/</span>
-                        <span id="neededLvlXP">120</span>
-                        <span id="XPtext">XP</span>
-                    </p>
-                </div>
-                <img src="icons8-pull-down-24.png" alt="menu" class="menu">
-            </div>
-            <div class="levelUpFlexContainer">
-                <div class="levelUpText">Level UP!</div>
-            </div>
-        </div> 
-        <div class="explanation message endurance">
-            <p>Here are some activities that affect your endurance:</p>
-            <ul>
-                <li>Running</li>
-                <li>Cycling</li>
-                <li>Cross-country skiing</li>
-                <li>Rowing</li>
-                <li>Swimming</li>
-              </ul>
-        </div> <br>
-        <div class="element agility">
-            <div class="row1">
-                <div class="titleRow">
-                    <p class="title agility">Agility</p>
-                    <p class="level agility">Lvl
-                        <span id="LvlValue">0</span>
-                    </p>
-                </div>
-                <button class="btn-progress agility">Add progress</button>
-            </div>
-            <div class="progressBarRow">
-                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(71, 194, 175, 1);background-color: rgba(71, 194, 175, 1)">
-                    <div class="progress-bar"></div>
-                </div>
-                <div class="xp__container">
-                    <p class="xp agility">
-                        <span id="currentXP">10</span>
-                        <span>/</span>
-                        <span id="neededLvlXP">120</span>
-                        <span id="XPtext">XP</span>
-                    </p>
-                </div>
-                <img src="icons8-pull-down-24.png" alt="menu" class="menu">
-            </div>
-            <div class="levelUpFlexContainer">
-                <div class="levelUpText">Level UP!</div>
-            </div>
-        </div>
-        <div class="explanation message agility">
-            <p>Here are some exercises that you can do to improve your agility:</p>
-            <ul>
-                <li>Plyometric Agility Hurdles</li>
-                <li>Speed Ladder Agility Drills</li>
-                <li>Plyometric Box Drills</li>
-                <li>Lateral Plyometric Jumps</li>
-                <li>Tuck Jumps</li>
-                <li>Dot Drills</li>
-              </ul>
-        </div> <br>
-        <div class="element intelligence">
-            <div class="row1">
-                <div class="titleRow">
-                    <p class="title intelligence">Intelligence</p>
-                    <p class="level intelligence">Lvl
-                        <span id="LvlValue">0</span>
-                    </p>
-                </div>
-                <button class="btn-progress intelligence">Add progress</button>
-            </div>
-            <div class="progressBarRow">
-                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(56, 102, 174, 1);background-color: rgba(56, 102, 174, 1)">
-                    <div class="progress-bar"></div>
-                </div>
-                <div class="xp__container">
-                    <p class="xp intelligence">
-                        <span id="currentXP">10</span>
-                        <span>/</span>
-                        <span id="neededLvlXP">120</span>
-                        <span id="XPtext">XP</span>
-                    </p>
-                </div>
-                <img src="icons8-pull-down-24.png" alt="menu" class="menu">
-            </div>
-            <div class="levelUpFlexContainer">
-                <div class="levelUpText">Level UP!</div>
-            </div>
-        </div> 
-        <div class="explanation message intelligence">
-            <p>Challenge yourself by:</p>
-            <ul>
-                <li>Reading</li>
-                <li>Studying</li>
-                <li>Learning a new skill (e.g. a musical instrument)</li>
-            </ul>
-        </div> <br>
-        <div class="element charisma">
-            <div class="row1">
-                <div class="titleRow">
-                    <p class="title charisma">Charisma</p>
-                    <p class="level charisma">Lvl
-                        <span id="LvlValue">0</span>
-                    </p>
-                </div>
-                <button class="btn-progress charisma">Add progress</button>
-            </div>
-            <div class="progressBarRow">
-                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(185, 58, 217, 1);background-color: rgba(185, 58, 217, 1)">
-                    <div class="progress-bar"></div>
-                </div>
-                <div class="xp__container">
-                    <p class="xp charisma">
-                        <span id="currentXP">10</span>
-                        <span>/</span>
-                        <span id="neededLvlXP">120</span>
-                        <span id="XPtext">XP</span>
-                    </p>
-                </div>
-                <img src="icons8-pull-down-24.png" alt="menu" class="menu">
-            </div>
-            <div class="levelUpFlexContainer">
-                <div class="levelUpText">Level UP!</div>
-            </div>
-        </div> <div class="explanation message charisma">
-            <p>See how you socialize with people, for example:</p>
-            <ul>
-                <li>Meeting with friends</li>
-                <li>Going out</li>
-                <li>Having conversations with your sports-mates, or colleagues</li>
-              </ul>
-        </div> <br>
-        <div class="element crafting">
-            <div class="row1">
-                <div class="titleRow">
-                    <p class="title crafting">Crafting</p>
-                    <p class="level crafting">Lvl
-                        <span id="LvlValue">0</span>
-                    </p>
-                </div>
-                <button class="btn-progress crafting">Add progress</button>
-            </div>
-            <div class="progressBarRow">
-                <div class="progress-bar__container" style="box-shadow: 0 0 5px rgba(178, 123, 77, 1);background-color: rgba(178, 123, 77, 1)">
-                    <div class="progress-bar"></div>
-                </div>
-                <div class="xp__container">
-                    <p class="xp crafting">
-                        <span id="currentXP">10</span>
-                        <span>/</span>
-                        <span id="neededLvlXP">120</span>
-                        <span id="XPtext">XP</span>
-                    </p>
-                </div>
-                <img src="icons8-pull-down-24.png" alt="menu" class="menu">
-            </div>
-            <div class="levelUpFlexContainer">
-                <div class="levelUpText">Level UP!</div>
-            </div>
-        </div> 
-        <div class="explanation message crafting">
-            <p>Here's what may be included in this category: </p>
-            <ul>
-                <li>DIY</li>
-                <li>Painting</li>
-                <li>Drawing</li>
-                <li>Woodwork</li>
-                <li>Crochet, knitting</li>
-              </ul>
-        </div> <br>
-    </div> -->

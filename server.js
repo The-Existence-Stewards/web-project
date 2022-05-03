@@ -39,11 +39,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // For debugging purposes
-app.use((req, res, next) => {
-    // console.log(req.session);
-    // console.log(req.user);
-    next();
-});
+// app.use((req, res, next) => {
+//     console.log(req.session);
+//     console.log(req.user);
+//     next();
+// });
 
 app.use(routes);
 

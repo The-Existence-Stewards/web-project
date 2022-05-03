@@ -239,10 +239,6 @@ div.progress-bar {
     color: rgba(255, 201, 43, 1);
 }
 
-.profile-card .profileStats {
-    padding: 20px 20px 0px;
-}
-
 .modal {
     position: fixed;
     left: 0;
