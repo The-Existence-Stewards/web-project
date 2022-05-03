@@ -3,13 +3,13 @@ const bcrypt = require('bcrypt');
 
 
 const saltRounds = 10;
-const stats = `insert into skills (user_id, skillName, multiplier) values
-($1,'Strength',1),
-($1,'Intelligence',1.2),
-($1,'Agility',1.3),
-($1,'Crafting',1.5),
-($1,'Charisma',0.85),
-($1,'Endurance',1.1);`;
+const stats = `insert into skills (user_id, skillName, multiplier, xpToNextLvl) values
+($1,'Strength',1, 45),
+($1,'Intelligence',1.2, 30),
+($1,'Agility',1.3, 20),
+($1,'Crafting',1.5, 50),
+($1,'Charisma',0.85, 60),
+($1,'Endurance',1.1, 40);`;
 
 const models = {
 
@@ -95,12 +95,49 @@ const models = {
     },
 
     updateStats: async (min, skillName, id) => {
+        // 960 min = 16 hours.
         const Limit = 960;
-        let loggedMinutes = null;
+        const levelupMultiplier = 1.15;
+        let todaysDate = new Date().toISOString().slice(0,10);
         try {
+            // receive minutes, (user_id/skill_id), skillName, calculatedXp, currentXp, currentLVL, xpForLvlUp
+            // check for limit
+                // if good calculate new values and send success back
+                // if bad send back failure
             const client = await db.connect();
-            let skillIDs = await client.query('')
+            const getSkillID = await client.query('SELECT skill_id from skills where user_id = $1 and skillName = $2;', [id, skillName]);
+            const skillID = getSkillID.rows[0].skill_id;
+            const getMinutes = await client.query('SELECT SUM(minutes) from logs where skill_id = $1 and date = $2;', [skillID, todaysDate]);
+            const loggedMinutes = getMinutes.rows[0].sum;
+            if ((min + loggedMinutes) < Limit) {
+                const getSkill = await client.query('SELECT xpToNextLvl, currentXp, totalXp, lvl, multiplier from skills where user_id = $1 and skillName = $2;', [id, skillName]);
+                const skill = getSkill.rows[0];
+                const multiplier = skill.multiplier;
+                const currentXp = skill.currentXp;
+                const totalXp = skill.totalXp;
+                let xpToNextLvl = skill.xpToNextLvl;
+                let lvl = skill.lvl;
+                
 
+                let newXp = currentXp + Math.round(min * multiplier);
+                let newTotalXp = totalXp + Math.round(min * multiplier);
+                let addingLevel = true;
+                while (addingLevel) {
+                    if (newXp >= xpToNextLvl) {
+                        newXp = newXp - xpToNextLvl;
+                        lvl++;
+                        xpToNextLvl = Math.round(xpToNextLvl * levelupMultiplier);
+                    } else {
+                        addingLevel = false;
+                    }
+                };
+
+                const updateSkill = await client.query('UPDATE skills SET currentXp = $1, totalXp = $2, lvl = $3, xpToNextLvl = $4 WHERE user_id = $5 and skill_id = $6;', [newXp, newTotalXp, lvl, xpToNextLvl, id, skillID]);
+                const updateLog = await client.query('INSERT INTO logs (skill_id, minutes) VALUES ($1, $2, $3);', [skillID, min]);
+                return { 'success': 'success' };                
+            } else {
+                return { 'error': 'Limit exceeded' };
+            }
         } catch (err) {
 
         }

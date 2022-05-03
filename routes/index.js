@@ -70,7 +70,8 @@ router.post('/register', (req, res, next) => {
 // put
 
 router.put('/addMinutes' , (req, res, next) => {
-    models.updateStats(req.body.min, req.body.skillName, req.user.user_id);
+    models.updateStats(req.body.min, req.body.skillName, req.user.user_id)
+    .then((response) => { res.send(response) });
     // receive minutes, (user_id/skill_id), skillName, calculatedXp, currentXp, currentLVL, xpForLvlUp
     // check for limit
         // if good calculate new values and send success back
