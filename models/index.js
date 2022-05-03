@@ -132,8 +132,8 @@ const models = {
                     }
                 };
 
-                const updateSkill = await client.query('UPDATE skills SET currentXp = $1, totalXp = $2, lvl = $3, xpToNextLvl = $4 WHERE user_id = $5 and skill_id = $6;', [newXp, newTotalXp, lvl, xpToNextLvl, id, skillID]);
-                const updateLog = await client.query('INSERT INTO logs (skill_id, minutes) VALUES ($1, $2, $3);', [skillID, min]);
+                await client.query('UPDATE skills SET currentXp = $1, totalXp = $2, lvl = $3, xpToNextLvl = $4 WHERE user_id = $5 and skill_id = $6;', [newXp, newTotalXp, lvl, xpToNextLvl, id, skillID]);
+                await client.query('INSERT INTO logs (skill_id, minutes) VALUES ($1, $2, $3);', [skillID, min]);
                 return { 'success': 'success' };                
             } else {
                 return { 'error': 'Limit exceeded' };
