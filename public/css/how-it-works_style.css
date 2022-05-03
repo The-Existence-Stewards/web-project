@@ -91,6 +91,8 @@ body {
     background-color:var(--main-yellow);
     padding: 5px 30px;
     text-align: center;
+    text-decoration: none;
+    color: black;
     /* font-size: 1.25rem; */
     font-size: 1.8vh;
     font-family: 'Chivo', sans-serif 
