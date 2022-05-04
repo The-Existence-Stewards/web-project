@@ -1,3 +1,7 @@
+const delay = ms => new Promise(res => setTimeout(res, ms))
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 function turnOnSpinner() {
     $(".inModal").toggleClass("active")
     setTimeout(function() {
@@ -72,33 +76,46 @@ function progressbarCrop(currentXP, neededLvlXP, progressBar) {
     let progressBarCrop = (currentXP / neededLvlXP)*100
     progressBar.css("clip-path", "inset(0 0 0 "+progressBarCrop+"%)")
 }
-function addMinutes(skill,minutes) {
+async function addMinutes(skill,minutes){
     let skillName = skill.toLowerCase()
     let detectedSkill = $(".elements").find("."+skillName)
-    let currentXP = $(detectedSkill).find("#currentXP").text()
-    let neededLvlXP = $(detectedSkill).find("#neededLvlXP").text()
-    let progressBar = $(detectedSkill).find(".progress-bar")
-    let newXP = parseInt(currentXP) + parseInt(minutes)
-    $(detectedSkill).find("#currentXP").text(newXP)
-    progressbarCrop(newXP, neededLvlXP, progressBar)
+    let currentXP = parseInt(detectedSkill.find("#currentXP").text())
+    let functionMinutes = parseInt(minutes)
+    let progressBar = detectedSkill.find(".progress-bar")
+    xpInput = Math.round((parseInt(functionMinutes)*sessionStorage[skillName]))+currentXP
+    if (xpInput < parseInt(detectedSkill.find("#neededLvlXP").text())) {
+        detectedSkill.find("#currentXP").text(xpInput)
+        progressbarCrop(xpInput, parseInt(detectedSkill.find("#neededLvlXP").text()), progressBar)
+        $.getJSON("/skills", function(respondedData) {
+            findStrongestStat(respondedData)
+            findTotalXp(respondedData)
+        });
+    }
+    else{
+        let animationDurationFast = 500
+        let animationDuration = ($(".progress-bar").css("transition").split(" ")[1].split("s")[0])*1000
+        while (xpInput >= parseInt(detectedSkill.find("#neededLvlXP").text())) {
+            xpInput = xpInput - parseInt(detectedSkill.find("#neededLvlXP").text())
+            detectedSkill.find("#currentXP").text(parseInt(detectedSkill.find("#neededLvlXP").text()))
+            progressbarCrop(parseInt(detectedSkill.find("#neededLvlXP").text()), parseInt(detectedSkill.find("#neededLvlXP").text()), progressBar)
+            await delay(animationDuration)
+            detectedSkill.find("#LvlValue").text(parseInt(detectedSkill.find("#LvlValue").text())+1)
+            visualLevelUp()
+            await delay(parseInt($(".elements").attr("data-timetakenforlvlup"))+200)
+            $(".progress-bar").css("transition", "clip-path "+animationDurationFast/1000+"s")
+            progressbarCrop(0, parseInt(detectedSkill.find("#neededLvlXP").text()), progressBar)
+            await delay(animationDurationFast)
+            detectedSkill.find("#currentXP").text(0)
+            detectedSkill.find("#neededLvlXP").text(Math.round(parseInt(detectedSkill.find("#neededLvlXP").text())*1.15))
+            $(".progress-bar").css("transition", "clip-path "+animationDuration/1000+"s")
+            if (xpInput < parseInt(detectedSkill.find("#neededLvlXP").text())) {
+                detectedSkill.find("#currentXP").text(xpInput)
+                progressbarCrop(xpInput, parseInt(detectedSkill.find("#neededLvlXP").text()), progressBar)
+                $.getJSON("/skills", function(respondedData) {
+                    findStrongestStat(respondedData)
+                    findTotalXp(respondedData)
+                });
+            }
+        }
+    }
 }
-// $(document).ready(function() {
-//     let mainElement = $(".elements")
-//     //select all mainElement child elements and put them in array
-//     let mainElementChildren = mainElement.children()
-//     //select all mainElement child elements and put them in array
-//     let mainElementChildrenArray = []
-//     for(let i = 0; i < mainElementChildren.length; i++){
-//         if (mainElementChildren[i].tagName != "BR"){
-//             mainElementChildrenArray.push(mainElementChildren[i])
-//         }
-//     }
-//     mainElementChildrenArray.forEach(element => {
-//         // let LvlValue = $(element).find("#LvlValue").text()
-//         let currentXP = $(element).find("#currentXP").text()
-//         let neededLvlXP = $(element).find("#neededLvlXP").text()
-//         let progressBar = $(element).find(".progress-bar")
-//         let progressBarCrop = (currentXP / neededLvlXP)*100
-//         progressBar.css("clip-path", "inset(0 0 0 "+progressBarCrop+"%)")
-//     });
-// });

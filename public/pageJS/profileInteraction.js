@@ -165,6 +165,64 @@ function visualLevelUp() {
         }, animationDurationFlex);
     }, animationDuration);
 }
+
+function calculateVisualLevelUp() {
+    //track how much time function is taking
+    let startTime = new Date();
+    targetSkill = $(".element.endurance");
+    levelUpSign = $(targetSkill).find(".levelUpFlexContainer");
+    animationDuration = ($(".levelUpTransition").css("transition").split(" ")[1].split("s")[0])*1000
+    animationDurationFlex = ($(".levelUpFlex").css("transition").split(" ")[1].split("s")[0])*1000
+    levelUpSign.css("display", "none")
+    //select all child elements of targetSkill except element with class "levelUpFlexContainer"
+    targetSkill.children().not(".levelUpFlexContainer").each(function() {
+        let targetElement = $(this);
+        targetElement.toggleClass("levelUpTransition")
+    });
+    setTimeout(function() {
+        targetSkill.toggleClass("levelUpTransition")
+    }, animationDuration);
+    setTimeout(function() {
+        levelUpSign.toggleClass("levelUpFlex")
+    }, animationDuration);
+    setTimeout(function() {
+        setTimeout(function() {
+            levelUpSign.toggleClass("levelUpFlex")
+        }, animationDurationFlex);
+        setTimeout(function() {
+            setTimeout(function() {
+                targetSkill.toggleClass("levelUpTransition")
+                setTimeout(function() {
+                    targetSkill.children().not(".levelUpFlexContainer").each(function() {
+                        let targetElement = $(this);
+                    })
+                    setTimeout(function() {
+                        targetSkill.children().not(".levelUpFlexContainer").each(function() {
+                            let targetElement = $(this);
+                            targetElement.toggleClass("levelUpTransition")
+                            levelUpSign.css("display", "none")
+                            let endTime = new Date();
+                            let timeTaken = endTime - startTime;
+                            $(".elements").attr("data-timeTakenForLvlUp", timeTaken)
+                        });
+                    }, animationDuration/2);;
+                }, animationDuration);
+            }, animationDuration);
+        }, animationDurationFlex);
+    }, animationDuration);
+}
+$(document).ready(function() {
+    $.ajax({
+        url: "/username",
+        type: 'GET',
+        success: function(res) {
+            var text = res;
+            $("#greeting").text(`Hello, ${text}!`)
+            $("#dudeMcDavid").text(`${text}`)
+        }
+    });
+});
+
 $(document).ready(function() {
     $.getJSON("/skills", function(respondedData) {
         let data = respondedData
@@ -258,41 +316,12 @@ $(document).ready(function() {
                     progressBar.css("clip-path", "inset(0 0 0 "+progressBarCrop+"%)")
                 });
                 $("#circleSpinner").hide()
+                calculateVisualLevelUp()
             })
         });
     });
-//execute code after json file was fetched
-// $(document).ready(function() {
-//     let mainElement = $(".elements")
-//     //select all mainElement child elements and put them in array
-//     let mainElementChildren = mainElement.children()
-//     console.log(mainElementChildren);
-//     //select all mainElement child elements and put them in array
-//     let mainElementChildrenArray = []
-//     for(let i = 0; i < mainElementChildren.length; i++){
-//         if (mainElementChildren[i].tagName != "BR"){
-//             mainElementChildrenArray.push(mainElementChildren[i])
-//         }
-//     }
-//     mainElementChildrenArray.forEach(element => {
-//         let currentXP = $(element).find("#currentXP").text()
-//         let neededLvlXP = $(element).find("#neededLvlXP").text()
-//         let progressBar = $(element).find(".progress-bar")
-//         let progressBarCrop = (currentXP / neededLvlXP)*100
-//         progressBar.css("clip-path", "inset(0 0 0 "+progressBarCrop+"%)")
-//     });
-// });
 
-// $(document).ready(function() {
-//     $(".message").hide();
-//     $(".menu").click(function() {
-//         //get element's 2nd class name
-//         var elementClass = $(this).parent().parent().attr("class").split(" ")[1];
-//         $(".message."+elementClass).slideToggle();
-//     });
-// });
 //open modal
-
     function toggleHamburgerModal() {
         $(".hamburgerModal").toggleClass("show-modal-hamburger");
     };

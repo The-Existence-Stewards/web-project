@@ -239,6 +239,10 @@ div.progress-bar {
     color: rgba(255, 201, 43, 1);
 }
 
+.profile-card .profileStats {
+    padding: 0px 20px 0px;
+}
+
 .modal {
     position: fixed;
     left: 0;
@@ -495,7 +499,7 @@ div.inModal.active.animation{
     opacity: 1;
     
 }
-/* change opacity of child if is visible */
+
 div.inModal svg{
     height: 50%;
     overflow: visible;
@@ -741,7 +745,11 @@ div.inModal svg{
 
     .modal-body button { 
         width: 30%;
-        font-size: .9rem}
+        font-size: .9rem
+    }
+    div.levelUpText{
+        font-size: 3em;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -994,4 +1002,7 @@ div.inModal svg{
         height: 50%;
         left: 50%;
         top: 50% }
+    div.levelUpText{
+        font-size: 3em;
+    }
 }

@@ -109,8 +109,15 @@ const models = {
             const client = await db.connect();
             const getSkillID = await client.query('SELECT skill_id from skills where user_id = $1 and skillName = $2;', [id, skillName]);
             const skillID = getSkillID.rows[0].skill_id;
-            const getMinutes = await client.query('SELECT SUM(minutes) from logs where date = $2;', [todaysDate]);
-            const loggedMinutes = getMinutes.rows[0].sum;
+            const getAllSkillIds = await client.query('SELECT skill_id from skills where user_id = $1;', [id]);
+            const allSkillIds = getAllSkillIds.rows;
+
+            let loggedMinutes = 0;
+            for (let i = 0; i < allSkillIds.length; i++) {
+                let getMinutes = await client.query('SELECT SUM(minutes) from logs where date = $1 and skill_id = $2', [todaysDate, allSkillIds[i].skill_id]);
+                loggedMinutes += Number(getMinutes.rows[0].sum);
+            }
+            
             if ((Number(min) + Number(loggedMinutes)) < Limit) {
                 const getSkill = await client.query('SELECT xpToNextLvl, currentXp, totalXp, lvl, multiplier from skills where user_id = $1 and skillName = $2;', [id, skillName]);
                 const skill = getSkill.rows[0];
@@ -125,7 +132,6 @@ const models = {
                 let newTotalXp = totalXp + Math.round(min * multiplier);
                 let addingLevel = true;
                 while (addingLevel) {
-                    console.log(currentXp);
                     if (newXp >= xpToNextLvl && xpToNextLvl !== 0) {
                         newXp = newXp - xpToNextLvl;
                         lvl++;
