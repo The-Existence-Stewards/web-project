@@ -9,4 +9,4 @@ https://skillthree.herokuapp.com/
 
 ### Members
 
-Anibal DONOSO, Eero HELANTI, Kacper KOLODZIEJ:austria:, Vadims LAPINS, Marion ROUSSEL
+Anibal DONOSO, Eero HELANTI, Kacper KOLODZIEJ, Vadims LAPINS, Marion ROUSSEL
